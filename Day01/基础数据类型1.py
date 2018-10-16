@@ -35,6 +35,9 @@ msg = '''
 print(msg)
 info = "i'm 18 old"
 print(info)
+# str转换成int通过int函数，但是有个条件是参数必须是数字
+str11 = int(11)
+
 
 # 3、布尔类型bool
 print(True,type(True))
