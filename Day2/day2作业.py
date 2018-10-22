@@ -84,14 +84,36 @@ while 条件：
             continue：终止本次循环，会执行下次循环）
 '''
 # 8、写代码计算1-2+3...+99中除了88以外的所有数的和。
+# count = 0
+# sum = 0
+# while count <= 98:
+#     count = count + 1
+#     if count % 2 == 1:
+#         sum = sum + count
+#     else:
+#         if count == 88:
+#             continue
+#         sum -= count
+# print(sum)
+
+# 9、用户登录(两次给错机会）且每次错误时输出剩余错误次数（提示：使用字符串格式化）
+
 count = 0
-sum = 0
-while count <= 98:
-    count = count + 1
-    if count % 2 == 1:
-        sum = sum + count
+name = 'jianghu'
+password = 123123
+while count < 3:
+    guess_name = input('请输入你的用户名:')
+    guess_password = input('请输入你的密码:')
+    sum = 3
+
+    if guess_name == name and guess_password == password:
+        print('恭喜你登录成功')
     else:
-        if count == 88:
-            continue
-        sum -= count
-print(sum)
+        count += 1
+        sum = sum - count
+        if sum == 0:
+            print('你真笨，三次机会用完，请下次再试')
+            break
+        else:
+            msg = '用户名或者密码错误:还有%s次机会' % (sum)
+            print(msg)
