@@ -10,10 +10,10 @@
 list1 = [1,2,3,[12,13]]
 print(list1)
 print(type(list1))
-# 5、tuple元组{} 有序不可变
+# 5、tuple元组（） 有序不可变
 # 元组：也是一个数据的集合，也是有序的，但是它不可变，也称作为只读列表，用小括号()
 # 特性：元组本身不可变，但是里面可以包含列表，所以元组间接也是可变的。
-tuple1 = {1,2,334,'jianghu'}
+tuple1 = (1,2,334,'jianghu')
 print(tuple1)
 print(type(tuple1))
 # 6、dict 字典，用大括号表示，里面是包含键值对的，一个键对应一个值，用于存储大量数据，但是一般用于存储关系型数据
@@ -24,3 +24,8 @@ print(type(tuple1))
 dict = {'name':'jianghu','age':'17'}
 print(dict)
 print(type(dict))
+
+# 7、集合是一个无序的，不重复的数据集合，用{}表示
+set = {11,12,'12231'}
+print(set)
+print(type(set))
