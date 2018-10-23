@@ -9,7 +9,12 @@ s2 = s.upper()
 print(s2)
 # 举例：
 # 登录，输入验证码，不区分大小写
-
+mark = 'sTRobc'
+input_Mark = input('请输入验证码:')
+if mark.upper() == input_Mark.upper():
+    print('通过验证')
+else:
+    print('验证码错误，请重新输入')
 
 # 3、字符串全部字符小写
 s3 = s.lower()
@@ -74,6 +79,14 @@ print(s18)    #result: @#jianghuyixiao
 str5 = ' %%jianghuyixiao&&&^%$$    '
 s19 = str5.strip('% ')
 print(s19)    #result:jianghuyixiao&&&^%$$
+
+# 举例：一般我们在用户输入的时候难免会输入空格，这个时候就需要我们使用strip进行去除空格
+name = input('请输入你的姓名：')
+if name.strip() == '江湖':
+    print('恭喜用户名输入正确')
+else:
+    print('用户名不正确')
+
 
 # 14、format格式化输出的三种方式{}
 str6 = '我叫{},我的性别是{},我的年龄是{},再说一次我叫{}'.format('江湖','男','27','江湖')
