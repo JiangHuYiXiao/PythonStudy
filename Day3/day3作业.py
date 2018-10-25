@@ -171,6 +171,7 @@ for i in list:
 print(sum)
 
 # 5、计算用户输入的内容中有几个整数（如：content = input('请输入内容:')如：’fssdfsddfs646de23wrwer099dsret‘）
+# 方法1：
 sum = 0
 content = input('请输入内容:')
 for i in content:
@@ -178,7 +179,8 @@ for i in content:
       sum += 1
 print(sum)
 
-# 6、分别用for和while循环输出字符串 s = input('请输入内容：')的每一个字符。
+
+# # 6、分别用for和while循环输出字符串 s = input('请输入内容：')的每一个字符。
 s = input('请输入你想输入的内容：')
 for i in s:
     print(i)
