@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-'''
+
 li = ['jianghu','jiangxi','Rose','Jack']
 
 # 1、列表索引
@@ -123,7 +123,7 @@ print(li)
 list = [1,34,5,7,77]
 list.sort()
 print(list)
-'''
+
 # 如果元素是字符串，则按照字符串的首字母的ascii的十进制进行排序
 list1 = ['ab','jiang','cd','js','python']
 list1.sort()
