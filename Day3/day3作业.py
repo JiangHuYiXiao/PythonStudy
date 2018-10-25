@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 # 1、有变量 name = 'aleX leNb',完成如下操作
 
-'''
 name = 'aleX leNb'
 # 1)移除name变量对应的值两边的空格，并输出处理结果
 name1 = name.strip()
@@ -101,11 +100,11 @@ print(name21)
 # 方法2：
 print(oldboy[:-1])
 print(oldboy)   #字符串的所有操作都是在新的字符串上操作，旧的字符串上不操作
-'''
+
 
 # 2、有字符串 s = '132a4b5c'
-'''
-1)通过对li列表切片形成新的字符串，s1 = '123
+
+# 1)通过对li列表切片形成新的字符串，s1 = '123
 
 # 方法1
 s = '132a4b5c'
@@ -146,10 +145,10 @@ print(s5)
 s = '132a4b5c'
 s6 = s[5:0:-2]
 print(s6)
-'''
+
 
 # 3、使用while和for循环分别打印‘asdfer’中每个元素
-'''
+
 str1 = 'asdfer'
 for i in str1:
     print(i)
@@ -159,10 +158,10 @@ str_index = len(str1)
 while index < str_index:
     print(str1[index])
     index += 1
-'''
+
 
 # 4、实现一个整数加法计算器（如：content = input('请输入内容:')如：用户输入5+9或者5 +9或者5+ 9然后进行分割再进行计算）
-'''
+
 num = input('请输入内容:')
 list = num.strip().split('+')
 sum = 0
@@ -170,13 +169,22 @@ for i in list:
     print(i)
     sum = sum + int(i)
 print(sum)
-'''
+
 # 5、计算用户输入的内容中有几个整数（如：content = input('请输入内容:')如：’fssdfsddfs646de23wrwer099dsret‘）
 sum = 0
 content = input('请输入内容:')
 for i in content:
-
-    if type(int(i)) == int:
-        sum +=1
-    elif type
+    if i.isdecimal():
+      sum += 1
 print(sum)
+
+# 6、分别用for和while循环输出字符串 s = input('请输入内容：')的每一个字符。
+s = input('请输入你想输入的内容：')
+for i in s:
+    print(i)
+
+i = 0
+while i < len(s):
+    print(s[i])
+    i += 1
+
