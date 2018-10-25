@@ -81,6 +81,10 @@ print(li)
 li.clear()
 print(li)
 
+# 第四种，删除列表，可以指定索引，可以多个删除
+del(li[1:4])
+print(li)
+
 # 6、列表的修改
 
 li[0] = 'jiangjiang'
@@ -132,5 +136,5 @@ print(str(ord('a')) + '--'+'--' + str(ord('b')) + '--' + ' --' + str(ord('c')))
 print(str(ord('A')) + '--' + str(ord('B')))
 
 # 倒序排序
-# list.sort(reverse=True)
-# print(list)
+list.sort(reverse=True)
+print(list)
