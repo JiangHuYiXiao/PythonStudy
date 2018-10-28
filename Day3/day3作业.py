@@ -179,8 +179,29 @@ for i in content:
       sum += 1
 print(sum)
 
+# 方法2：
+content = input('请输入内容：')
+for i in content:
+    if i.isalpha():
+        content = content.replace(i,'')
+count = len(content)
+print(count)
 
-# # 6、分别用for和while循环输出字符串 s = input('请输入内容：')的每一个字符。
+
+
+# 方法3:计算有几块整数(不用详细到个数)
+
+content = input('请输入内容：')
+for i in content:
+    if i.isalpha():
+        content = content.replace(i,'')
+li = content.split()
+count = len(content)
+print(count)
+
+
+
+# 6、分别用for和while循环输出字符串 s = input('请输入内容：')的每一个字符。
 s = input('请输入你想输入的内容：')
 for i in s:
     print(i)
