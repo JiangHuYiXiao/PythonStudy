@@ -169,7 +169,7 @@ li = ['苍老师','东京热','武藤兰','波多野结衣']
 s = []
 for i in li:
     if i in info:
-        num = len(info)
+        num = len(i)
         info = info.replace(i,'*'* num)
 s.append(info)
 print(s)
