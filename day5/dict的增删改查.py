@@ -48,7 +48,7 @@ print(dic)
 dic.clear(dic)
 print(dic)
 
-# 删除方法4：clear清空
+# 删除方法4：delete删除
 del(dic['name'])
 print(dic)
 
