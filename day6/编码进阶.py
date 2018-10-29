@@ -30,3 +30,28 @@ gbk：
 # 所以我们存储和传输应该是将str的unicode转换成bytes
 
 # 内存中str和bytes存储中英文的区别
+# 英文：
+a = 'jianghu'
+# 1、str:
+# 表现形式：a = 'jianghu'
+# 编码方式：unicode
+print(a.encode('utf-8'))  #b'jianghu'    #encode是将字符串a，转换成bytes，然后以utf-8进行编码
+
+# 2、bytes:
+# 表现形式：a = b'jianghu'
+# 编码方式：utf-8或者GBK,gb2312，ascii
+
+# 中文：
+a1 = '江湖'
+# 1、str:
+# 表现形式：a = '江湖'
+# 编码方式：unicode
+
+# 2、bytes:
+# 表现形式：a = b'\xe6\xb1\x9f\xe6\xb9\x96'
+# 编码方式：utf-8或者GBK,gb2312，ascii
+b = a1.encode('utf-8')   #encode是将字符串a1，转换成bytes，然后以utf-8进行编码
+print(b)   # b'\xe6\xb1\x9f\xe6\xb9\x96'
+
+# 为啥我们不用bytes表现字符串，且bytes的编码方式（utf-8,gbk等）都可以直接在硬盘上存储，和进行传输？，
+# 那是因为bytes的表现形式，为16进制，我们不好识别
