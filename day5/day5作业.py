@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-'''
+
 # 1、有如下变量：tu ，请实现要求的功能
 tu = ('alex',[11,22,{'k1':'v1','k2':['age','name'],'k3':[11,22,33]},44])
 # a、讲述元组的特性
@@ -47,7 +47,7 @@ print(dic)
 dic.setdefault('k4','v4')
 print(dic)
 
-e、
+# e、
 # 方法1
 dic['k1'] = 'alex'
 print(dic)
@@ -56,30 +56,30 @@ print(dic)
 dic1 = {'k1':'alex'}
 dic.update(dic1)
 print(dic)
-f、
+# f、
 dic['k3'].append(44)
 print(dic)
 
-g、
+# g、
 dic['k3'].insert(0,18)
 print(dic)
-'''
+
 
 # 3、元素分类，有如下值li = [11,22,33,44,55,66,77,88,99,90],
 # 将所有的大于66的值，保存到字典的第一个key下面，将小于66值，保存至第二个，key值中
 #即：{'k1':'大于66值的所有列表','k2':'小于66的所有值列表'}
-# dic = {}
-# new1_li =[]
-# new2_li =[]
-# li =[11,22,33,44,55,66,77,88,99,90]
-# for i in li:
-#     if i > 66:
-#         new1_li.append(i)
-#     if i < 66:
-#         new2_li.append(i)
-# dic['k1'] = new1_li
-# dic['k2'] = new2_li
-# print(dic)
+dic = {}
+new1_li =[]
+new2_li =[]
+li =[11,22,33,44,55,66,77,88,99,90]
+for i in li:
+    if i > 66:
+        new1_li.append(i)
+    if i < 66:
+        new2_li.append(i)
+dic['k1'] = new1_li
+dic['k2'] = new2_li
+print(dic)
 
 # 4、输出商品列表，用户输入序号，显示用户输入的商品，
 # li = ['手机','电脑','鼠标垫','游艇']
