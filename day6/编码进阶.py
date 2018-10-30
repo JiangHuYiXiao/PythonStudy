@@ -27,7 +27,7 @@ gbk：
 # str在内存中是用unicode进行编码的
 # py3中存在一个特殊的数据类型，bytes类型，
 # 他和str差不多，但是他在内存中的的编码方式是（utf-8，gbk，gb2312，ascii）
-# 所以我们存储和传输应该是将str的unicode转换成bytes
+# 所以我们存储和传输应该是将str的unicode转换成bytes的utf-8
 
 # 内存中str和bytes存储中英文的区别
 # 英文：
