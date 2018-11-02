@@ -15,6 +15,8 @@ f = open('文件操作相对路径', mode = 'r',encoding= 'utf-8')
 b = f.read()
 print(b)
 f.close()
+# 这里内部通过open进行了将str到bytes数据类型然后再bytes到str数据类型的转换，才可以让我们读懂
+
 
 # 需要注意
 1、文件编写的是什么编码，打开就应该用什么编码打开，否则会乱码
@@ -31,10 +33,37 @@ b = f.read()
 f.write('写一下哈')     # io.UnsupportedOperation: not writable
 print(b)
 f.close()
+
+
+# rb
+# f = open('文件操作相对路径', mode = 'rb')
+# b = f.read()
+# print(b)                     # b'\xe5\x86\x99\xe4\xb8\xaa\xe5\x95\xa5'
+# f.close()
+#
+
+# 2、只写  如果文件存在内容，则先删除原文件，然后再添加
+# w
+# f = open('文件操作相对路径',mode= 'w',encoding='utf-8')
+# b = f.write('写个啥')  #返回字符数
+# print(b)
+# f.close()
+
+# wb 以bytes数据类型进行写，wb，因为bytes数据类型的编码方式为utf-8或者gbk等，所以不要写enconding
+# f = open('文件操作相对路径',mode= 'wb')
+# b = f.write('dfe'.encode('GBK'))  #bytes数据类型转换到str需要经过encode进行编码，unicode转到utf-8或者GBK
+# print(b)
+# f.close()
 '''
 
-# 2、只写:如果文件存在则，先删除原文件，然后再添加
-f = open('相对路径',mode= 'w',encoding='utf-8')
-b = f.write('写个啥')
-print(b)
+# 3、追加 a
+f = open('文件操作相对路径',mode= 'a' ,encoding='utf-8')
+f.write('追加')
+print(f.write)
+f.close()
+
+# ab
+f = open('文件操作相对路径',mode= 'ab')
+f.write('追加'.encode('utf-8'))
+print(f.write)
 f.close()
