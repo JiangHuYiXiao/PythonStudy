@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 # 1、写函数，检查获取传入列表或者元组对象所有奇数的位索引对应的元素，并将其作为新列表返回给调用者。
-'''
-方法1：
+
+# 方法1：
 def func(*args):
     list = []
     for i in args:
@@ -35,9 +35,9 @@ print(res)
 
 res = func([1,3,5,6,7])
 print(res)
-'''
+
 # 2、写函数，判断用户传入的对象（字符串，列表，元组）长度是否大于5
-'''
+
 # 方法1：
 def func2(args):
     k = 0
@@ -60,9 +60,9 @@ def func(args):
 print(func('abcd'))
 if func('abcdd6'):
     print('对象的长度确实大于5')
-'''
+
 # 3、写函数，检查传入列表的长度，如果大于2，那么保留前两个长度的内容，并将新内容返回给调用者。
-'''
+
 # 方法1
 def func3(list):
     lis = []
@@ -91,10 +91,11 @@ print(func([1,2,3,4]))
 def func(li):
         return li[:2]
 print(func([1,2,3,4]))
-'''
+
 
 # 4、写函数，计算传入字符串中的数字，字母，空格，以及其他的个数，并返回结果。
-'''
+
+# 方法1:
 def func4(arg):
     i =0
     s =0
@@ -110,60 +111,104 @@ def func4(arg):
     other = len(arg)-i-s-space
     return(i,s,space,other)
 print(func4('12ww @#'))
-'''
-# 5、写函数，检查用户传入的对象（字符串，列表，元组），检查用户传入的每一个元素是否含有空内容，并返回结果。
-'''
-def func5(kwargs):
-    k = 0
-    for i in kwargs:
 
+# 方法2：将这些变量定义成一个字典的键更好，然后值为一个value
+def func(args):
+    dic = {'digit':0,'alpha':0,'space':0,'other':0}
+    for i in args:
+        if i.isdigit():
+            dic['digit'] += 1
+        if i.isalpha():
+            dic['alpha'] += 1
         if i.isspace():
-            k += 1
-            print(True)
-    return k
-# print(func5(str1 = 'intw 32',list1 =[1,3, '',32],tuple1 =(1,3,'')))
-print(func5('123  3'))
-print(func5([1,3, '',32]))
-'''
+            dic['space'] += 1
+        else:
+            dic['other'] += 1
+    return dic
+print(func('sjdfiowe  &&&q123123 41231'))  #{'digit': 11, 'alpha': 9, 'space': 3, 'other': 23}
+
+
+
+
+
+# 5、写函数，检查用户传入的对象（字符串，列表，元组），检查用户传入的每一个元素是否含有空内容，并返回结果。
+
+def func5(*args):
+    k = 0
+    for i in args:
+        if type(i) == str:
+            if i == ' ':
+                k += 1
+        if type(i) == list:
+            if i == []:
+                k += 1
+        if type(i) == ():
+            if i == ():
+                k += 1
+    return k,bool(k)
+print(func5('jsdifwe wer ',''))
+print(func5((1,22),()))
+
 
 # 6、写函数，检查传入字典的每一个value的长度，如果大于2，那么保留前两个长度的内容，并将新内容返回给调用者。
 # 字典的value值只能是字符串或者列表
-'''
+
 def func6(args):
     dic = {'k1': 'v1v2', 'k2': [11, 22, 33, 44]}
     list = []
-    for i in dic.values():
+    for i in dic.values():    #不建议这么用，因为字典的value都很大，这样会很消耗内存
         if len(i) > 2:
             list.append(i[0])
             list.append(i[1])
     return list
 res = func6({'k1': 'v1v2', 'k2': [11, 22, 33, 44]})
 print(res)
-'''
+
+
+# 题目是要把截取后的字典返回给调用者不是返回一个列表
+def func(dic1):
+    for i in dic1:
+        if len(dic1[i]) > 2:
+            dic1[i] = dic1[i][:2]
+    return dic1
+print(func({'k1': 'v1v2', 'k2': [11, 22, 33, 44]}))
+
+
+
 # 7、接收两个数字参数，返回较大的数
-'''
-# def compare_large(a,b):
-#     if a > b:
-#         return a
-#     if a < b:
-#         return b
-#     else:
-#         print('两个数一样大')
-# print(compare_large(2,1))
-'''
+# 方法1：
+
+def compare_large(a,b):
+    if a > b:
+        return a
+    if a < b:
+        return b
+    # else:
+    #     print('两个数一样大')    可以不需要这段，因为当a == b时 走哪个都可以
+
+# 方法2：
+# 使用三目运算符
+def func(a,b):
+    return(a if a > b else b)
+
+print(func(100,23))
+
+
+
 
 # 8、写函数，用户传入修改的文件名，与要修改的内容，执行函数，完成整个文件的批量修改操作。
 
-# def replace_func(name,content):
-#     with open('name',mode='r+',encoding='utf-8') as file,open('replace_name',mode='w+',encoding='utf-8') as replace_file:
-#         for line in file:
-#             line = line.replace('alex','SB')
-#             replace_file.write(line)
-# import os
-# os.remove('name')
-# os.replace('replace_name','name')
+def replace_func(name,old,new):
+    with open('replace',mode='w',encoding='utf-8') as replace_file,open('name',mode='r+',encoding='utf-8') as file:
+        for line in file:
+            line = line.replace('old','new')
+            replace_file.write(line)
+import os
+os.remove('name')
+os.replace('replace','name')
 
 
+replace_func('F:\PythonStudy\day9\name','行','列')
 # 9、写一个函数，完成三次注册，再写一个函数完成三次登录
 '''
 # 1、定义函数
