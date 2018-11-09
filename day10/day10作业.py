@@ -39,6 +39,7 @@
 
 def register(name,password):
     with open('注册信息',mode='w+',encoding='utf-8') as file:
+        file.write('{}\n{}'.format(name,password)
 
 
 
