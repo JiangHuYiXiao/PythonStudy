@@ -72,8 +72,8 @@ def timer(f):                 # 装饰器函数 ，步骤1
 
 
 # 调用函数
-# func = timer(func)   # 这里现在func的值是inner的内存地址  ，赋值右边，步骤3   赋值左边步骤6，把inner的内存地址返回给func
-# func()           #步骤7，调用inner函数，这里面的func都要是被装饰的函数名
+func = timer(func)   # 这里现在func的值是inner的内存地址  ，赋值右边，步骤3   赋值左边步骤6，把inner的内存地址返回给func
+func()           #步骤7，调用inner函数，这里面的func都要是被装饰的函数名
 
 # 这个timer就是一个简单的装饰器，装饰器函数需要有内部函数，且内部函数，
 # 且需要返回内部函数的函数名
