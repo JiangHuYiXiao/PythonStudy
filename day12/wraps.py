@@ -26,5 +26,5 @@ def holiday(day):
 from functools import wraps  # 导入ｗｒａｐｓ
 # 在inner函数上一行加入待参数的装饰器@wraps（func）
 
-print(holiday.__name__)     # inner
-print(holiday.__doc__)     # 这个是inner函数
+print(holiday.__name__)     # holiday
+print(holiday.__doc__)     # 这是一个放假通知
