@@ -2,7 +2,7 @@
 # 1、带参数的装饰器
 # 现在有个需求想要删除被装饰函数的装饰器，可以一个一个删除，
 # 但是更加高效的方法是给timer加个函数，传个参数给timer来判断是删除还是不删除装饰器
-'''
+
 import time
 flag = False
 # flag = True
@@ -38,31 +38,31 @@ def jianghu():
 
 wahaha()
 jianghu()
-'''
+
 
 # 2、多个装饰器装饰一个函数
-# def wrapper1(func):
-#     def inner2():
-#         print('wrapper1 ,before func')      # 2
-#         func()
-#         print('wrapper1 ,after func')       # 3
-#     return inner2
-#
-# def wrapper2(func):
-#     def inner2():
-#         print('wrapper2 ,before func')      #1
-#         func()
-#         print('wrapper2 ,after func')       # 4
-#     return inner2
-#
-#
-# @wrapper2
-# @wrapper1
-# def f():
-#     print('in f')
-#
-# # 调用函数
-# f()
+def wrapper1(func):
+    def inner2():
+        print('wrapper1 ,before func')      # 2
+        func()
+        print('wrapper1 ,after func')       # 3
+    return inner2
+
+def wrapper2(func):
+    def inner2():
+        print('wrapper2 ,before func')      #1
+        func()
+        print('wrapper2 ,after func')       # 4
+    return inner2
+
+
+@wrapper2
+@wrapper1
+def f():
+    print('in f')
+
+# 调用函数
+f()
 
 # wrapper2 ,before func
 # wrapper1 ,before func
@@ -70,26 +70,26 @@ jianghu()
 # wrapper1 ,after func
 # wrapper2 ,after func
 
-#
-# def wrapper1(func):
-#     def inner2():
-#         print('wrapper1 ,before func')      # 1
-#         func()
-#         print('wrapper1 ,after func')       # 4
-#     return inner2
-#
-# def wrapper2(func):
-#     def inner2():
-#         print('wrapper2 ,before func')      # 2
-#         func()
-#         print('wrapper2 ,after func')       # 3
-#     return inner2
-#
-#
-# @wrapper1
-# @wrapper2
-# def f():
-#     print('in f')
+
+def wrapper1(func):
+    def inner2():
+        print('wrapper1 ,before func')      # 1
+        func()
+        print('wrapper1 ,after func')       # 4
+    return inner2
+
+def wrapper2(func):
+    def inner2():
+        print('wrapper2 ,before func')      # 2
+        func()
+        print('wrapper2 ,after func')       # 3
+    return inner2
+
+
+@wrapper1
+@wrapper2
+def f():
+    print('in f')
 #
 # # 调用函数
 # f()
@@ -134,13 +134,13 @@ def f():
 # 调用函数
 f()
 
-# wrapper1 ,before func  被装饰函数之前的功能执行顺序
-# wrapper2 ,before func  被装饰函数之前的功能执行顺序
-# wrapper3 ,before func  被装饰函数之前的功能执行顺序
+# wrapper1 ,before func  被装饰函数之前的所有功能执行顺序
+# wrapper2 ,before func  被装饰函数之前的所有功能执行顺序
+# wrapper3 ,before func  被装饰函数之前的所有功能执行顺序
 # in f
-# wrapper3 ,after func   被装饰函数之后的功能执行顺序
-# wrapper2 ,after func   被装饰函数之后的功能执行顺序
-# wrapper1 ,after func   被装饰函数之后的功能执行顺序
+# wrapper3 ,after func   被装饰函数之后的所有功能执行顺序
+# wrapper2 ,after func   被装饰函数之后的所有功能执行顺序
+# wrapper1 ,after func   被装饰函数之后的所有功能执行顺序
 
 
 # 结论：
