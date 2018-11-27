@@ -301,7 +301,7 @@ import time
 # f()
 
 
-# 17、想要获取装饰器的注释，内置函数，使用wraps
+# 17、想要获取被装饰函数的注释，名称，内置函数，使用wraps
 from functools import wraps
 def wrapper(func):
     # '被装饰函数之前可以添加的功能'
@@ -321,5 +321,6 @@ def func(*args, **kwargs):
 
 print(func.__name__)
 print(func.__doc__)
+
 
 func()
