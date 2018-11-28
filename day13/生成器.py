@@ -36,7 +36,9 @@ print(res)   # <generator object generator at 0x00000000022B3750> # 步骤4
 # 所以可以直接调用生成器函数的__next__(）方法
 print(res.__next__())   # 步骤5
 '''
-# 连续取生成器函数的值
+# 连续取生成器函数的值，可以通过__next__和for循环
+
+# 1、__next__
 # def generator():
 #     print(1)
 #     yield 'a'
@@ -53,6 +55,8 @@ print(res.__next__())   # 步骤5
 
 # yield就不会结束函数，会继续取值
 
+
+# 2、for循环
 # for循环取全部生成器函数的值
 # def generator():
 #     print(1)
@@ -77,34 +81,59 @@ print(res.__next__())   # 步骤5
 
 
 # 只想要取得50个
-def func():    # 生成器函数
-
-    for i in range(200001):
-        yield 'wahaha%s'%i
-
-res = func()   # 生成器
-count = 0
-for i in res:
-    count += 1
-    print(i)
-    if count > 50:
-        break
-
-# 还可以接着取值
-print('****',res.__next__())
-
-# 还可以接着取值
-for i in res:
-    count += 1
-    print(i)
-    if count > 100:
-        break
+# def func():    # 生成器函数
+#
+#     for i in range(200001):
+#         yield 'wahaha%s'%i
+#
+# res = func()   # 生成器
+# count = 0
+# for i in res:
+#     count += 1
+#     print(i)
+#     if count > 50:
+#         break
+#
+# # 还可以接着取值
+# print('****',res.__next__())
+#
+# # 还可以接着取值
+# for i in res:
+#     count += 1
+#     print(i)
+#     if count > 100:
+#         break
 
 
 # 迭代器和可迭代的关于for循环的差异
+#迭代器：针对于同一个迭代器是不会重新取值的，只有针对于不同迭代器就会重新取值
+def generator():
+    for i in range(500):
+     yield 'wahaha%s'%i
 
+g = generator()
+g1 = generator()
+count = 0
+for i in g:
+    count += 1
+    print(i)
+    if count > 50:
+        break           # 到wahaha50
+print(g.__next__())     # wahaha51
 
+print(g1.__next__())    # wahaha0
 
+# 可迭代的:会重新开始取值
+# list = [11,12,14]
+# for i in list:
+#     print(i)
+#     if i == 12:
+#         break
+# # result:11,12
+#
+# for i in list:
+#     print(i)
 
+# result:11,12,14
 
 
