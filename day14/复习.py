@@ -96,3 +96,7 @@ g = listener('filename')
 for i in g:
     if 'python' in i:
         print(i)
+
+# 10、生成器的取值方式和迭代器的取值方式一样，可以通过__next__,for循环，
+# 还需要特意指出一个是通过数据类型的强制转换
+# list(g)  占用内存
