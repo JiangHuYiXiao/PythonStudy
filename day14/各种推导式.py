@@ -36,5 +36,5 @@ print(res)    # {10: 'a', 34: 'b'}
 
 # 练习2：合并大小写对应的value值，将k统一成小写
 mcase = {'a': 10, 'b': 34, 'A': 7, 'Z': 3}
-res = {k.lower():mcase.get(k.lower(),0) + mcase.get(k.upper(),0) for k in mcase}
+res = {k.lower():mcase.get(k.lower(),0) + mcase.get(k.upper(),0) for k in mcase}  # 不设置get后面为0则可能出现int+None
 print(res)          # {'a': 17, 'b': 34, 'z': 3}
