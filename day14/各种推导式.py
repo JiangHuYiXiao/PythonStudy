@@ -38,3 +38,10 @@ print(res)    # {10: 'a', 34: 'b'}
 mcase = {'a': 10, 'b': 34, 'A': 7, 'Z': 3}
 res = {k.lower():mcase.get(k.lower(),0) + mcase.get(k.upper(),0) for k in mcase}  # 不设置get后面为0则可能出现int+None
 print(res)          # {'a': 17, 'b': 34, 'z': 3}
+
+
+# 三、集合推导式：因为集合数据类型是不包含重复数据的，所以会自动去重复，对于返回的结果
+# 练习1：计算列表中每个值的平方，自带去重功能
+set = {1,-1,4}
+res = {i*i for i in set}
+print(res)          # {16, 1}
