@@ -4,7 +4,7 @@
 #     筛选功能
 
 # 一、列表推导式
-'''
+
 #一个简易的列表推导式：
 res = [i for i in range(30)]    # -----相当于一个遍历功能
 print(res)              # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
@@ -28,7 +28,7 @@ names = [['Tom', 'Billy', 'Jefferson', 'Andrew', 'Wesley', 'Steven', 'Joe'],
 
 res = [name for list in names for name in list if name.count('e')==2]
 print(res)   # ['Jefferson', 'Wesley', 'Steven', 'Jennifer']
-'''
+
 
 # 二、字典推导式
 # 练习1：将一个字典的key和value对调
