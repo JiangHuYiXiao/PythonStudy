@@ -78,23 +78,22 @@ import time
 # exec()        # 执行字符串类型代码，没有返回值，一般用在处理简单的流程
 # eval()        # 执行字符串类型代码，有返回值,只能用在你明确知道你要执行的代码是什么,就是写死的
 # compile       # 把字符串代码进行编译，实际执行的还是要exec，或者eval
-exec('print(123)')
-eval('print(123)')
-print(exec('1+2+3'))  # None
-print(eval('1+2+3'))
-
-code = '''for i in range(10):
-    print(i*'*')
-'''
-exec(code)
-
-
-code1 = '''for i in range(10):
-    print(i)
-'''
-compile1 = compile(code1,'','exec')
-exec(compile1)
-
+# exec('print(123)')
+# eval('print(123)')
+# print(exec('1+2+3'))  # None
+# print(eval('1+2+3'))
+#
+# code = '''for i in range(10):
+#     print(i*'*')
+# '''
+# exec(code)
+#
+#
+# code1 = '''for i in range(10):
+#     print(i)
+# '''
+# compile1 = compile(code1,'','exec')
+# exec(compile1)
 
 
 # 三、迭代器/生成器相关
@@ -122,3 +121,54 @@ exec(compile1)
 # print('__iter__' in dir(range(10))) # True 可迭代的
 # print('__next__' in dir(range(10))) # False 不是一个迭代器
 # print('__next__'in dir (iter(range(2)))) # True 被iter调用后就是一个迭代器
+
+# 四 、基础数据类型相关
+# 1、和数字相关
+# 1.1 数据类型
+# bool()
+# int()
+# float() 有限循环小数，无限循环小数
+# complex(()  复数，也就是实数+虚数，3+2j
+print(bool(0))          # False
+print(bool(2))          # True
+print(bool('ewr'))          # True
+
+print(int(True))         # 1
+print(int(False))         # 0
+print(int('21312'))         # 21312
+
+
+# 1.2 进制转换
+# bin()二进制
+# oct()八进制
+# hex()十六进制
+print(bin(12))          # 0b1100
+print(oct(12))          # 0o14
+print(hex(12))          # 0xc
+
+# 1.3 数学运算
+# abs()#绝对值
+# divmod()#除余
+# round()#取精确值
+# pow()#幂运算
+# sum()#求和,需要给可迭代的 sum(iterable,start)
+# min()#最小值
+# max()#最大值
+print(abs(-1))
+print(divmod(11,3))   #(3, 2)3,是商，余2，div是除数，mod是取余数
+print(round(12.3587,1)) # 12.4 取小数点后一位，四舍五入
+print(pow(2,5))  # 2的5次方
+print(sum([1,324],1))  # 1+324+1
+print(sum((1,324),1))  # 1+324+1
+# min(iterable,key,defult)
+# min(*args,key,defult)
+print(min([1,23,32]))
+print(min(1,23,32))
+print(min(1,23,32,-3))
+print(min([1,-23,32],key=abs))  # 1 先取绝对值再去取最小值
+
+print(max([1,23,32]))
+print(max(1,23,32))
+print(max(1,23,32,-3))
+print(max([1,-23,32,-65],key=abs))  # 32 先取绝对值再去取最大值
+
