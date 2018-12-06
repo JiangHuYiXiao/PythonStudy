@@ -4,8 +4,10 @@
 # all()判断是否全部为True,全为真，则返回真
 # any()判断是否有任意一个为True，有一个为真，则返回真
 # zip()拉链方法
-# filter(func名称,可迭代对象)过滤器方法
-'''
+# filter(func名称,可迭代对象)过滤器方法，执行了filter后的结果一定小于等于执行前的个数，只筛选，不改变原有值
+# map()执行了map后的结果一定等于执行前的个数，可能会改变原有值
+# sorted()排序，不改变原有列表，生成一个新的列表
+
 print(all([1,2,0,'',[]]))           # False
 print(all([1,2,0,[]]))           # True
 
@@ -28,7 +30,7 @@ for i in zip(l1,l2,t1,dict1):
     print(i)
 # (12, 'a', 1, 3242)
 # (14, 'b', '12', 234324)
-'''
+
 
 def is_odd(num):
     if num%2 == 1:
@@ -60,7 +62,41 @@ for i in res:
 # 练习3：删除None或者空字符串
 list2 = [12,'jianghu',2,'abc',None,'',4]
 def is_none(s):
-
         return s and str(s).strip()
 for i in filter(is_none,list2):
     print(i)
+
+# 练习4、请利用filter（）过滤出1-100中平方根是整数的数，
+# 需要导入math模块，使用里面的sqr
+from math import sqrt
+def sqr_func(num):
+    if sqrt(num)%1==0:
+        return num
+res = filter(sqr_func,range(1,101))
+print(res)
+for i in res:
+    print(i)
+
+
+res = map(abs,[1,-12,-2,98]) # abs(i) for i in [1,-12,-2,98]
+for i in res:
+    print(i)
+
+li = [1,-12,-2,98]
+res = li.sort()    # sort排序改变原来的列表
+print(li)
+
+li = [1,-12,-2,98]
+res = li.sort(key=abs)    # sort排序改变原来的列表
+print(li)
+
+li = [1,-12,-2,98]
+print(sorted(li))   #[-12, -2, 1, 98]  sorted排序不改变原来的列表，占用内存
+print(li)   #[1, -12, -2, 98]
+print(sorted(li,reverse=True))          # [98, 1, -2, -12]
+print(sorted(li,key=abs,reverse=True))
+
+# 练习1：按照长度排序
+l1 = ['1','98','   ','21132','说沃尔沃人人网']
+print(sorted(l1,key=len))       # ['1', '98', '   ', '21132', '说沃尔沃人人网']
+
