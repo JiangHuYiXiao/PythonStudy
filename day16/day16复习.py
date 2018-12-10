@@ -46,13 +46,13 @@ exec(code1)
 res = compile(code1,'','exec')
 exec(res)
 
-# 4、基础数据类型相关
-#     1、数据类型
+# 4、基础数据类型相关(38)
+#     1、数据类型(4)
 #         int()
 #         bool()
 #         float() 有限循环小数、无限循环小数
 #         complex复数，1+2j
-#     2、进制转换
+#     2、进制转换(3)
 #     bin()   # 二进制
 #     oct()   # 八进制
 #     hex()   # 16进制
@@ -60,7 +60,7 @@ print(bin(12)) # 0b1100
 print(oct(12)) # 0o14
 print(hex(12)) # 0xc
 
-    # 3、数学运算
+    # 3、数学运算(7)
 #     sum()   # 求和,需要给可迭代的 sum(iterable,start)
 #     max()
 #     min()
@@ -71,12 +71,12 @@ print(hex(12)) # 0xc
 # min(iterable,key,defult)
 # min(*args,key,defult)
 
-    # 4、数据集合
+    # 4、数据集合(3)
 #     dict()
 #     set()
 #     frozenset()不可变集合，可以作为字典的key
 
-    # 5、序列
+    # 5、序列(13)
 #     list()
 #     tuple()
 #     reversed()返回一个新的反序的迭代器，为了节省内存空间，
@@ -100,7 +100,7 @@ name = 'jianghu'
 age = 18
 print(repr('我的名字%r'%name))
 print(repr('我的年龄%r'%age))
-    # 6、相关内置函数
+    # 6、相关内置函数(8)
     #     len() 返回长度
     #     map() 返回元素个数和调用前一致
     #     filter() 过滤，返回的元素少于过滤前的
