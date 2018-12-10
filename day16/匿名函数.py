@@ -4,7 +4,7 @@
 # 比如：calc = lambda n:n**n，函数名为calc，
 # 到目前为止，我们所学到的内置函数其中含有key关键字的有：（max，min，map，filter，sorted）
 # 然后这五个函数都可以和lambda集合进行使用
-'''
+
 calc = lambda n:n**n
 print(calc(10))
 # 一、匿名函数和普通函数的转换
@@ -28,13 +28,13 @@ print(max(dict,key=lambda key:dict[key]))
 
 # 三、lambda和filter结合使用，一般用在返回的元素个数少于等于使用前元素的个数
 # 练习2：筛选列表中大于10的数[5,8,11,9,15]
-# def func(num):
-#     if num>10:
-#         return num
-# res = filter(func,[5,8,11,9,15])
-# print(res)
-# for i in res:
-#     print(i)
+def func(num):
+    if num>10:
+        return num
+res = filter(func,[5,8,11,9,15])
+print(res)
+for i in res:
+    print(i)
 
 # 使用匿名函数
 
@@ -49,7 +49,7 @@ list = [1,5,7,4,8]
 res = map(lambda num:num*num,list)
 for i in res:
     print(i)
-'''
+
 # 面试题1：下面程序的输出结果是
 d = lambda p:p*2
 t = lambda p:p*3
