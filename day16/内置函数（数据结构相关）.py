@@ -2,7 +2,7 @@
 # 和数据结构相关的内置函数：
 
 # python中数据类型：int,str,bool,...
-# python中数据类型：就是指容器类型的数据，list，dict，tuple，set，str
+# python中数据结构：就是指容器类型的数据，list，dict，tuple，set，str
 # 1、列表和元组
 # list()用于数据类型强制转换
 # tuple()用于数据类型强制转换

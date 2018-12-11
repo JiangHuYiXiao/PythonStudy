@@ -66,7 +66,7 @@ tuple2 = (('c'),('d'))
 res = zip(tuple1,tuple2)
 # def func(x):
 #     return {x[0]:x(1)}
-ret = map(lambda x:{x[0]:x[1]},res)
+ret = map(lambda x:{x[0]:x[1]},res)   # lambda x:{x[0]:x[1]} for i in res
 print(list(ret))  # 通过强制转换的方式可以从一个可迭代对象里面取值
 
 # 面试题3：以下代码的输出是什么，并给出答案,请修改multipliers的定义来产生期望的结果
