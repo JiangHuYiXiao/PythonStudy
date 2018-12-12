@@ -46,5 +46,9 @@ def age_func(n):
         return 40
     elif n >= 1 and n <= 3:
         return age_func(n+1) + 2
+        # 这一行，age_func（)先执行，n =1执行就是调用age_func(2),n =2然后再执行age_func(3),n=3然后再执行age_func(4),然后再执行n==4，返回40给age_func（4)---这一步是递
+        # 然后再执行40+2，返回给age_func（3)，然后再执行42+2返回给age_func（2)，然后再执行44+2返回给age_func（1)---这一步是归
+        # 1     2       3       4
+        # 4     3       2       1
 
-print(age_func(3))
+print(age_func(1))
