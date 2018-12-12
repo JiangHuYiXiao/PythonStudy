@@ -12,19 +12,19 @@
 
 # 但是执行到一定地方会报错，（RecursionError: maximum recursion depth exceeded while calling a Python object）
 # 这个地方叫做递归深度，默认递归深度为998或者997，是python从节约内存的角度进行限制的
-import sys
-sys.setrecursionlimit(100000) # 设置最大递归深度为100000
-n = 0
-def story():
-    global n
-    n = n +1
-    print(n)
-    story()
-story()   #
-
-# 可以手动修改默认的递归深度值
-import sys
-sys.setrecursionlimit(100000) # 设置最大递归深度为100000，但是不一定能到10000，和电脑配置有关，我的电脑最大为3926
+# import sys
+# sys.setrecursionlimit(100000) # 设置最大递归深度为100000
+# n = 0
+# def story():
+#     global n
+#     n = n +1
+#     print(n)
+#     story()
+# story()   #
+#
+# # 可以手动修改默认的递归深度值
+# import sys
+# sys.setrecursionlimit(100000) # 设置最大递归深度为100000，但是不一定能到100000，和电脑配置有关，我的电脑最大为3926
 
 # 递归总结：
 #     如果递归次数太多，就不适合用递归来解决问题
@@ -41,7 +41,10 @@ sys.setrecursionlimit(100000) # 设置最大递归深度为100000，但是不一
 # wusir比金老板大两岁 age(3) = age(4) + 2
 # 金老板多大？        n =4 age(4) = 40
 # 金老板40了
-def age_func(age):
-    age = age + 2
-    age_func(40)
-age_func()
+def age_func(n):
+    if n == 4:
+        return 40
+    elif n >= 1 and n <= 3:
+        return age_func(n+1) + 2
+
+print(age_func(3))
