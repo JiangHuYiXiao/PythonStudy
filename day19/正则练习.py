@@ -15,7 +15,7 @@ ret = re.search(r"<(\w+)>\w+</\1>","<h1>hello</h1>")
 #获取的匹配结果可以直接用group(序号)拿到对应的值
 print(ret.group(1))
 print(ret.group())  #结果 ：<h1>hello</h1>
-'''
+
 # 2、匹配整数
 
 # 方法1：
@@ -32,7 +32,7 @@ print(ret)      # ['1', '2', '60', '', '5', '4', '3'] 会有空字符
 ret = re.findall(r'\d+\.\d+|(\d+)','1-2*(60+(-40.35/5)-(-4*3))') # 给加上分组，分组优先
 ret.remove("")      # 把空字符删除
 print(ret)      # ['1', '2', '60', '5', '4', '3']
-
+'''
 # 如果想让特殊字符-、.、*、+、（）表示原有意思，我们可以在正则表达式前面加上r
 
 # 方法2：
@@ -44,6 +44,13 @@ print(ret)      # ['1', '2', '60', '5', '4', '3']
 # 3、数字匹配
 # 1、 匹配一段文本中的每行的邮箱
 #       http://blog.csdn.net/make164492212/article/details/51656638
+import re
+# with open('email',mode='r+',encoding='utf-8')as file:
+#     line = file.readlines()
+# for i in line:
+#     # print(i)
+ret = re.findall('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$','jianghuyixiao@qq.com')
+print(ret)
 #
 # 2、 匹配一段文本中的每行的时间字符串，比如：‘1990-07-12’；
 #
