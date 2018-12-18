@@ -38,3 +38,89 @@
 # 我们常用的为re.S,在后面加上后，表示.可以代表任意字符
 
 # 二、re模块
+import re
+
+# 1、re.findall()    # 查找所有，返回一个列表
+# 存在一个分组优先的情况
+ret = re.findall('^([1-9][0-9]{16})[0-9x]|[1-9][0-9]{14}$','110101198001017032')
+print(ret)      # ['11010119800101703']
+# 取消分组优先在分组之前使用?:
+ret = re.findall('(?:^[1-9][0-9]{16})[0-9x]|[1-9][0-9]{14}$','110101198001017032')
+print(ret)      # ['110101198001017032']
+
+ret = re.findall('.','1101011980010 17 032',re.S)       # 表示.可以匹配任意字符
+print(ret)
+
+# 2、re.search()   # 匹配到第一个就返回，需要使用group()
+# 匹配不到就返回None
+# 使用group(1),表示返回第一个分组，group(2)返回第二个分组
+# 还可以给分组加上名字这样在取分组时，可以直接使用名字去取?P<name>
+ret = re.search('(\d)(g)','12324gsdfsiwe3223',re.S)
+print(ret.group())      # 4g
+print(ret.group(1))      # 4
+print(ret.group(2))      # g
+ret = re.search('(\d)(?P<name>g)','12324gsdfsiwe3223',re.S)
+print(ret.group('name'))
+
+
+# 3、re.match()   # 从头开始匹配，需要使用group()获取值，
+# 没有匹配到就返回None
+# 取分组内容：
+#     1、使用group(1)
+#     2、给分组命名?P<name>
+
+ret = re.match('(\d)(a)','1a2324gsdfsiwe3223')
+print(ret.group())      # 1a
+print(ret.group(1))      # 1
+print(ret.group(2))      # a
+
+ret = re.match('(\d)(?P<name1>a)','1a2324gsdfsiwe3223')
+print(ret.group('name1'))
+
+
+# 4、re.split()      # 拆分
+# 没有分组
+ret = re.split('a','abcdb132asdfg')
+print(ret)      # ['', 'bcdb132', 'sdfg']
+
+#有分组
+ret = re.split('(a)','abcdb132asdfg')
+print(ret)      # ['', 'a', 'bcdb132', 'a', 'sdfg'] 有分组，先按照分组a拆分,被拆的还会保留
+
+# 取消分组
+ret = re.split('(?:a)','abcdb132asdfg')
+print(ret)      # ['', 'bcdb132', 'sdfg'] 有分组，先按照分组a拆分
+
+# 5、re.sub()替换
+ret = re.sub('\w','P','123abc__456')
+print(ret)      # PPPPPPPPPPP
+
+
+
+# 6、re.subn()替换，返回一个元组，但是会返回替换的次数
+ret = re.subn('\w','A','123abc__456')
+print(ret)      # ('AAAAAAAAAAA', 11)
+
+
+
+
+# 7、re.finditer() 返回一个正则迭代器，当返回的结果很多需要一个个取时，使用,需要使用group()
+ret = re.finditer('\d','123abc456')
+# 使用for循环获取
+# for i in ret:
+#     print(i.group())
+
+# 或者使用next获取
+print(next(ret).group())
+print(next(ret).group())
+print(next(ret).group())
+print(next(ret).group())
+print(next(ret).group())
+print(next(ret).group())
+
+# 8、编译，用于正则表达式长且多次使用
+ret = re.compile('\d')
+res = re.findall(ret,'123abc456')
+# 或者这样
+res = ret.findall('123abc456')
+print(res)
