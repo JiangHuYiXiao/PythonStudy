@@ -32,35 +32,49 @@ print(ret)      # ['1', '2', '60', '', '5', '4', '3'] 会有空字符
 ret = re.findall(r'\d+\.\d+|(\d+)','1-2*(60+(-40.35/5)-(-4*3))') # 给加上分组，分组优先
 ret.remove("")      # 把空字符删除
 print(ret)      # ['1', '2', '60', '5', '4', '3']
-'''
+
 # 如果想让特殊字符-、.、*、+、（）表示原有意思，我们可以在正则表达式前面加上r
 
-# 方法2：
-# ret=re.findall(r"-?\d+\.\d*|(-?\d+)","1-2*(60+(-40.35/5)-(-4*3))")
-# print(ret) #['1', '-2', '60', '', '5', '-4', '3']
-# ret.remove("")
-# print(ret) #['1', '-2', '60', '5', '-4', '3']
+
 
 # 3、数字匹配
 # 1、 匹配一段文本中的每行的邮箱
-#       http://blog.csdn.net/make164492212/article/details/51656638
+# http://blog.csdn.net/make164492212/article/details/51656638
 import re
-# with open('email',mode='r+',encoding='utf-8')as file:
-#     line = file.readlines()
-# for i in line:
-#     # print(i)
-ret = re.findall('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$','jianghuyixiao@qq.com')
-print(ret)
-#
+with open('email',mode='r+',encoding='utf-8')as file:
+    line = file.readlines()
+for i in line:
+    # print(i)
+    ret = re.findall('[-\w]+@[-\w]+\.[a-zA-Z]+',i)
+    # \w[-\w. +] * @ ([A - Za - z0 - 9][-A - Za - z0 - 9] +\.) + [A - Za - z]{2, 14}   这个也可以
+    print(ret)
+
 # 2、 匹配一段文本中的每行的时间字符串，比如：‘1990-07-12’；
-#
+import re
+with open('正则练习文本',mode='r+',encoding='utf-8') as file:
+    line = file.readlines()
+for i in line:
+    ret = re.findall('[1-9]\d{3}-[0-1][0-9]-[0-3]\d',i)
+    print(ret)
+
 #    分别取出1年的12个月（^(0?[1-9]|1[0-2])$）、
 #    一个月的31天：^((0?[1-9])|((1|2)[0-9])|30|31)$
 #
-# 3、 匹配qq号。(腾讯QQ号从10000开始)  ［1,9］[0,9]{4,}
-#
+# 3、 匹配qq号。(腾讯QQ号从10000开始)
+import re
+with open('正则练习文本',mode='r+',encoding='utf-8') as file:
+    line = file.readlines()
+for i in line:
+    ret = re.findall('[1-9](\d{4,})',i)
+    print(ret)
+'''
 # 4、 匹配一个浮点数。       ^(-?\d+)(\.\d+)?$   或者  -?\d+\.?\d*
-#
+import re
+ret = re.findall('-?\d+\.\d*','-12.23')
+print(ret)
+ret = re.findall('-?\d+\.\d*','12.23')
+print(ret)
 # 5、 匹配汉字。             ^[\u4e00-\u9fa5]{0,}$
-#
+ret = re.findall('[\u4e00-\u9fa5]+','WOD我的')
+print(ret)
 # 6、 匹配出所有整数
