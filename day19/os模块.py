@@ -1,11 +1,11 @@
 # -*- coding:utf-8 -*-
 import os
-'''
+
 # 1、os.getcwd() 返回当前工作目录
 print(os.getcwd())          # F:\PythonStudy\day19
 
 # 2、os.chdir 改变当前脚本的工作目录
-os.chdir(r'F:\PythonStudy\day18')  r取消转义
+os.chdir(r'F:\PythonStudy\day18')  #r取消转义
 print(os.getcwd())          # F:\PythonStudy\day18
 
 # 3、os.curdir 返回当前脚本的工作目录，相当于.
@@ -84,19 +84,20 @@ print(os.path.dirname(os.getcwd()))     # F:\PythonStudy
 
 # 21、os.path.basename(path) 返回path的文件。其实就是os.path.split(path)的第二个元素
 print(os.path.basename(os.getcwd()))     # day19
-'''
+
 # 22、os.path.exists(path)  如果path存在，返回True；如果path不存在，返回False
 print(os.path.exists('F:\PythonStudy'))     # True
 # 23、os.path.isabs(path)  如果path是绝对路径，返回True
-print(os.path.exists('F:\PythonStudy'))     # True
+print(os.path.isabs('F:\PythonStudy'))     # True
 # 24、os.path.isfile(path)  如果path是一个存在的文件，返回True。否则返回False
 print(os.path.isfile('email1'))     # False
 # 25、os.path.isdir(path)  如果path是一个存在的目录，则返回True。否则返回False
-print(os.path.isfile('PythonStudy'))     # False
+print(os.path.isdir('PythonStudy'))     # False
 # 26、os.path.join(path1[, path2[, ...]])  将多个路径组合后返回，第一个绝对路径之前的参数将被忽略
-
+print(os.path.join('c','user','didi'))          # c\user\didi
 # 27、os.path.getatime(path)  返回path所指向的文件或者目录的最后访问时间
-
+print(os.path.getatime('F:\PythonStudy\day19'))
 # 28、os.path.getmtime(path)  返回path所指向的文件或者目录的最后修改时间
-
+print(os.path.getmtime('F:\PythonStudy\day19'))
 # 29、os.path.getsize(path) 返回path的大小
+print(os.path.getsize('F:\PythonStudy\day19'))      # 4096,w文件夹的大小最多4096
