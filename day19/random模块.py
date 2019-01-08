@@ -26,14 +26,25 @@ print(item)         # [2, 5, 6, 4, 3, 1]
 # 练习：验证码
 # print(chr(65))
 # print(ord('A'))
-
 import random
-def v_code():
+def random_code():
     code = ''
     for i in range(5):
-        num=random.randint(0,9)
-        alf=chr(random.randint(65,90))
-        add=random.choice([num,alf])
-        code="".join([code,str(add)])
+        random_int = random.randint(0,9)
+        random_alpha = chr(random.randint(65,90))
+        add = random.choice([str(random_int),random_alpha])
+        code = "".join([code,add])
     return code
-print(v_code())
+res = random_code()
+print(res)
+
+# import random
+# def v_code():
+#     code = ''
+#     for i in range(5):
+#         num=random.randint(0,9)
+#         alf=chr(random.randint(65,90))
+#         add=random.choice([num,alf])
+#         code="".join([code,str(add)])
+#     return code
+# print(v_code())
