@@ -62,7 +62,7 @@ f.close
 f1 = open('file1',mode='r',encoding='utf-8')
 res = json.load(f1)
 print(type(res),res)
-'''
+
 
 import json
 dic = {'k1':'我去'}
@@ -73,6 +73,21 @@ json.dump(dic,f1,ensure_ascii=False)   # 加上ensure_ascii属性
 f1 = open('file1',mode='r',encoding='utf-8')        # {"k1": "我去"}
 res = json.load(f1)
 print(type(res),res)
+'''
+# json往文件里面写东西和读只能一次性
+import json
+# dic = {'k':'12','k1':'13'}
+# f = open('file2',mode='w',encoding='utf-8')
+# json.dump(dic,f)
+# json.dump(dic,f)
+# f.close()
+f = open('file2',mode='r',encoding='utf-8')
+res = json.load(f)
+res1 = json.load(f)
+
+print(type(res),res,res1)
+
+
 
 
 # 2、pickle
