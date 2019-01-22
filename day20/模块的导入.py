@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-'''
-# 1、模块导入
+
+# 1、模块导入import
 import demo         # 输出结果为 in demo.py
 
 # import 具体做了以下事：
@@ -15,7 +15,7 @@ demo.read()         # in read
 # 3、模块中变量的使用
 print(demo.money)
 
-# 4、在执行的文件中存在和导入的模块中相同的方法或者变量名
+# 4、通过import方式导入的模块和在执行的文件中存在相同的方法或者变量名，进行调用的时候使用的是导入模块里面的，不会和执行文件的方法、变量发生冲突（局部）
 import demo
 money =100
 def read():
@@ -35,6 +35,7 @@ print(sys.modules.keys())   #dict_keys(['sys', 'builtins', '_frozen_importlib', 
 # 应用场景：
 # 1、模块名或者方法名太长
 # 2、通过别名同时操作相同模块，提高代码的兼容性
+# 3、重命名后，之前的模块名不能使用了，只能用重命名的
 import time as t
 print(t.time())         # 1547781355.3096266
 
@@ -68,4 +69,69 @@ if file_format == 'xml':
 elif file_format == 'csv':
     import csvreader as db
 db.read_data(file_format)
-'''
+
+# 7、在一行导入多个模块
+import sys,os,time          # 但是不推荐这个导入方式
+
+# 8、模块导入的顺序
+# 1、内置模块 sys，os，time，；urllib
+# 2、扩展模块 django
+# 3、自定义模块
+
+# 9、模块导入from 模块名 import 模块
+from time import sleep
+
+from demo import read
+
+import sys
+print(sys.path)
+# 10、from 模块名 import 模块后使用方式
+sleep(10)
+read()
+
+# 11、通过from导入的执行文件中存在和导入模块相同的方法变量，调用时会有冲突,使用的是执行文件的read方法（全局）
+from demo import read
+def read():
+    print('out demo read')
+read()          # out demo read
+
+# 12、通过from导入方式导入多个变量、方法
+from demo import money,read
+# print(money)
+# read()
+money = 200
+read()          # in read 10000,这里的money用的还是导入模块的，因为money的内存地址没变
+
+# 13、导入全部(不太安全)
+from demo import *      # in demo.py
+print(money)             # 10000
+read()                   # in read 10000
+
+# 14、双下_all_方法与from demo import * 结合使用用于控制导入后可以使用的变量或者方法(好像3.7后可以用)
+from demo import *
+print(money)
+read()
+
+# 总结：
+# 模块不会重复被导入，因为导入的模块从sys.moudles检查是否存在该模块
+# 从哪儿导入模块：sys.path
+# import 模块名
+#     1、调用： 模块名.变量名
+#     2、和本文件中的变量名不冲突，使用导入的变量名
+#     3、import 模块名 as 重命名模块名：提高代码兼容性的时候使用
+#     4、导入多个模块，import 模块1，模块2
+
+# from 模块名 import 方法名
+#     1、调用：方法名或者变量
+#     2、和本文件中的变量名冲突，使用文件中的变量名
+#     3、from 模块名1，模块名2
+#     4、from 模块名 import 变量名 as 重命名变量名
+#     5、from 模块名 import * ：将模块中的所有变量名都放到内存中
+#     6、from 模块名 import * 和_all_是一对，结合使用，没有这个变量则导入所有的，有这个变量名，则只导入all列表中的变量名
+
+# 所有的模块导入尽量往上写
+# 模块导入的顺序
+    # 内置模块 sys，os，time，；urllib
+    # 扩展模块 django
+    # 自定义模块
+import time
