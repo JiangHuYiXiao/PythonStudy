@@ -24,7 +24,7 @@ l.append(open('glance/cmd/manage.py','w'))
 l.append(open('glance/db/models.py','w'))
 l.append(open('glance/db/__init__.py','w'))
 map(lambda f:f.close() ,l)
-'''
+
 # 注意事项
 
 # 1.关于包相关的导入语句也分为import和from ... import ...两种，但是无论哪种，无论在什么位置，
@@ -42,6 +42,21 @@ glance.api.policy.get()         # from policy.py
 # 2、from 包名 import 包或者模块
 # 导入
 from glance import api
+from glance.api import policy
 # from glance import api.policy   import后面不能有.
 #调用
 api.policy.get()            # from policy.py
+
+# 3、路径添加
+# import sys
+# print(sys.path)
+# sys.path.insert(0,'F:\\PythonStudy\\day21', 'F:\\PythonStudy\\day21\\api')
+'''
+# 4、__init__.py
+# 导入模块默认是执行.py文件，导入包默认却是执行__init__.py文件
+# 不管是哪种方式，只要是第一次导入包或者是包的任何其他部分，
+# 都会依次执行包下的__init__.py文件(我们可以在每个包的文件内都打印一行内容来验证一下)，这个文件可以为空，但是也可以存放一些初始化包的代码。
+import glance           # 导入就是执行__init__.py文件 ***********
+# glance.api.polict.get()         # AttributeError: module 'glance' has no attribute 'api',__init__.py文件中未导入
+glance.api.policy.get()         # from policy.py
+
