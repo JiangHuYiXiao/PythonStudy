@@ -57,6 +57,6 @@ api.policy.get()            # from policy.py
 # 不管是哪种方式，只要是第一次导入包或者是包的任何其他部分，
 # 都会依次执行包下的__init__.py文件(我们可以在每个包的文件内都打印一行内容来验证一下)，这个文件可以为空，但是也可以存放一些初始化包的代码。
 import glance           # 导入就是执行__init__.py文件 ***********
-# glance.api.polict.get()         # AttributeError: module 'glance' has no attribute 'api',__init__.py文件中未导入
+# glance.api.policy.get()         # AttributeError: module 'glance' has no attribute 'api',__init__.py文件中未导入
 glance.api.policy.get()         # from policy.py
 
