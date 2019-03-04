@@ -3,7 +3,7 @@
 # class 类名:
 #     pass
 
-class Person:                       # Person就是一个类
+class Person:                       # Person就是一个类  ,类的名字，首字母大写
     country = 'china'                   # 静态属性
 
     def __init__(self,*args):           # 通过__init__() 初始化方法可以往self里面放值，且返回一个self对象
@@ -61,11 +61,15 @@ print(alex.__dict__['name'])
 # 修改
 alex.__dict__['name'] = '老二'
 print(alex.name)
+# Person.__dict__['country'] = 'USA'  类的属性不通过__dict__ 修改，只能查看
 
 
-# 一般建议这么修改对象的属性
+# 一般建议这么修改对象、类的属性
 alex.name = '大师兄'
 print(alex.__dict__)            # {'name': '大师兄', 'hp': 100, 'aggr': 10, 'sex': 'man'}
+Person.country = 'USA'
+print(Person.__dict__)
+print(alex.country)             # USA
 
 
 
