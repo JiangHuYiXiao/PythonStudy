@@ -23,6 +23,7 @@ print(jianghu.__dict__)
 print(jianghu.name)
 #   修改属性
 jianghu.name = 'jiang'
+jianghu.__dict__['name'] = 'jiangxi'
 print(jianghu.name)
 #  调用方法
 jianghu.study('好好学习')
@@ -34,7 +35,10 @@ print(Person.__dict__)
 #   修改属性
 Person.country = 'usa'
 print(Person.country)
-
+Person.name =  'jiangjiang'
+print(Person.name)
+Person.__dict__['name'] = 'jianghuyixiao'           # TypeError: 'mappingproxy' object does not support item assignment
+print(Person.country)
 # 调用方法
 Person.study(jianghu,'是大人了')
 
