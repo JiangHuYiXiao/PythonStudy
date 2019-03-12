@@ -28,3 +28,41 @@
 
 7. 上面的操作产生的数据都通过pickle序列化保存到文件里
 '''
+# 学校类
+class School:
+    def __init__(self,school_name,address,classmate):
+        self.name = school_name
+        self.address = address
+        self.classmate = classmate
+
+# 老师类
+class Teacher(School):
+    def __init__(self,teacher_name,kind):
+        self.name = teacher_name
+        self.kind = kind
+
+# 课程类
+class Course:
+    def __int__(self,course_name,period,price):
+        self.course_name =course_name
+        self.period = period
+        self.price = price
+
+# 班级类
+class Classmate(Course,Teacher):
+    def __init__(self,classmate_name,):
+        self.classmate_name = classmate_name
+
+
+# 学生类
+class Student(School):
+    def __init__(self,student_name):
+        self.student_name = student_name
+    # 登录
+
+
+
+# 创建学校对象
+S1 = School('go_school','上海',['go1','go2','go3'])
+S2 = School('linux_python_school','北京',['python1','linux2','linux3'])
+
