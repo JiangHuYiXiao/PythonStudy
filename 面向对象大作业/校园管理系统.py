@@ -59,7 +59,9 @@ class Student(School):
     def __init__(self,student_name):
         self.student_name = student_name
     # 登录
-
+    def login(self):
+        input_name = input('请输入账号：')
+        input_password = input('请输入密码：')
 
 
 # 创建学校对象
