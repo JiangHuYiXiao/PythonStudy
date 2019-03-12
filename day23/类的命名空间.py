@@ -15,7 +15,7 @@ linux = Course('Linux','oldboy',6,10000)
 # 类的命名空间
     # 1、类调用静态属性
 print(Course.language)
-    # 2、类调用静态属性
+    # 2、类调用动态属性
 Course.func(python)
     # 3、类调用类的属性
 # print(Course.name)          # AttributeError: type object 'Course' has no attribute 'name',得出结论，类不能使用对象的属性，因为如果有两个对象，应该使用谁的呢，就会混乱
