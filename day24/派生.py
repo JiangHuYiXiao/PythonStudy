@@ -62,7 +62,7 @@ class Dog(Animal):
     def bite(self,person):          # 派生方法
         person.hp = person.hp - self.aggr
     def eat(self):
-        Animal.eat(self)            # 不仅实现了父类的功能，还有子类自己的功能
+        Animal.eat(self)            # 不仅实现了父类的功能，还有子类自己的功能，要使用父类的必须自己传self
         self.tooth = 2
 
 class Person(Animal):
