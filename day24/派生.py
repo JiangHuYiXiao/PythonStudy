@@ -35,7 +35,7 @@ xiaohei.eat()
 print(xiaohei.hp)
 jianghu.eat()
 print(jianghu.hp)
-'''
+
 # 结论：
 #     1、父类中没有的属性在子类中有是派生属性
 # #     2、父类中没有的方法在子类中有是派生方法
@@ -79,3 +79,41 @@ xiaohei = Dog('xiaohei',10,100,'teddy')
 xiaohei.eat()
 print(xiaohei.hp)
 print(xiaohei.tooth)
+'''
+
+# 想使用父类的功能有两种办法，
+#   方法1：
+#   父类的属性就是上面的使用：父类名.__init__(self,name,aggr,hp),
+#   父类的方法就是上面的使用：父类名.方法名(self),不管是使用父类的属性或者方法都该传递self对象
+
+#   方法2：
+#   属性使用super().__init(name,aggr,hp)不需要self
+#   方法使用super().方法名()
+class Animal:
+    def __init(self,name,aggr,hp):
+        self.name = name
+        self.aggr = aggr
+        self.hp = hp
+    def eat(self):
+        print('吃药回血')
+        self.hp += 100
+
+class Dog(Animal):
+    def __init__(self,name,aggr,hp,kind):
+        super().__init__(name,aggr,hp)
+        self.kind = kind
+    def bite(self,person):
+        person.hp -= self.aggr
+    def tooth(self):
+        super().eat()
+        tooth = 2
+
+class Person(Animal):
+    def __init__(self,name,aggr,hp,sex):
+        super().__init__(name,aggr,hp)
+        self.sex = sex
+    def attack(self,dog):
+        dog.hp -= self.aggr
+xiaohei = Dog('xiaohei',10,100,'teddy')
+print(xiaohei.name)
+
