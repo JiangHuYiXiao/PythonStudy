@@ -90,7 +90,7 @@ print(xiaohei.tooth)
 #   属性使用super().__init(name,aggr,hp)不需要self
 #   方法使用super().方法名()
 class Animal:
-    def __init(self,name,aggr,hp):
+    def __init__(self,name,aggr,hp):
         self.name = name
         self.aggr = aggr
         self.hp = hp
@@ -100,7 +100,7 @@ class Animal:
 
 class Dog(Animal):
     def __init__(self,name,aggr,hp,kind):
-        super().__init__(name,aggr,hp)
+        super().__init__(name,aggr,hp)          # super在一个类的内部使用不需要传类和对象，
         self.kind = kind
     def bite(self,person):
         person.hp -= self.aggr
@@ -114,6 +114,13 @@ class Person(Animal):
         self.sex = sex
     def attack(self,dog):
         dog.hp -= self.aggr
+
+jianghu = Person('jianghu',100,1000,'man')
+print(jianghu.name)
 xiaohei = Dog('xiaohei',10,100,'teddy')
 print(xiaohei.name)
+xiaohei.eat()   # 首先执行自己类中的eat，如果没有就执行父类的eat
+print(xiaohei.hp)
 
+# super在一个类的外部使用,传一个类和一个对象
+super(Dog,xiaohei).eat()
