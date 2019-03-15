@@ -87,7 +87,7 @@ print(xiaohei.tooth)
 #   父类的方法就是上面的使用：父类名.方法名(self),不管是使用父类的属性或者方法都该传递self对象
 
 #   方法2：
-#   属性使用super().__init(name,aggr,hp)不需要self
+#   属性使用super().__init__(name,aggr,hp)不需要self
 #   方法使用super().方法名()
 class Animal:
     def __init__(self,name,aggr,hp):
