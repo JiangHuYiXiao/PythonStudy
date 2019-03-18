@@ -55,13 +55,17 @@ class Classmate(Course,Teacher):
 
 
 # 学生类
-class Student(School):
+class Student(School,Classmate):
     def __init__(self,student_name):
         self.student_name = student_name
+    # 注册
+    def register(self):
+        register_name = input('请输入你注册的用户名')
+        register_password = input('请输入你密码')
     # 登录
     def login(self):
-        input_name = input('请输入账号：')
-        input_password = input('请输入密码：')
+        login_name = input('请输入账号：')
+        login_password = input('请输入密码：')
 
 
 # 创建学校对象
