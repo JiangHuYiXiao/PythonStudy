@@ -60,13 +60,30 @@ class Student(School,Classmate):
         self.student_name = student_name
     # 注册
     def register(self):
-        register_name = input('请输入你注册的用户名')
-        register_password = input('请输入你密码')
+        register_name = input('请输入你注册的用户名:')
+        register_password = input('请输入你密码:')
+        with open(file = 'info',mode='w',encoding='utf-8') as file:
+            file.write('{}\n{}'.format(register_name,register_password))
+            print('恭喜你註冊成功')
+
     # 登录
     def login(self):
-        login_name = input('请输入账号：')
-        login_password = input('请输入密码：')
 
+        ls = []
+        i = 3
+        login_name = input('请输入账号:')
+        login_password = input('请输入密码:')
+        with open(file = 'info',mode= 'r+',encoding= 'utf-8') as file:
+            for line in file:
+                ls.append(line)
+        if ls[0].strip() == login_name.strip() and ls[1].strip() == login_password.strip():
+            print('恭喜你登錄成功')
+            return
+        else:
+            print('登錄失敗')
+    # 查看课程
+    def look_course(self):
+        return('你的课程名为:'% (self.classmate.course_name))
 
 # 创建学校对象
 S1 = School('go_school','上海',['go1','go2','go3'])
