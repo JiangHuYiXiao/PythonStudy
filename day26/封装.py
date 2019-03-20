@@ -37,3 +37,12 @@ print(p1.get_passwd())              # 1234
     # 私有方法
     # 私有静态属性
 
+from selenium import webdriver
+
+
+driver = webdriver.Chrome()
+driver.get('https://www.baidu.com')
+
+print(driver.title)
+
+driver.quit()
