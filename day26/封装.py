@@ -1,6 +1,9 @@
 #-*- coding:utf-8 -*-
+
+# 1、封装的基础
 # 广义上的封装是：保护代码，在python中利用对象去调用类中的属性和方法，这种面向对象的思想就是封装。
 # 狭义上的封装：把类中的属性、方法隐藏起来。
+
 class Person:
     __key = 123                         # 私有静态属性
     def __init__(self,name,passwd):
@@ -37,12 +40,49 @@ print(p1.get_passwd())              # 1234
     # 私有方法
     # 私有静态属性
 
-from selenium import webdriver
+
+# 2、get方法获取私有属性，set方法修改私有属性
+# 举例：
+class House:            # 父类
+    def __init__(self,name,width,height):
+        self.__name = name                # 作为私有就是，为了不让在类的外面进行修改，导致错误
+        self.__width = width            # 私有属性，作为为了是不让别人用，自己用来计算面积
+        self.__height = height
+
+    def area(self):
+        return self.__width*self.__height
+
+    # 获取私有属性值
+    def get_name(self):
+        return self.__name
+
+    # 修改私有属性值
+    def set_name(self,new_name):
+        if type(new_name) is str and new_name.isdigit() == False:       # 保护私有属性不会随便修改
+            self.__name = new_name
+        else:
+            print('不合法的姓名')
+
+sz = House('jianghu',120,100)
+print(sz.area())
+
+# 类的外部修改属性
+# sz.name = 2
+# print(sz.name)          # 这样就导致name属性值，不能见名知意了，所以可以把name进行私有化
+
+sz.set_name('22')           # 不合法的姓名
+print(sz.get_name())
 
 
-driver = webdriver.Chrome()
-driver.get('https://www.baidu.com')
+# 3、父类的私有属性不能被子类调用
+class House:            # 父类
+    def __init__(self,name):
+        self.__name = name                # 作为私有就是，为了不让在类的外面进行修改，导致错误
 
-print(driver.title)
+class Son(House):
+    print(House.name)           # AttributeError: type object 'House' has no attribute 'name'
 
-driver.quit()
+# 会用到私有的概念地方有：
+    # 1、隐藏这个属性不想被类的外部调用
+    # 2、不想这个属性被随意改变
+    # 3、不想子类继承父类的这个属性
