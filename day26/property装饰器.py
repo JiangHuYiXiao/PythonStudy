@@ -1,8 +1,7 @@
 # -*- coding:utf-8 -*-
 # @property 内置装饰器函数，只在面向对象中使用
 from math import pi
-import sys
-sys.setrecursionlimit(10000)
+
 '''
 class Circle:
     def __init__(self,r):
@@ -76,10 +75,69 @@ p1 = Person('hunan')
 print(p1.name)
 p1.name = 'hebei'
 print(p1.name)
-'''
-# 练习2：超市促销活动
+
+# 练习2：超市促销活动,计算各个商品打折后的价格,前三天是5折，后面是8折
+# 方法1：
+
 class Goods:
     discount = 0.5
+    def __init__(self,name,weight,price):
+        self.name = name
+        self.weight = weight
+        self.price = price
+
+apple = Goods('apple',2,5)
+print(apple.price*apple.weight*apple.discount)
 
 
+# 方法2
+class Goods:
+    discount = 0.5
+    def __init__(self,name,weight,price):
+        self.name = name
+        self.weight = weight
+        self.__price = price
+    @property
+    def price(self):
+        return self.__price*self.discount*self.weight
 
+apple_price = Goods('apple',3,6)
+print(apple_price.price)
+# 后面三天就只需要修改discount为0.8就可以
+# 总结：@property一般是和私有属性一起使用，为了就是计算私有属性值，返回
+'''
+# 通过@property对属性的增、删除、改、查
+
+class Person:
+    def __init__(self,name):
+        self.__name = name
+    # 查
+    @property
+    def name(self):
+        return self.__name
+    # 删
+    @name.deleter
+    def name(self):
+        print('没有删除')
+        del self.__name
+    @name.setter
+    def name(self,newname):
+        self.__name = newname
+
+jianghu = Person('jianghu')
+
+# 查
+print(jianghu.name)
+
+# 删除
+del jianghu.name    # 通过del去执行name函数，然后再根据函数里面的代码执行的是啥 （删除）
+print(jianghu.__dict__)
+print(jianghu.name)
+
+#没有删除
+# del self.__name
+
+# 修改
+jianghu.name = 'jiangxi'
+
+print(jianghu.name)
