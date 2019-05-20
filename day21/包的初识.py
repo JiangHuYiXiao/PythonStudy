@@ -9,7 +9,7 @@
 # 强调：
 # 　　1、在python3中，即使包下没有__init__.py文件，import 包仍然不会报错，而在python2中，包下一定要有该文件，否则import 包报错
 # 　　2、创建包的目的不是为了运行，而是被导入使用，记住，包只是模块的一种形式而已，包即模块
-'''
+
 import os
 os.makedirs('glance/api')
 os.makedirs('glance/cmd')
@@ -48,10 +48,10 @@ from glance.api import policy
 api.policy.get()            # from policy.py
 
 # 3、路径添加
-# import sys
-# print(sys.path)
-# sys.path.insert(0,'F:\\PythonStudy\\day21', 'F:\\PythonStudy\\day21\\api')
-'''
+import sys
+print(sys.path)
+sys.path.insert(0,'F:\\PythonStudy\\day21', 'F:\\PythonStudy\\day21\\api')
+
 # 4、__init__.py
 # 导入模块默认是执行.py文件，导入包默认却是执行__init__.py文件
 # 不管是哪种方式，只要是第一次导入包或者是包的任何其他部分，
