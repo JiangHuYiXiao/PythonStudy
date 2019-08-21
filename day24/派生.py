@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-'''
+
 class Animal:
     def __init__(self,name,aggr,hp):
         self.name = name
@@ -79,7 +79,7 @@ xiaohei = Dog('xiaohei',10,100,'teddy')
 xiaohei.eat()
 print(xiaohei.hp)
 print(xiaohei.tooth)
-'''
+
 
 # 想使用父类的功能有两种办法，
 #   方法1：

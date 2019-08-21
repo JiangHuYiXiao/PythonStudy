@@ -75,7 +75,7 @@ print(1 < 2 or 2 < 3)  #True
 
 #not
 print(not(2 > 3))  #True
-# 作业
+# article
 '''
 1,3>4 or 4<3 and 1==1
 2,1 < 2 and 3 < 4 or 1>2 
@@ -84,7 +84,7 @@ print(not(2 > 3))  #True
 5,1 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6
 6,not 2 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6'''
 
-print('-------------------作业----------------')
+print('-------------------article----------------')
 print(3>4 or 4<3 and 1==1)  #False
 print(1 < 2 and 3 < 4 or 1>2) #True
 print(2 > 1 and 3 < 4 or 4 > 5 and 2 < 1) #True
@@ -98,7 +98,7 @@ print(0 and 1) #x为假则返回x（总结：遇到一个假则返回，否则�
 print(1 or 2)  #x为真则返回x
 print(0 or 3)  #x为假则返回y（总结：遇到真则返回）
 
-# 作业
+# article
 print(1 or 12 or 199 or 200) #1
 print(1 and 2 and 4 and 0 and 11 )#0
 print(1 and 3 or 4 and 5) #3
