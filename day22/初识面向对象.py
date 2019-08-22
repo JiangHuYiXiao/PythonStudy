@@ -74,8 +74,9 @@ def Dog(name, blood,aggr,kind):         # ---狗模子
     return dog
 Jin_Dog = Dog('金小狗',10000,10,'teddy')
 Alex_Person = Person('狗蛋儿',100,1,'不详')
-print(Alex_Person)
-print(Jin_Dog)
+print(Alex_Person)  # {'name': '狗蛋儿', 'blood': 100, 'aggr': 1, 'sex': '不详', 'attack': <function Person.<locals>.Person_Attack at 0x00000000022E9048>}Alex_Person这个对象字典中包含了函数Person_Attack
+print(Jin_Dog)  # {'name': '金小狗', 'blood': 10000, 'aggr': 10, 'kind': 'teddy', 'attack': <function Dog.<locals>.Dog_Attack at 0x00000000022D8F28>}Jin_Dog这个对象字典中包含了函数Dog_Attack
+
 Alex_Person['attack'](Jin_Dog)
 Jin_Dog['attack'](Alex_Person)
 
