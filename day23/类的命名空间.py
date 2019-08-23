@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-# 1、静态属性为不可变数据类型
-'''
+# 1、静态属性为不可变数据类型(int,str)
+
 class Course:
     language = 'chinese'
     def __init__(self,*args):
@@ -9,7 +9,7 @@ class Course:
         self.period = args[2]
         self.price = args[3]
     def func(self):
-        print('%s个月学结束'%(self.period))
+        print('%s个月后学习结束'%(self.period))
 python = Course('python','alex',6,18000)
 linux = Course('Linux','oldboy',6,10000)
 # 类的命名空间
@@ -23,6 +23,7 @@ Course.func(python)
 print(python.language)          # chinese
 python.language = 'english'    # 在对象的命名空间里面给对象加上一个language属性，但是不会修改类中的静态属性的值,这样之后python.language始终用的是python自己的language属性
 # del python.language只有使用把这个属性删除后，python就是会再次使用类的静态属性
+
 
 print(python.language)          # english
 print(Course.language)          # chinese
@@ -38,6 +39,7 @@ print(linux.language)           # french    linux用的是Course类的language�
 # 2、类不能调用对象的属性
 # 3、调用静态属性时，尽量使用类去调用，不要使用对象去调用。因为用对象去操作后可能永远就不会使用静态属性了
 
+
 # 2、静态属性为可变数据类型
 class Course1:
     language = ['chinese']
@@ -50,18 +52,19 @@ class Course1:
         print('%s个月学结束'%(self.period))
 python1 = Course1('python','alex',6,18000)
 linux1 = Course1('Linux','oldboy',6,10000)
+
 # 1、使用类修改静态属性
 Course1.language[0] = 'german'
 print(Course1.language)         # ['german']
 print(python1.language)         # ['german']
 print(linux1.language)          # ['german']
 # 2、使用对象修改静态属性
-# python1.language[0] = 'english'   # 这样是修改列表中第0个元素，所以对象的language都会修改
-# print(Course1.language)         # ['english']
-# print(python1.language)         # ['english']
-# print(linux1.language)          # ['english']
+python1.language[0] = 'english'   # 这样是修改列表中第0个元素，所以对象的language都会修改
+print(Course1.language)         # ['english']
+print(python1.language)         # ['english']
+print(linux1.language)          # ['english']
 # 3、为对象创建一个language属性
-python1.language = ['english']   # 这样是修改列表中第0个元素，所以对象的language都会修改
+python1.language = ['brazil']   # 这样是修改列表中第0个元素，所以对象的language都会修改
 print(Course1.language)         # ['german']
 print(python1.language)         # ['english']
 print(linux1.language)          # ['german']
@@ -70,7 +73,8 @@ print(linux1.language)          # ['german']
 # 1、对于不可变数据类型，类中的静态属性最好用类名去调用操作。
 # 2、对于可变数据类型，修改是共享的，使用对象重新赋值是独立的。
 
-# 1、实际使用到类的命名空间的例子
+# 实际使用到类的命名空间的例子
+# 1、存钱
 class Person:
     money = 0
 father =Person()
@@ -85,6 +89,7 @@ Person.money += 1000
 Person.money += 2000
 print(Person.money)
 
+
 # 2、创建一个类，每实例化一个对象就记录下来,最终所有对象共享这个数据
 class Foo:
     count = 0
@@ -92,6 +97,7 @@ class Foo:
         Foo.count = Foo.count + 1           # 用类去修改后所有对象的count也会跟着修改
 
 f1 = Foo()
+print(f1.count)
 f2 = Foo()
 print(f1.count)
 print(f2.count)
@@ -99,7 +105,8 @@ f3 = Foo()
 print(f3.count)
 print(f1.count)
 print(f2.count)
-'''
+
+
 
 # 3、绑定方法
     # 函数
@@ -118,5 +125,4 @@ print(f1.func)              # <bound method Foo.func of <__main__.Foo object at 
 
 # 4、包的导入
 # 包的导入为啥会执行__init__()方法,这是因为，在python中一切都是对象，当我们使用import时，就是相当于实例化，所以会执行__init__()方法
-import time
 # 会执行__init__()方法
