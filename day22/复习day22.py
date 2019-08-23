@@ -1,9 +1,6 @@
 # 练习1：人狗大战
 
 # 人类
-'''
-
-
 class Person:
     def __init__(self,name,blood,aggr,sex):
         self.name = name
@@ -69,7 +66,7 @@ P1 = Person('老李',90,'男')
 P1.moutain()
 P1.driver()
 P1.enjoy()
-'''
+
 
 # 练习3：计算圆周长和面积
 from math import pi
