@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-、
 # 组合表示的是什么有什么的关系
-
+# 一个类的属性值是另一个类的对象时，调用的时候：用对象.属性.属性
 # 人狗大战优化版
     # 人类
 class Person:
@@ -14,11 +14,11 @@ class Person:
     def attack(self,dog):           # 攻击
         dog_res = '%s狗被%s打了，掉了%s血，剩下%s血'%(dog.name,self.name,self.aggr,dog.hp - self.aggr)
         return(dog_res)
-    def get_weapon(self,weapon):            # 捡武器
-        if self.money >= weapon.price:
-            self.money -= weapon.price
-            self.weapon = weapon
-            self.aggr += weapon.aggr
+    def get_weapon(self,w):            # 捡武器
+        if self.money >= w.price:
+            self.money -= w.price
+            self.weapon = w
+            self.aggr += w.aggr
         else:
             print('余额不足，请及时充值')
 alex = Person('alex',1,110,'man')
