@@ -3,7 +3,7 @@
 #     类有自己的命名空间
 #     类调用静态属性：类名.静态属性
 #     类调用动态属性：类名.方法名()
-#     类不能调用类的属性，报错 AttributeError: type object 'Course' has no attribute 'name'
+#     类不能调用对象的属性，报错 AttributeError: type object 'Course' has no attribute 'name'
 #     对象调用属性时，如果自己的命名空间有该属性则使用自己的，如果自己的命名空间里面没有，则找类的，如果类中也没有，则报错。
 
 
@@ -23,5 +23,4 @@
 
 # 4、包的导入
 # 包的导入为啥会执行__init__()方法,这是因为，在python中一切都是对象，当我们使用import时，就是相当于实例化，所以会执行__init__()方法
-import time
 # 会执行__init__()方法
