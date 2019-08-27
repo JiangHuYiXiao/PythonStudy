@@ -68,7 +68,7 @@ jianghu = Person('jianghu',10,1000)
 print(jianghu.aggr)
 '''
 
-# 面试题：
+# 面试题：子类中有的方法、属性先用子类的
 class Animal:
     def __init__(self):         # 2、执行init方法
         print('执行Animal.__init__')          # 3、输出
