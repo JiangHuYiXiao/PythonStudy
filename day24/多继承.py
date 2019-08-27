@@ -7,13 +7,13 @@ class A:
 
 class B(A):
     pass
-    # def func(self):
-    #     print('B')
+    def func(self):
+        print('B')
 
 class C(A):
     pass
-    # def func(self):
-    #     print('C')
+    def func(self):
+        print('C')
 
 class D(B,C):
     pass
@@ -22,7 +22,8 @@ class D(B,C):
 
 d = D()
 d.func()
-# 继承顺序为：D,B,C,A
+# 继承顺序为：D,B,C,A   B\C就近原则
+
 
 
 # 2、小乌龟继承案例
