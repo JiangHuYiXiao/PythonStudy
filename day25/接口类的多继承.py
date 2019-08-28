@@ -6,7 +6,7 @@
 from abc import abstractmethod,ABCMeta          # 导入抽象基类，和元类ABCMeta
 
 class Walk_Animal(metaclass=ABCMeta):           # 接口类
-    # 加上装饰器 加上规范，必须实现方法
+    # 加上装饰器 加上规范和必须实现方法
     @abstractmethod
     def walk(self):
         pass
