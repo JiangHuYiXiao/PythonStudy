@@ -60,21 +60,21 @@ print(C1.perimeter)         # 伪装后，直接用对象调用方法名
 # # p1.BMI = 11         # AttributeError: can't set attribute,这个伪装的属性不能修改，这样做就起到了保护的作用
 
 # 修改方法作为伪装属性的值
-class Person:
-    def __init__(self,name):
-        self.__name = name       # 私有属性
-    @property
-    def name(self):             # 方法伪装为属性，这样是为了保护这个属性不被随意修改，但是可以通过一定方式进行修改
-        return  self.__name + 'sb'
-    @name.setter                # 前面的name就是我们的方法名name
-    def name(self,new_name):             # 再定义一个name方法
-        self.__name = new_name
+# class Person:
+#     def __init__(self,name):
+#         self.__name = name       # 私有属性
+#     @property
+#     def name(self):             # 方法伪装为属性，这样是为了保护这个属性不被随意修改，但是可以通过一定方式进行修改
+#         return  self.__name + 'sb'
+#     @name.setter                # 前面的name就是我们的方法名name
+#     def name(self,new_name):             # 再定义一个name方法
+#         self.__name = new_name
+#
+# p1 = Person('hunan')
+# print(p1.name)
+# p1.name = 'hebei'
+# print(p1.name)
 
-p1 = Person('hunan')
-print(p1.name)
-p1.name = 'hebei'
-print(p1.name)
-'''
 
 # 练习2：超市促销活动,计算各个商品打折后的价格,前三天是5折，后面是8折
 # 方法1：
@@ -119,7 +119,9 @@ class Person:
     @name.deleter
     def name(self):
         print('没有删除')
-        del self.__name
+
+        # del self.__name   # 这里是啥，则执行del self.__name就会做啥
+    # 改
     @name.setter
     def name(self,newname):
         self.__name = newname
@@ -131,14 +133,15 @@ print(jianghu.name)
 
 # 删除
 del jianghu.name    # 通过del去执行name函数，然后再根据函数里面的代码执行的是啥 （删除）
+
+print(Person.__dict__)
 print(jianghu.__dict__)
 print(jianghu.name)
 
 #没有删除
-# del self.__name
+# del self.__name   # 执行了del才会删除，没有执行不删除，注释他就不会删除，即使上面有
 
 # 修改
 jianghu.name = 'jiangxi'
 
 print(jianghu.name)
-'''
