@@ -38,12 +38,14 @@ jianghu.login()
 #     @classmethod            # 一般类方法用于那些静态属性的修改，
 #     def change_discount(cls,new_discount):          # 不用传self，但是要cls，指代的是这个类
 #         cls.__discount = new_discount
-#     @property
+#     @property   # 一般是和__私有属性一起使用，计算后return返回私有属性值,后面使用时就可以直接通过对象直接调用私有属性
 #     def price(self):
 #         return self.__price*Goods.__discount*self.weight
 #
 # apple = Goods('apple',3,6)
+# orange = Goods('orange',4,2)
 # print(apple.price)
+# print(orange.price)
 #
 # Goods.change_discount(0.6)  # 把一个类中的方法改为类方法后，可以直接使用类调用，不需要依托任何对象
 # print(apple.price)
