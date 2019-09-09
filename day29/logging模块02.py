@@ -69,3 +69,37 @@ format参数中可能用到的格式化串：
 '''
 
 # 3、配置logging对象输出日志
+import logging
+logger = logging.getLogger()
+# 创建一个handler，用于写日志
+fh = logging.FileHandler('test1.log',encoding='utf-8')
+
+# 创建一个handler，用于输出到屏幕
+sh = logging.StreamHandler()
+
+# 格式化
+formatter = logging.Formatter('%(asctime)s %(filename)s [line:%(lineno)d] %(levelname)s %(message)s')
+
+formatter2 = logging.Formatter('%(asctime)s %(filename)s [line:%(lineno)d] %(levelname)s %(message)s')
+
+# 文件操作handler和格式关联
+fh.setFormatter(formatter)
+# 屏幕操作handler和格式关联
+sh.setFormatter(formatter2)
+# logger和文件操作handler关联
+logger.addHandler(fh)
+# logger和屏幕操作handler关联
+logger.addHandler(sh)
+
+logging.debug('debug message')
+logging.info('info message')
+logging.error('warning message')
+logging.error('报错警告')
+logging.critical('critical message')
+
+
+# 总结：
+# 1、有五个日志级别
+# 2、两种配置方式basicconfig、log对象
+
+
