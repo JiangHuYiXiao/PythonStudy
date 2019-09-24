@@ -17,7 +17,9 @@ while True:
     else:
         conn.send(bytes(cmd.encode('gbk')))
         num = conn.recv(4)
+        print(type(num),num)
         num = struct.unpack('i',num)[0]
+        print(type(num), num)
         result = conn.recv(int(num)).decode('gbk')
         print(result)
 conn.close()
