@@ -3,7 +3,8 @@
 # @Time           : 2019/9/12 14:00
 # @Software       : PythonStudy
 # @Python_verison : 3.7
-
+# TCP（Transmission Control Protocol）可靠的、面向连接的协议（eg:打电话）、传输效率低全双工通信（发送缓存&接收缓存）、面向字节流。
+# 使用TCP的应用：Web浏览器；电子邮件、文件传输程序。
 # 1、详解
 '''
 import socket
