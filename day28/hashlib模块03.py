@@ -21,7 +21,7 @@
 import hashlib
 h = hashlib.md5()
 h.update(b'123456')         # 必须是字节类型的
-pwd = h.hexdigest()
+pwd = h.hexdigest()         # 转化为16进制的结果
 print(pwd)
 
 h = hashlib.md5()
