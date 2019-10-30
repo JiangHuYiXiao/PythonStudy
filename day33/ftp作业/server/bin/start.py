@@ -8,8 +8,9 @@ import sys
 import core.server
 import socketserver
 from core.server import Mysocket
+from conf import setting
 # 添加模块导入的搜索路径
 sys.path.append(os.path.dirname(os.getcwd()))
 if __name__ == '__main__':
-    server = socketserver.ThreadingTCPServer(('127.0.0.1', 9954), Mysocket)  # 实例化，创建对象
+    server = socketserver.ThreadingTCPServer((setting.addr), Mysocket)  # 实例化，创建对象
     server.serve_forever()

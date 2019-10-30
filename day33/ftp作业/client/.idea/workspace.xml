@@ -2,37 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed786a3c-98ea-4b2f-a491-2709ccca83f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/start.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/auth_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/socket_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/bin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/bin/start.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/conf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/core/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/core/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/db/user_info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/log/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/conf/setting.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/core/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/db/user_pickle/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../day20/序列化模块.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day20/序列化模块.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/socket_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/socket_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/bin/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server/bin/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/core/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server/core/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/db/user_info" beforeDir="false" afterPath="$PROJECT_DIR$/../server/db/user_info" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/client$start.coverage" NAME="start Coverage Results" MODIFIED="1572402094291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
+    <SUITE FILE_PATH="coverage/client$start.coverage" NAME="start Coverage Results" MODIFIED="1572426738307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
     <SUITE FILE_PATH="coverage/client$socket_client.coverage" NAME="socket_client Coverage Results" MODIFIED="1572331214435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -54,35 +35,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="7" />
+          <entry key="py" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="7" />
+          <entry key="Python" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="py" value="2105" />
+          <entry key="py" value="2228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="2105" />
+          <entry key="Python" value="2228" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="184">
+              <caret line="8" column="13" selection-start-line="11" selection-end-line="11" selection-end-column="17" />
               <folding>
                 <element signature="e#135#144#0" expanded="true" />
               </folding>
@@ -93,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="552">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding>
                 <marker date="1572400882140" expanded="true" signature="177:178" ph="..." />
                 <marker date="1572400882140" expanded="true" signature="189:194" ph="..." />
@@ -103,13 +84,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/socket_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="435">
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding>
-                <element signature="e#136#149#0" expanded="true" />
+                <element signature="e#155#168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/core/auth_client.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#159#170#0" expanded="true" />
                 <element signature="e#1154#1163#1" />
@@ -167,6 +148,7 @@
         <option value="$PROJECT_DIR$/bin/start.py" />
         <option value="$PROJECT_DIR$/core/client.py" />
         <option value="$PROJECT_DIR$/core/auth_client.py" />
+        <option value="$PROJECT_DIR$/conf/setting.py" />
         <option value="$PROJECT_DIR$/core/socket_client.py" />
       </list>
     </option>
@@ -330,7 +312,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09221748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -389,31 +371,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="e#135#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <marker date="1572400882140" expanded="true" signature="177:178" ph="..." />
-            <marker date="1572400882140" expanded="true" signature="189:194" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/auth_client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#159#170#0" expanded="true" />
             <element signature="e#1154#1163#1" />
@@ -424,12 +385,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <marker date="1572400882140" expanded="true" signature="177:178" ph="..." />
+            <marker date="1572400882140" expanded="true" signature="189:194" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/conf/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/socket_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state relative-caret-position="435">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
           <folding>
-            <element signature="e#136#149#0" expanded="true" />
+            <element signature="e#155#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="13" selection-start-line="11" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="e#135#144#0" expanded="true" />
           </folding>
         </state>
       </provider>
