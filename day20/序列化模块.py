@@ -16,7 +16,7 @@
     # 2、loads反序列化方法，直接操作内存里面的内容
     # 3、dump 先把数据类型序列化，然后往文件里面写东西，一般我们往文件里面写东西，只能写字符串，不能写字典、元组等
     # 4、load 通过load方法从文件里面读东西,读取出来的内容数据类型还是写进去的
-
+'''
 # dumps
 import json
 dic = {'k1':'v1'}
@@ -116,7 +116,7 @@ for i in f:
     dic = json.loads(i.strip())          # {'k1': '11'} <class 'dict'>这个时候就是字典了
     print(dic,type(dic))
 f.close()
-
+'''
 
 # 2、pickle
 #     所有的python中的数据类型都可以转换成字符串的形式，但是pickle序列化后的为bytes数据类型，loads出来的是可读的数据类型
@@ -134,36 +134,39 @@ dic_d = pickle.loads(dic_str)
 print(type(dic_d),dic_d)    # <class 'dict'> {'k1': 'v1'}
 
 # dump
-# import pickle
-# dic = {'k1':'v1'}
-# f = open('file4',mode='wb')
-# pickle.dump(dic,f)
-# f.close()
+import pickle
+dic = {'k1':'v1'}
+f = open('file4',mode='wb')
+res = pickle.dump(dic,f)
+print(res)
+f.close()
 
 
 # load
-import pickle
-dic = {'k1':'v1'}
-f = open('file4',mode='rb')
-res = pickle.load(f)
-f.close()
-print(res)
+# import pickle
+# dic = {'k1':'v1'}
+# f = open('file4',mode='rb')
+# res = pickle.load(f)
+# f.close()
+# print(res)
+#
+#
+# # pickle分步写读
+# import pickle
+# dic1 = {'k1':'v1'}
+# dic2 = {'k2':'v2'}
+# f = open('file5',mode='wb')
+# pickle.dump(dic1,f)
+# pickle.dump(dic2,f)
+# f.close()
+#
+# f = open('file5',mode='rb')
+# a1 = pickle.load(f)     # {'k1': 'v1'}
+# a2 = pickle.load(f)     # {'k2': 'v2'}
+# print(a1)
+# print(a2)
+'''
 
-
-# pickle分步写读
-import pickle
-dic1 = {'k1':'v1'}
-dic2 = {'k2':'v2'}
-f = open('file5',mode='wb')
-pickle.dump(dic1,f)
-pickle.dump(dic2,f)
-f.close()
-
-f = open('file5',mode='rb')
-a1 = pickle.load(f)     # {'k1': 'v1'}
-a2 = pickle.load(f)     # {'k2': 'v2'}
-print(a1)
-print(a2)
 
 # 3、shelve
 #     python3新增的模块
@@ -199,3 +202,4 @@ print(f1['key'])
 f1['key']['dict'] = {'k1':122}  # 添加值，这样是添加成功的
 res = f1['key']
 print(res)          # {'int': 12, 'float': 9.3, 'str': 'woqu', 'dict': {'k1': 122}}
+'''
