@@ -132,4 +132,56 @@
 
 # 注意：在windows做创建进程时，必须放到if __name__ == '__main__':作用域内，否则的话会一直创建进程，直到内存满了。
 
-# 开启多个子进程：
+# 开启多个子进程：进程的启动时无序的，如果不在代码级别进行控制
+# import os
+# import time
+# from multiprocessing import Process
+# def func():
+#     print('子进程%s，主进程为%s'%(os.getpid(),os.getppid()))
+# if __name__ == '__main__':
+#     p1 = Process(target=func)
+#     p2 = Process(target=func)
+#     p3 = Process(target=func)
+#     p1.start()
+#     p2.start()
+#     p2.join()           # 表示后面的打印主进程这些信息一定是在P2进程结束之后,其他的进程没法确定
+#     p3.start()
+#     # p3.join()           # 表示后面的打印主进程这些信息一定是在P3进程结束之后
+#     print('****主进程****')
+
+
+# 使用for循环启动多个进程
+# import os
+# import time
+# from multiprocessing import Process
+#
+# def func(i):
+#     print('%s:子进程%s，主进程为%s'%(i,os.getpid(),os.getppid()))
+#     # p.join()
+#
+# if __name__ == '__main__':
+#     for i in range(10):
+#         p = Process(target=func,args=(i,))
+#         p.start()
+#     print('***主进程***')
+
+# 使用for循环启动多个进程,并且主进程在最后，使用p.join
+import os
+import time
+from multiprocessing import Process
+
+
+def func(i):
+    print('%s:子进程%s，主进程为%s' % (i, os.getpid(), os.getppid()))
+    # p.join()
+
+
+if __name__ == '__main__':
+    p_lst = []
+    for i in range(10):
+        p = Process(target=func, args=(i,))
+        p.start()
+        p_lst.append(p)
+    for p in p_lst:
+        p.join()
+    print('***主进程***')
