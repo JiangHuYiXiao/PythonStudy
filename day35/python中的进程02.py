@@ -165,23 +165,66 @@
 #         p.start()
 #     print('***主进程***')
 
-# 使用for循环启动多个进程,并且主进程在最后，使用p.join
-import os
-import time
+# # 使用for循环启动多个进程,并且主进程在最后，使用p.join
+# import os
+# import time
+# from multiprocessing import Process
+#
+#
+# def func(i):
+#     print('%s:子进程%s，主进程为%s' % (i, os.getpid(), os.getppid()))
+#     # p.join()
+#
+#
+# if __name__ == '__main__':
+#     p_lst = []
+#     for i in range(10):
+#         p = Process(target=func, args=(i,))
+#         p.start()
+#         p_lst.append(p)
+#     for p in p_lst:
+#         p.join()
+#     print('***主进程***')
+
+# 使用一个类继承Process类来创建子进程和启动子继承，以及传参
+
+# import os
+# from multiprocessing import Process
+#
+# class MyProcess(Process):           # 继承Process类
+#     def __init__(self,arg1,arg2,arg3):
+#         super().__init__()          # 子类MyProcess使用父类的属性
+#         self.arg1 = arg1
+#         self.arg2 = arg2
+#         self.arg3 = arg3
+#     def run(self):          # 必须实现run方法
+#         print('子进程的pid为：',os.getpid())
+#         print('子进程的父进程pid为：',os.getppid())
+#         self.walk()         # 在子进程中调用walk
+#
+#     def walk(self):         # walk方法默认是永远不会被start方法调用的，除非主动调用
+#         print('walk')
+# if __name__ == '__main__':
+#     p = MyProcess(1,2,3)
+#     p.start()           # 会默认调用run方法
+#     p.walk()            # 主动调用，而且是在主进程中调用
+#     print('主进程的pid为：',os.getpid())
+
+# 注意：必须继承Process类，必须实现run方法，实例化一个MyProcess对象，使用start方法启动进程
+
+# 各个子进程的数据是隔离的
 from multiprocessing import Process
-
-
-def func(i):
-    print('%s:子进程%s，主进程为%s' % (i, os.getpid(), os.getppid()))
-    # p.join()
+n = 100
+def func():
+    global n
+    n = n-1
+    print('子进程：',n)
 
 
 if __name__ == '__main__':
-    p_lst = []
     for i in range(10):
-        p = Process(target=func, args=(i,))
+        p = Process(target=func)
         p.start()
-        p_lst.append(p)
-    for p in p_lst:
         p.join()
-    print('***主进程***')
+    print('主进程：', n)
+
