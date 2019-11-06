@@ -128,6 +128,6 @@ if __name__ == '__main__':
     p1 = Process(target=producter,args=(Q,))
     p1.start()
     p2 = Process(target=consumer,args=(Q,))
-    p3 = Process(target=consumer,args=(Q,))
+    p3 = Process(target=consumer,args=(Q,))     # 增加消费者
     p2.start()
     p3.start()
