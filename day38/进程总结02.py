@@ -21,7 +21,7 @@
     # 或者运行时没有阻塞就完成【退出】
     # 阻塞的情况有recv、sleep、input、accept
 
-# 5、多进程
+# 5、多进程：是没有返回值的，如果需要返回值可以通过进程间的通信返回
 # def func():
 #     pass
 # from multiprocessing import Process
@@ -175,3 +175,79 @@ from multiprocessing import Event
 
 # 12、生产者消费者模型，使用JoinableQueue来解决
 # 需要设置消费者为守护进程，每次消费后发送task_done，在生产者里面设置join等待消费者把生产者生产的数据都处理完成执行了task_done
+
+
+# 13、管道,
+# 因为无锁，所以不安全，要想安全，手动加锁
+# 管道支持双向通信
+# 只有在端口关闭下，且是第二次，取值才会有EOFerror
+# from multiprocessing import Pipe
+# p1,p2 = Pipe()
+# p1.send('python')
+# p2.send('java')
+# # print(p2.recv())
+# print(p1.recv())
+# p2.close()
+# print(p1.recv())                # EOFError
+# print(p1.recv())                # 阻塞
+# print(p2.recv())              # 阻塞
+# p1.close()
+# print(p2.recv())                # EOFError
+# p2.close()
+
+
+# 使用管道来完成主进程和子进程的通信
+# from multiprocessing import Pipe
+# from multiprocessing import Lock
+# from multiprocessing import Process
+# def func(foo,son):
+#     foo.close()
+#     print(son.recv())
+#     son.send('子进程应答的消息')
+#
+# if __name__ == '__main__':
+#     lock = Lock()
+#     foo,son = Pipe()
+#     pro = Process(target=func,args=(foo,son))
+#     pro.start()
+#     son.close()
+#     foo.send('主进程发过来的消息')
+#     print(foo.recv())
+
+
+# 14、使用Manager模块创建dict、list等数据类型，来实现子进程和主进程的数据共享
+# from multiprocessing import Manager
+# from multiprocessing import Process
+# def func(d):
+#     d['count'] = 18
+#     print(d)
+#
+# if __name__ == '__main__':
+#     m = Manager()
+#     d = m.dict()
+#     d['name'] = 'jianghu'
+#     for i in range(10):
+#         pro = Process(target=func,args=(d,))
+#         pro.start()
+#         pro.join()
+
+# 15、
+# 进程池的出现是为了解决多进程创建、启用耗费时间以及操作系统调度慢的问题
+# 所以会有进程池的出现，开进程池会有现成的进程在池子里面。
+# 有任务来了就可以直接用池子中的进程去处理任务，处理完成后，再把进程放回池子里面。
+# 池子中的进程就去处理其他任务了，当所有的任务都处理完成后，进程池关闭，回收所有的进程。
+# 进程池开的数量一般为：内核数+1，最多是内核数*2.5
+# 进程池，都是可以有返回值的
+# from multiprocessing import Pool
+# def func():
+#     pass
+# if __name__ == '__main__':
+#
+#     po = Pool(5)
+#     po.map(func,iterable可迭代的)
+#     po.apply(func)          # 同步，也可以设置回调函数
+#     po.apply_async(func,callback)          # 异步 ，也可以设置回调函数
+# 回调函数都是在主进程中执行，不能再多传参数，只能接收多进程中函数的返回值
+# 应用：多进程的io多，多进程去拿数据，主程序执行
+
+
