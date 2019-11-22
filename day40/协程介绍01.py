@@ -124,7 +124,7 @@ g1 = gevent.spawn(func1)            # 创建一个协程对象g1
 g2 = gevent.spawn(func2)            # 创建一个协程对象g2
 # g1.join()
 # g2.join()
-gevent.joinall([g1,g2])             # 等价于g1.join()和g2.join()两个
+gevent.joinall([g1,g2])             # 等价于g1.join()和g2.join()两个一起
 
 
 
