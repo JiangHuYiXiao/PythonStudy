@@ -110,7 +110,9 @@ import gevent
 
 def func1():
     print(123)
-    gevent.sleep(3)         # 使用gevent自己的time才能够被识别，遇到这个就会切换
+    gevent.sleep(3)
+    # 使用gevent自己的time才能够被识别，遇到这个就会切换，识别不了我们通用的time模块，
+    # 如果想要识别time模块那么可以在执行文件收行加上from gevent import  monkey;monkey.patch_all()就可以识别time模块的IO
     print(456)
 
 def func2():
@@ -120,8 +122,9 @@ def func2():
 
 g1 = gevent.spawn(func1)            # 创建一个协程对象g1
 g2 = gevent.spawn(func2)            # 创建一个协程对象g2
-g1.join()
-g2.join()
+# g1.join()
+# g2.join()
+gevent.joinall([g1,g2])             # 等价于g1.join()和g2.join()两个
 
 
 
