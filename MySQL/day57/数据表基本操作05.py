@@ -33,7 +33,7 @@
 # drop table addrs;           # 表都删除
 
 
-# 5、给数据表添加外键，外键是为了保持数据一致性，完整性和节省空间
+# 5、给数据表添加外键，外键是为了保持数据一致性，完整性和节省空间----***使用场景，下拉选择值***
 # create table ats_info(
 #     aid int auto_increment primary key,
 #     name varchar(40)not null,
