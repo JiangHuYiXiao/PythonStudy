@@ -51,6 +51,92 @@ CREATE TABLE t_student (
 	gender CHAR (2) NOT NULL,
 	CONSTRAINT fk_student_class FOREIGN KEY ('s_class_id',) REFERENCES t_class (class_id)
 ) ENGINE = INNODB DEFAULT CHARSET = utf8;
+一、创建表
+
+/*创建表t_classs表*/
+CREATE TABLE t_class (
+	class_id INT auto_increment PRIMARY KEY,
+	caption VARCHAR (20) NOT NULL
+) ENGINE = INNODB DEFAULT charset = utf8;
+
+/*插入数据*/
+insert into t_class(class_id,caption) values(1,'三年二班');
+insert into t_class(caption) values('一年三班');
+insert into t_class(caption) values('三年一班');
+insert into t_class values(2,'一年二班'),(3,'一年三班');
+
+/*查询*/
+select * from t_class;
+
+delete FROM t_class;
+
+
+/*创建表t_teacher表*/
+CREATE TABLE t_teacher (
+	teacher_id INT auto_increment PRIMARY KEY,
+	tname VARCHAR (18) NOT NULL
+) ENGINE = INNODB DEFAULT CHARSET = utf8;
+
+drop table t_techer;
+
+insert INTO t_teacher(teacher_id,tname) values(1,'波多');
+insert INTO t_teacher(tname) values('苍空');
+insert INTO t_teacher(tname) values('饭岛');
+
+select * from t_teacher;
+
+
+/*创建表t_student表*/
+DROP TABLE
+IF EXISTS t_student;
+CREATE TABLE t_student (
+	s_id INT auto_increment PRIMARY KEY,
+	sname VARCHAR (20) NOT NULL,
+	gender CHAR (2) NOT NULL,
+	s_class_id INT NOT NULL,
+-- 	KEY fk_student_class ('s_class_id'),
+	CONSTRAINT fk_student_class FOREIGN KEY (s_class_id) REFERENCES t_class (class_id)
+) ENGINE = INNODB DEFAULT CHARSET = utf8;
+
+INSERT INTO t_student(s_id,sname,gender,s_class_id) VALUES(1,'钢蛋','女',1);
+INSERT INTO t_student VALUES(2,'铁锤','女',1),(3,'山炮','男',2);COMMIT;
+select * from t_student;
+
+
+
+-- 创建课程表t_course
+DROP TABLE
+IF EXISTS t_course;
+CREATE TABLE t_course (
+	course_id INT auto_increment PRIMARY KEY,
+	course_name CHAR (10) NOT NULL,
+	c_teacher_id INT NOT NULL,
+	CONSTRAINT fk_course_teacher FOREIGN KEY (c_teacher_id) REFERENCES t_teacher (teacher_id)
+) ENGINE = INNODB DEFAULT CHARSET = utf8;
+
+insert into t_course values(1,'生物',1),(2,'体育',1),(3,'物理',2);
+select * from t_course;
+
+
+-- 创建成绩表t_score
+DROP TABLE
+IF EXISTS t_score;
+CREATE TABLE t_score (
+	score_id INT auto_increment PRIMARY KEY,
+	score_student_id INT NOT NULL,
+	score_course_id INT NOT NULL,
+	score_number INT NOT NULL,
+	CONSTRAINT fk_score_student FOREIGN KEY (score_student_id) REFERENCES t_student (s_id),
+	CONSTRAINT fk_score_course FOREIGN KEY (score_course_id) REFERENCES t_course (course_id)
+
+) ENGINE = INNODB auto_increment=1 DEFAULT CHARSET = utf8;
+
+
+-- 插入数据
+insert INTO t_score values(1,1,1,60),(2,1,2,59),(3,2,2,100);
+
+-- 查询数据
+select * from t_score;
 
 二、操作表
 
