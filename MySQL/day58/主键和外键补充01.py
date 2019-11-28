@@ -16,6 +16,7 @@ CREATE TABLE ats_info (
 ) ENGINE = INNODB DEFAULT CHARSET = utf8;
 
 -- 2、外键补充：一个表可以有多个外键
+# 一个表的外键必须是另一个表的唯一索引，主键约束和唯一性约束都是唯一性索引。
 
 show create table t_score;-- 查看表创建的语句以及下一个auto_increment的值
 
