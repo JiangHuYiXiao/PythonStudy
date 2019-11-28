@@ -34,6 +34,7 @@
 
 
 # 5、给数据表添加外键，外键是为了保持数据一致性，完整性和节省空间----***使用场景，下拉选择值***
+# 一个表的外键必须是另一个表的唯一索引，主键约束和唯一性约束都是唯一性索引。
 # create table ats_info(
 #     aid int auto_increment primary key,
 #     name varchar(40)not null,
