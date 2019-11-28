@@ -65,7 +65,7 @@
 # delete from addrs where id =2;
 
 # 8、更新表数据
-# update from addrs set age=199;
+# update addrs set age=199;
 
 # 9、查询表数据
 # select * from addrs;
