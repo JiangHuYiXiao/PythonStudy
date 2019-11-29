@@ -16,9 +16,9 @@ select * from t_department;
 
 -- 2、删除
 
-delete from t1;
+delete from t1;-- 删除后自增列值不会重新取值
 drop table t1;
-TRUNCATE table t1;
+TRUNCATE table t1;-- 删除后自增列值会重新取值
 
 -- 3、改
 
