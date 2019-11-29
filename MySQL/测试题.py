@@ -126,6 +126,7 @@ CREATE TABLE t_score (
 	score_student_id INT NOT NULL,
 	score_course_id INT NOT NULL,
 	score_number INT NOT NULL,
+	unique uq(score_student_id,score_course_id),
 	CONSTRAINT fk_score_student FOREIGN KEY (score_student_id) REFERENCES t_student (s_id),
 	CONSTRAINT fk_score_course FOREIGN KEY (score_course_id) REFERENCES t_course (course_id)
 
@@ -134,6 +135,7 @@ CREATE TABLE t_score (
 
 -- 插入数据
 insert INTO t_score values(1,1,1,60),(2,1,2,59),(3,2,2,100);
+insert INTO t_score(score_student_id,score_course_id,score_number) values(1,1,6);
 
 -- 查询数据
 select * from t_score;
