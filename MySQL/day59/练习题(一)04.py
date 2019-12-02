@@ -4,33 +4,18 @@
 # @Software       : Python_study
 # @Python_verison : 3.7
 '''
-1、自行创建测试数据
+-- 1、查询成绩表大于60分的数据
+select * from t_score where score_number>60;
 
-2、查询“生物”课程比“物理”课程成绩高的所有学生的学号；
+-- 2、查询课程表中每个老师任课数。
+select  t.c_teacher_id,count(*) from t_course t group BY t.c_teacher_id;
 
-3、查询平均成绩大于60分的同学的学号和平均成绩；
+-- 3、查询课程表中teacher_id对应的中文名称。
+select c_teacher_id,tname from t_course t1 left join t_teacher t2 on t1.c_teacher_id=t2.teacher_id;
 
-4、查询所有同学的学号、姓名、选课数、总成绩；
+-- 4、查询学生表中class_id对应的班级名称。
+select t1.s_class_id,t2.caption from t_student t1 left join t_class t2 on t1.s_class_id=t2.class_id;
 
-5、查询姓“李”的老师的个数；
-
-6、查询没学过“叶平”老师课的同学的学号、姓名；
-
-7、查询学过“001”并且也学过编号“002”课程的同学的学号、姓名；
-
-8、查询学过“叶平”老师所教的所有课的同学的学号、姓名；
-
-9、查询课程编号“002”的成绩比课程编号“001”课程低的所有同学的学号、姓名；
-
-10、查询有课程成绩小于60分的同学的学号、姓名；
-
-11、查询没有学全所有课的同学的学号、姓名；
-
-12、查询至少有一门课与学号为“001”的同学所学相同的同学的学号和姓名；
-
-13、查询至少学过学号为“001”同学所选课程中任意一门课的其他同学学号和姓名；
-
-14、查询和“002”号的同学学习的课程完全相同的其他同学学号和姓名；
-
-15、删除学习“叶平”老师课的SC表记录；
+-- 5、查询学生表中男生数和女生数。
+select gender,count(gender) FROM t_student GROUP BY gender;
 '''
