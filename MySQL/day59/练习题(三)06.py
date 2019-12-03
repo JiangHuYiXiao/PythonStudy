@@ -36,8 +36,18 @@ left join t_score score on student.s_id=score.score_student_id GROUP BY score.sc
 select count(1) from t_teacher where tname like'李%';
 
 -- 11、查询没有学过李平老师课的同学的学号和姓名
-select * from t_teacher teacher left join
-(select score.score_student_id,score.score_course_id,student.sname from t_score score left join t_student student ON score.score_student_id=student.s_id) as b
-left join t_course course on b.score_course_id=course.course_id
+
+select student.s_id,student.sname from t_student student where student.s_id not in(
+select score.score_student_id from t_score score where score.score_course_id in (
+select course.course_id from t_teacher teacher left join t_course course on teacher.teacher_id=course.c_teacher_id where teacher.tname='李平老师') group by score.score_student_id);
+
+-- 12、查询“生物”课程比“物理”课程成绩高的所有学生的学号
+
+select * from
+(select score.score_student_id,score.score_number from t_score score left join t_course course on score.score_course_id=course.course_id where course.course_name='生物')as A
+INNER JOIN
+(select score.score_student_id,score.score_number from t_score score left join t_course course on score.score_course_id=course.course_id where course.course_name='物理')as B
+ON A.score_student_id=B.score_student_id where A.score_number>B.score_number;
+
 ;
 '''
