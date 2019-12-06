@@ -11,6 +11,7 @@ INSERT INTO t_department(department_name,department_id) VALUES('测试部',60);
 INSERT INTO t_department(department_name,department_id) VALUES('测试部',7),('需求部',8);
     -- 来源与其他表
 INSERT INTO t_department(department_name,department_id) select name,id from user_info;
+INSERT INTO t_department(department_name,department_id) select name,(select id from user) from user_info;
 
 select * from t_department;
 
