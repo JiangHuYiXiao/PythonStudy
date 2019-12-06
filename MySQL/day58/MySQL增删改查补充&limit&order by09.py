@@ -48,6 +48,12 @@ select * from t_user_info where t_user_info.id between 1 and 3;
 select * from t_user_info where t_user_info.id between 1 and 3;
 
 select * from t_user_info t1 where id in(select teacher_id from t_teacher);
+SELECT
+    student_id,
+    (select num from score as s2 where s2.student_id=s1.student_id and course_id = 1) as 语文,
+    (select num from score as s2 where s2.student_id=s1.student_id and course_id = 2) as 数学,
+    (select num from score as s2 where s2.student_id=s1.student_id and course_id = 3) as 英语
+from score as s1;
 
     -- 通配符
 
