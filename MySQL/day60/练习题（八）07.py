@@ -14,4 +14,24 @@ left join t_teacher teacher on course.c_teacher_id= teacher.teacher_id group by 
 
 -- 27、查询各科成绩前三名的记录:(不考虑成绩并列情况)
 
+select* FROM
+(select
+score_student_id,
+score_course_id,
+score_number,
+(select score.score_number from t_score score where score.score_course_id=A.score_course_id group by score.score_number order by score.score_number desc limit 0,1)as 第一名,
+(select score.score_number from t_score score where score.score_course_id=A.score_course_id group by score.score_number order by score.score_number desc limit 2,1)as 第三名
+from t_score as A)as C WHERE C.score_number> C.第三名 and C.score_number<C.第一名 group BY C.score_course_id;
+
+
+-- 28、查询每门课程成绩最好的前两名；
+
+select* FROM
+(select
+score_student_id,
+score_course_id,
+score_number,
+(select score.score_number from t_score score where score.score_course_id=A.score_course_id group by score.score_number order by score.score_number desc limit 0,1)as 第一名,
+(select score.score_number from t_score score where score.score_course_id=A.score_course_id group by score.score_number order by score.score_number desc limit 2,1)as 第三名
+from t_score as A)as C WHERE C.score_number> C.第三名 and C.score_number<C.第一名 group BY C.score_course_id;
 '''
