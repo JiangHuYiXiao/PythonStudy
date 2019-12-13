@@ -50,3 +50,25 @@ drop function fun1;
 
 -- 函数必须有返回值，函数里面不能写select语句
 '''
+# 自定义函数
+import pymysql
+conn = pymysql.connect(host='localhost',user='root',password='',database='db1')
+cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+sql = 'select fun1(%s,%s)'
+cursor.execute(sql,[12,21])
+res =cursor.fetchone()
+print(res)
+conn.close()
+cursor.close()
+
+
+# 预置函数
+import pymysql
+conn = pymysql.connect(host='localhost',user='root',password='',database='db1')
+cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+sql = 'select sum(%s+%s)'
+cursor.execute(sql,[12,21])
+res =cursor.fetchone()
+print(res)
+conn.close()
+cursor.close()
