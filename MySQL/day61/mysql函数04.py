@@ -72,3 +72,5 @@ res =cursor.fetchone()
 print(res)
 conn.close()
 cursor.close()
+
+# mysql中的函数执行效率较低，在性能要求高的系统不建议
