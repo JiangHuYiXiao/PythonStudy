@@ -1,0 +1,12 @@
+/*属性选择器*/
+
+
+/*用于选取带有指定属性的元素。*/
+p[jianghu]{
+    background: antiquewhite;
+}
+
+/*用于选取带有指定属性和值的元素。*/
+p[jianghu="yixiao"]{
+    background: yellow;
+}
