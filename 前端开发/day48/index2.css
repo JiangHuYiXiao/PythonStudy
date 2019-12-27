@@ -1,0 +1,27 @@
+/*css基本选择器和通用选择器样式04*/
+
+/*标签选择器*/
+h1{
+    font-size: 20px;
+}
+
+
+p{
+    color:red;
+}
+
+/*id选择器*/
+#p1{
+    color: yellow;
+}
+
+/*类选择器*/
+.c1{
+    color: black;
+}
+.c2{
+    font-size: 30px;
+}
+*{
+    background: azure;
+}
