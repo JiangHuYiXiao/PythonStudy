@@ -1,0 +1,5 @@
+#!F:\Python_study\前端开发\day48\django_demo\demo\venv\Scripts\python.exe
+from django.core import management
+
+if __name__ == "__main__":
+    management.execute_from_command_line()

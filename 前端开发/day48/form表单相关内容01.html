@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单相关内容01</title>
+</head>
+<body>
+<!--
+
+在用户使用需要进行数据交互的时候需要使用form表单，把数据传送给数据库
+表单用于向服务器传输数据，从而实现用户与Web服务器的交互
+表单能够包含input系列标签，比如文本字段、复选框、单选框、提交按钮等等。
+表单还可以包含textarea、select、fieldset和 label标签。
+
+属性：
+accept-charset	规定在被提交表单中使用的字符集（默认：页面字符集）。
+action	规定向何处提交表单的地址（URL）（提交页面）。
+autocomplete	规定浏览器应该自动完成表单（默认：开启）。on off
+enctype	规定被提交数据的编码（默认：url-encoded）。
+method	规定在提交表单时所用的 HTTP 方法（默认：GET）。
+name	规定识别表单的名称（对于 DOM 使用：document.forms.name）。
+novalidate	规定浏览器不验证表单。表单校验，比如我们的邮箱格式
+target	规定 action 属性中地址的目标（默认：_self）。
+
+基本概念：
+HTML表单是HTML元素中较为复杂的部分，表单往往和脚本、动态页面、数据处理等功能相结合，因此它是制作动态网站很重要的内容。
+表单一般用来收集用户的输入信息
+表单工作原理：
+访问者在浏览有表单的网页时，可填写必需的信息，然后按某个按钮提交。这些信息通过Internet传送到服务器上。
+服务器上专门的程序对这些数据进行处理，如果有错误会返回错误信息，并要求纠正错误。当数据完整无误后，服务器反馈一个输入完成的信息。-->
+<!--<form action="">-->
+<!--
+<input> 元素会根据不同的 type 属性，变化为多种形态。
+type属性值：
+text	    单行输入文本	<input type=text" />
+password	密码输入框	<input type="password"  />
+date	    日期输入框	<input type="date" />
+checkbox	复选框	    <input type="checkbox" checked="checked"  />
+radio	    单选框	    <input type="radio"  value=""/>
+submit	    提交按钮	    <input type="submit" value="提交" />
+reset	    重置按钮	    <input type="reset" value="重置"  />
+button	    普通按钮    	<input type="button" value="普通按钮"  /> 用js给button绑定事件
+hidden	    隐藏输入框	<input type="hidden"  />
+file	    文本选择框	<input type="file"  />
+textarea	文本域	<input type="textarea"  />
+email	邮件	<input type="email"  />
+-->
+    <!--<input type="text">-->
+    <!--<input type="submit" value="提交">-->
+    <!--<input type="date">-->
+
+<!--</form>-->
+
+<!--注册实例-->
+<form action="http://127.0.0.1:8000/upload/">
+    <p>用户名：
+        <input type="text" name="username">
+    </p>
+    <p>密码：
+        <input type="password" name="password">
+    </p>
+    <p>性别:
+        <input name="gender" type="radio" value="1">男
+        <input name="gender" type="radio" value="0">女
+    </p>
+    <p>生日：
+        <input name="birthday" type="date">
+    </p>
+    <p>爱好：
+        <input name="hobby" type="checkbox" value="football">足球
+        <input name="hobby" type="checkbox" value="baseketball">篮球
+    </p>家乡：
+    <select name="from" id="1">
+        <option value="jx">江西</option>
+        <option value="hn">湖南</option>
+        <option value="sz">深圳</option>
+    </select>
+
+    <select name="from1" id="2">
+        <optgroup label="江西">
+            <option value="nc">南昌</option>
+            <option value="jj">九江</option>
+            <option value="px">萍乡</option>
+        </optgroup>
+
+        <optgroup name="from2" label="湖南">
+            <option value="hy">衡阳</option>
+            <option value="">长沙</option>
+            <option value="">浏阳</option>
+        </optgroup>
+
+        <optgroup name="from3" label="深圳">
+            <option value="ba">宝安区</option>
+            <option value="lh">罗湖区</option>
+            <option value="ft">福田区</option>
+        </optgroup>
+    </select>
+    <textarea name="info" id="3" cols="30" rows="10"></textarea>
+    <p>头像：
+        <input type="file">
+    </p>
+
+    <p><input type="submit" value="提交"></p>
+    <p><input type="button" value="按钮"></p>
+    <p><input type="reset" value="取消"></p>
+    <p>邮箱：<input type="email" name="email"></p>
+
+
+</form>
+</body>
+</html>

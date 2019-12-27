@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+form表单提交数据的几个注意事项：
+1、因为form相当于一个容器，所以所有的用户提交的数据（标签）都应该放到form表单里面
+2、form表单的action属性控制着往哪儿提交
+3、input、select、textarea必须有name属性，value属性
+4、必须有提交按钮 input标签，submit属性
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单相关内容详解</title>
+</head>
+<body>
+<!--
+form：
+文件上传的时候需要加上form属性需要添加：method、enctype
+method	规定在提交表单时所用的 HTTP 方法（默认：GET）。
+enctype	规定被提交数据的编码（默认：url-encoded）。
+novalidate  不做表单校验加上的话
+autocomplete 没有自动补全，联想
+
+input：属性说明
+input标签的hidden属性，隐藏输入框
+name：表单提交时的“键”，注意和id的区别
+value：表单提交时对应项的值，指定默认值
+type="button", "reset", "submit"时，为按钮上显示的文本年内容
+type="text","password","hidden"时，为输入框的初始值
+type="checkbox", "radio", "file"，为输入相关联的值
+checked：radio和checkbox默认被选中的项
+readonly：text和password设置只读
+placeholder： 输入框提示信息
+disabled：禁用，置灰 所有input均适用
+
+select 属性说明：
+multiple：布尔属性，设置后为多选，否则默认单选
+disabled：禁用
+selected：默认选中该项
+value：定义提交时的选项值
+
+
+textarea属性说明：
+name：名称
+rows：行数
+cols：列数
+disabled：禁用
+
+label标签：不使用label也可以，但是标准的使用应该使用label，使用label就不需要一定选中选择框，可以选择label中的文字也可以选择勾选框
+定义：<label> 标签为 input 元素定义标注（标记）。
+说明：
+label 元素不会向用户呈现任何特殊效果。
+<label> 标签的 for 属性值应当与相关元素的 id 属性值相同。
+-->
+<!--上传实例-->
+<form action="http://127.0.0.1:8000/upload/" method="post" enctype="multipart/form-data" novalidate autocomplete="off">
+    <p>用户名：
+        <input type="text" name="username" value="江湖" readonly>
+        <input type="text" name="username" placeholder="江湖一笑">
+        <input type="text" name="username" placeholder="江湖一笑" disabled>
+    </p>
+    <p>密码：
+        <input type="password" name="password">
+    </p>
+    <p>性别:
+        <input name="gender" type="radio" value="1">男
+        <input name="gender" type="radio" value="0">女
+    </p>
+    <p>生日：
+        <input name="birthday" type="date">
+    </p>
+    <p>爱好：
+        <input name="hobby" type="checkbox" value="football">足球
+        <input name="hobby" type="checkbox" value="baseketball">篮球
+    </p>
+<!--正确的使用方法-->
+    <p>爱好1：
+        <label for="id1">足球</label>
+        <input id= "id1" name="hobby" type="checkbox" value="football">
+        <label for="id2">篮球</label>
+        <input id= "id2"name="hobby" type="checkbox" value="baseketball">
+    </p>
+
+    <!--最好的使用方法-->
+    <label>爱好2：
+        <input name="hobby" type="checkbox" value="football">足球
+    </label>
+    <label>
+        <input name="hobby" type="checkbox" value="baseketball">篮球
+    </label>
+
+    家乡：
+    <select name="from" id="1" multiple>
+        <option value="jx" selected>江西</option>
+        <option value="hn">湖南</option>
+        <option value="sz">深圳</option>
+    </select>
+
+    <select name="from1" id="2">
+        <optgroup label="江西">
+            <option value="nc">南昌</option>
+            <option value="jj">九江</option>
+            <option value="px">萍乡</option>
+        </optgroup>
+
+        <optgroup name="from2" label="湖南">
+            <option value="hy">衡阳</option>
+            <option value="">长沙</option>
+            <option value="">浏阳</option>
+        </optgroup>
+
+        <optgroup name="from3" label="深圳">
+            <option value="ba">宝安区</option>
+            <option value="lh">罗湖区</option>
+            <option value="ft">福田区</option>
+        </optgroup>
+    </select>
+    <textarea name="info" id="3" cols="30" rows="10"></textarea>
+    <p>头像：
+        <input name="file1" type="file">
+    </p>
+
+    <p><input type="submit" value="提交"></p>
+    <p><input type="button" value="按钮"></p>
+    <p><input type="reset" value="取消"></p>
+    <p>邮箱：<input type="email" name="email"></p>
+    <p><input type="hidden"></p>
+
+</form>
+</body>
+</html>
