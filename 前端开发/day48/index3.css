@@ -1,0 +1,22 @@
+/*css组合选择器05样式*/
+
+/*后代选择器*/
+#d1 p {
+    color: red;
+}
+
+/*儿子选择器*/
+#d1>p{
+    background: yellow;
+}
+
+
+/*毗邻选择器 两个标签是同层级的 且只往下*/
+#p2+h1 {
+    color: blue;
+}
+
+/*弟弟选择器*/
+#p3~p{
+    color: yellow;
+}
