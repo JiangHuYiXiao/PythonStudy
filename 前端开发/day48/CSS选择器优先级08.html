@@ -1,0 +1,28 @@
+<!--
+css文件样式优先级：
+    1、标签内的样式权重最高，最优先
+    2、在针对同样的标签时，谁离标签近谁优先，就近原则
+    3、内联样式（1000） > id选择器（100）  > 类选择器（10）  >元素选择器（1）
+    4、权重不会进位，意思就是，你就算有10个类选择器那么你的优先级也是小于id选择器
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css选择器优先级</title>
+    <link rel="stylesheet" href="index6.css">
+    <!--优先于index6.css 就近原则-->
+    <!--<link rel="stylesheet" href="index7.css">-->
+</head>
+<body>
+<div>
+    <p style="color: red">富强民主文明</p>
+    <p id="p1">富强民主文明</p>
+    <p class="c1">富强民主文明</p>
+    <p class="c2 c3">富强民主文明</p>
+    <p id="p2" class="c4">富强民主文明</p>
+</div>
+
+</body>
+</html>
