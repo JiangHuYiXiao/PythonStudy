@@ -1,0 +1,22 @@
+/*css选择器优先级*/
+
+/*元素选择器*/
+p{
+    color: blue;
+}
+
+/*id选择器*/
+#p1{
+    color: orange;
+}
+/*类选择器*/
+.c1{
+    color: black;
+    background: azure;
+}
+/*多个类选择器*/
+.c2,.c3{
+    color: chartreuse;
+    font-size: 20px;
+    background: plum;
+}
