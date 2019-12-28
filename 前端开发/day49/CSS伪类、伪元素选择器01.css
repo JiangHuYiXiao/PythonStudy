@@ -1,0 +1,60 @@
+/*伪类选择器、伪元素选择器*/
+
+/*伪类选择器*/
+    /*1、未访问的链接*/
+    div>a:link {
+        color: plum;
+    }
+
+    /*2、已访问的链接*/
+    div>a:visited{
+        color:deepskyblue;
+    }
+
+    /*3、鼠标移动到链接上*/
+    div>a:hover{
+        color: yellow;
+    }
+
+    /*4、选定的链接 按住鼠标左键*/
+    div>a:active{
+        color: black;
+    }
+
+    /*5、input输入框获取焦点时的样式*/
+    div>label>input:focus{
+        outline: none;
+        background: chartreuse;
+    }
+
+
+/*伪元素选择器*/
+
+/*1、first-letter给首字母设置样式*/
+p:first-letter{
+    font-size: 30px;
+    color: chartreuse;
+}
+
+/*2、before在每个元素之前插入内容*/
+p:before{
+    content: '中国';
+    color: pink;
+}
+
+a:before{
+    content: '链接：';
+    color: black;
+}
+
+/*3、after在每个元素后插入内容*/
+p:after{
+    content: '结束';
+    color: pink;
+}
+
+a:after{
+    content: '[?]：';
+    color: blue;
+}
+/*before和after多用于清除浮动。*/
