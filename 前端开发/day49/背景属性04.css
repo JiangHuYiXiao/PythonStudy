@@ -19,11 +19,15 @@ background-position: 200px 200px;
 */
 
 div.c1{
+    /*background-color: pink;*/
     width: 800px;
     height: 800px;
-    background-image: url("./scxd.jpeg");
-    background-repeat: no-repeat;
-    background-position:center;
+    /*background-image: url("./scxd.jpeg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position:center;*/
+
+    /*支持简写*/
+    background:pink url("./scxd.jpeg") no-repeat 400px 400px;
 
 }
 
