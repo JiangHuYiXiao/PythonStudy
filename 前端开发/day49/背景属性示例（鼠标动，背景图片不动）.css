@@ -1,0 +1,19 @@
+div.c1{
+    height: 200px;
+    background: chartreuse;
+}
+
+div.c2{
+    width: 100%;
+    height: 800px;
+    background-image: url("./banner2@2x_1567507260.133423.png");
+    background-position: center;
+    /*固定图片*/
+    background-attachment: fixed;
+}
+
+div.c3{
+    height: 400px;
+    background-color: yellow;
+
+}
