@@ -1,0 +1,13 @@
+
+/*
+用于控制HTML元素的显示效果。
+display:"none"	HTML文档中元素存在，但是在浏览器中不显示。一般用于配合JavaScript代码使用。
+display:"block"	默认占满整个页面宽度，如果设置了指定宽度，则会用margin填充剩下的部分。
+display:"inline"	按行内元素显示，此时再设置元素的width、height、margin-top、margin-bottom和float属性都不会有什么影响。
+display:"inline-block"	使元素同时具有行内元素和块级元素的特点。
+*/
+div{
+    display: none;
+    /*display: inline;*/
+    /*display:block;*/
+}
