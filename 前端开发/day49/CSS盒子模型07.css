@@ -1,0 +1,30 @@
+/*通用属性*/
+*{
+    font-family: "Microsoft Tai Le", "微软雅黑", ".Pinfang -sc";
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+/*字体属性*/
+.c1{
+    color: yellow;
+/*文本属性*/
+    text-align: center;
+/*背景属性*/
+    background-color: pink;
+}
+
+div>p.c1{
+    width: 200px;
+    height: 200px;
+    /*margin-top: 5px;*/
+    /*margin-right: 10px;*/
+    /*margin-bottom:5px;*/
+    /*margin-left: 10px;*/
+    /*border-style: dashed;*/
+    /*border-color: black;*/
+    /*border-width: 6px;*/
+    margin: 5px 10px 5px 10px;
+    border: 6px dashed chartreuse;
+    padding:5px 10px 5px 10px;
+}
