@@ -1,0 +1,23 @@
+/*除了可以统一设置边框外还可以单独为某一个边框设置样式，如下所示：*/
+
+  /*border-top-style:dotted;*/
+  /*border-top-color: red;*/
+  /*border-right-style:solid;*/
+  /*border-bottom-style:dotted;*/
+  /*border-left-style:none;*/
+
+/*用border-radius这个属性能实现圆角边框的效果。*/
+/*将border-radius设置为长或高的一半即可得到一个圆形。*/
+
+div.c1{
+    width: 200px;
+    height: 200px;
+    border-color: yellow;
+    /*border-style:solid;*/
+    /*border-style: dashed;*/
+    border-style: dotted;
+    /*border-top-style: solid;*/
+    border-width: 10px;
+    border-radius: 100px;
+    text-align: center;
+}
