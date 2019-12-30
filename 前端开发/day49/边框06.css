@@ -21,3 +21,7 @@ div.c1{
     border-radius: 100px;
     text-align: center;
 }
+
+div.c2{
+   border: 5px solid red;
+}
