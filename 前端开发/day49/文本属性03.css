@@ -1,0 +1,53 @@
+/*
+1、text-align 属性规定元素中的文本的水平对齐方式。
+
+值	描述
+left	左边对齐 默认值
+right	右对齐
+center	居中对齐
+justify	两端对齐
+
+
+
+2、文字装饰
+text-decoration 属性用来给文字添加特殊效果。
+值	描述
+none	默认。定义标准的文本。
+underline	定义文本下的一条线。
+overline	定义文本上的一条线。
+line-through	定义穿过文本下的一条线。
+inherit	继承父元素的text-decoration属性的值。
+
+3、常用的为去掉a标签默认的自划线：
+a {
+  text-decoration: none;
+}
+*/
+
+
+a.c1{
+    text-align: left;
+    text-decoration: none;
+}
+
+div p{
+    /*字体属性*/
+    font-family: "Microsoft Tai Le", "微软雅黑", ".Pinfang -sc";
+    font-size: 20px;
+    font-weight: bolder;
+    color: pink;
+
+    /*文本属性*/
+    text-align: left;
+    /*text-align: right;*/
+    /*text-align: center;*/
+
+    /*文字装饰*/
+    /*text-decoration:underline;*/
+    text-decoration: overline;
+
+
+    /*首行缩进 需要根据字体大小设置*/
+    text-indent: 40px;
+}
+
