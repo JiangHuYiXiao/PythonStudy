@@ -1,0 +1,77 @@
+/*
+1、应用场景：当我们两个div需要在一行排列时，就需要使用浮动，
+
+2、创建浮动：使用float标签
+
+3、清除浮动：
+方法1：固定高度
+方法2：伪元素清除法
+方法3：
+*/
+
+/*1、没有设置浮动则两个div是上下排列的，但是我们想要两个div左右排列*/
+/*.c1{*/
+    /*width: 20%;*/
+    /*height: 200px;*/
+    /*background-color: chartreuse;*/
+/*}*/
+
+/*.c2{*/
+    /*width: 80%;*/
+    /*height: 200px;*/
+    /*background-color: yellow;*/
+    /**/
+/*}*/
+
+
+/*2、设置浮动则两个div左右排列,*/
+.c1{
+    width: 500px;
+    height: 200px;
+    background-color: chartreuse;
+    border: 1px solid black;
+    float: left;
+}
+
+.c2{
+    width: 500px;
+    height: 200px;
+    background-color: yellow;
+    border: 1px solid black;
+    float: left;
+}
+.c4{
+    height: 400px;
+    border: 1px solid deeppink;
+}
+/*3、浮动会存在一定的问题：比如父标签塌陷,边框没有撑起来*/
+.c3{
+    border: 2px solid black;
+}
+
+
+/*4、浮动父标签塌陷问题解决方法1*/
+/*在html中增加一个div,固定高度*/
+/*#d1{*/
+    /*height: 200px;*/
+/*}*/
+
+/*5、浮动父标签塌陷问题解决方法2*/
+/*clear清除正常div的左边浮动*/
+/*.c4{*/
+    /*clear: both;*/
+/*}*/
+
+/*6、浮动父标签塌陷问题解决方法3*/
+/*给父标签的最后加上伪元素,因为前面的方法是需要添加一个空的div d1,使用display模拟一个块级标签*/
+/*.c3:after{*/
+    /*content: "";*/
+    /*clear: both;*/
+    /*display: block;*/
+/*}*/
+/*因为这个清除浮动是一个公共的方法，所以我们抽取出来,然后给需要清除浮动的标签加上clearfix属性*/
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
