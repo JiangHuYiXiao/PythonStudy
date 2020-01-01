@@ -22,6 +22,11 @@ div.c1{
     text-align: center;
 }
 
+div.c1>div{
+    position: relative;
+    left: 0;
+    top: 80px;
+}
 div.c2{
    border: 5px solid red;
 }
