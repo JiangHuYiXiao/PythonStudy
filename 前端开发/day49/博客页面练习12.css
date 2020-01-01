@@ -1,0 +1,93 @@
+/*通用样式*/
+
+*{
+    font-family: "Microsoft Tai Le", "微软雅黑", ".Pinfang -sc";
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/*左边栏样式*/
+.left{
+    width: 20%;
+    height: 1000px;
+    background-color: rgb(76,77,76);
+    float: left;
+}
+
+.blog-img{
+    width: 200px;
+    height: 200px;
+
+}
+.img{
+    max-width: 100%;
+    border-radius: 50%;
+    margin: 20px 90px;
+}
+
+#d1{
+    margin: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+
+}
+
+
+/*blog-link下的a样式*/
+.blog-link a{
+    color: white;
+    text-decoration: none;
+}
+/*blog-link样式*/
+.blog-link{
+    text-align: center;
+}
+
+
+/*blog-tag样式*/
+.blog-tag{
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*blog-tag下的a样式*/
+.blog-tag>li>a{
+    color: white;
+    text-decoration: none;
+}
+
+/*右边栏样式*/
+.right{
+    width: 80%;
+    background-color: red;
+    height: 100%;
+    float: left;
+}
+.article_list{
+    background-color: white;
+}
+
+.article-date{
+    float: right;
+}
+
+.article-title{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+
+.article-info{
+    margin-left: 10px;
+
+}
+
+
+.article-tag{
+    margin-left: 10px;
+    margin-top: 2px;
+    border: 1px solid rgb(238,237,237);
+}
