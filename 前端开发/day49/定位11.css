@@ -1,0 +1,67 @@
+/*定位我们使用position*/
+/*1、static
+默认值，无定位，不能当作绝对定位的参照物，并且设置标签对象的left、top等值是不起作用的的。
+*/
+
+/*2、相对定位*/
+/*元素原先在正常文档流中所占的空间会关闭，就好像该元素原来不存在一样*/
+/*relative,相对定位是相对于该元素在文档流中的原始位置，即以自己原始位置为参照物。有趣的是，即使设定了元素的相对定位以及偏移值，元素还占有着原来的位置，即占据文档流空间
+使用top right bottom left来定位具体值*/
+
+/*3、absolute绝对定位*/
+/*根据已经定位的父元素来定位，使用top right bottom left来定位具体值*/
+
+/*4、fixed（固定）被设置为fixed的元素会被定位于浏览器窗口的一个指定坐标，不论窗口是否滚动，它都会固定在这个位置。*/
+*{
+    margin: 0;
+}
+
+.c1{
+    width: 200px;
+    height: 200px;
+    border: 1px solid palegreen;
+    background-color: pink;
+    position: relative;
+    top: 0px;
+    right: 200px;
+    bottom: 0px;
+    left: 200px;
+}
+
+.c2{
+    width: 200px;
+    height: 200px;
+    border: 1px solid yellow;
+    background-color: black;
+    /*position: relative;*/
+    /*top: 200px;*/
+    /*right: 200px;*/
+    /*bottom: 200px;*/
+    /*left: 200px;*/
+    /*使用绝对定位移动div2*/
+    position: absolute;
+    top: 600px;
+    right: 300px;
+    bottom: 600px;
+    left: 800px;
+
+}
+
+.c3{
+    width: 200px;
+    height: 1000px;
+    border: 1px solid rebeccapurple;
+    background-color: red;
+}
+
+/*返回顶部按钮样式示例*/
+.c4{
+    width: 80px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: azure;
+    position:fixed;
+    right: 10px;
+    bottom: 20px;
+
+}
