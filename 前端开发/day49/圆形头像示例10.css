@@ -1,0 +1,11 @@
+div{
+    width: 300px;
+    height: 300px;
+    border: 2px solid deeppink;
+    border-radius: 150px;
+    overflow: hidden;
+}
+/*当图片大于div时设置最大img为100%*/
+div>img{
+    max-width: 100%;
+}
