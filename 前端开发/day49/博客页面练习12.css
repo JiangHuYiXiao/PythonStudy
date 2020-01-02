@@ -59,29 +59,41 @@
     text-decoration: none;
 }
 
+.blog-tag>li>a:before{
+    content: "#";
+
+}
+
 /*右边栏样式*/
 .right{
     width: 80%;
-    background-color: red;
+    background-color: rgb(238,237,237);
     height: 100%;
     float: left;
 }
 .article_list{
     background-color: white;
+    margin: 10px 200px 10px 30px;
 }
 
 .article-date{
     float: right;
+
 }
 
 .article-title{
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    /*margin-left: 20px;*/
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 2px solid red;
 }
 
 
 .article-info{
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
 
 }
 
@@ -90,4 +102,7 @@
     margin-left: 10px;
     margin-top: 2px;
     border: 1px solid rgb(238,237,237);
+    border-left: none;
+    border-right: none;
 }
+
