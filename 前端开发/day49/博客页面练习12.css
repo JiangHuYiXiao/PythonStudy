@@ -24,6 +24,7 @@
     max-width: 100%;
     border-radius: 50%;
     margin: 20px 90px;
+    overflow: hidden;
 }
 
 #d1{
