@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>透明度示例</title>
+    <style>
+        /*opcity：设置的透明度不仅背景色透明而且会使得其下的文字都会是透明的*/
+        /*rgba设置透明度只能设置背景色，下面的文字不是透明的*/
+    .c1{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        background-color: rgba(0,0,0,0.2);
+        color: red;
+
+    }
+
+    .c2{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        opacity:0.2;
+        background-color: black;
+        color: red;
+
+    }
+    </style>
+</head>
+<body>
+<div class="c1">我是div1</div>
+<div class="c2">我是div2</div>
+</body>
+</html>
