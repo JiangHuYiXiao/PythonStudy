@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index应用</title>
+    <style>
+        .c1{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.5);
+            /*把背景的z-index设置更小*/
+            z-index: 998;
+
+        }
+
+        .c2{
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            /*这样C2盖住了c1*/
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /*设置边框的一半让其置于中间*/
+            margin-left: -200px;
+            margin-top: -100px;
+            /*把弹出框的z-index设置更大的值*/
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+<div class="c1"></div>
+<div class="c2"></div>
+</body>
+</html>
