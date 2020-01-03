@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>脱离文档流</title>
+    <style>
+        /*目前我们学到的脱离文档流的情况有
+        1、float     原来的位置不占据了
+        2、position：relative;    原来的位置还是占据了
+        3、position：absolute;    原来的位置不占据了
+        4、postion：fixed;    原来的位置不占据了
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .c1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: red;
+        }
+
+        .c2{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background-color: green;
+
+            /*1、float：c3会占据c2之前的空间*/
+            /*float: right;*/
+
+            /*2、position: relative;c3不会占据c2之前的空间*/
+            /*position: relative;*/
+            /*left: 200px;*/
+
+            /*3、position: relative;c3会占据c2之前的空间*/
+            /*position: absolute;*/
+            /*left: 200px;*/
+
+            /*4、flex-direction:c3会占据c2之前的空间;*/
+            position: fixed;
+            left: 600px;
+
+
+
+
+
+
+
+
+
+        }
+
+        .c3{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="c1"></div>
+<div class="c2"></div>
+<div class="c3"></div>
+</body>
+</html>
