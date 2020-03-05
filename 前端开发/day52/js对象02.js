@@ -4,10 +4,12 @@
 // JavaScript中的对象实际就是键值对的组合，但是键只能是字符串
 /*
 // 1、自定义对象
+创建方法1：
 var s1 =[1,2];
 var s2 = new Array(1,2);
 console.log(s1,typeof(s1));
 console.log(s2,typeof(s2));
+
 
 var name ='abc';
 var d1 ={"name":"jianghu","age":"18","abc":"123"};
@@ -21,7 +23,7 @@ console.log(d1.name);         //对象后面的点只能跟属性不能跟变量
 console.log(d1["abc"]);         //对象后面的点只能跟属性不能跟变量
 
 // 创建对象：
-
+创建方法2：
 var person=new Object();  // 创建一个person对象
 person.name="Alex";  // person对象的name属性
 person.age=18;  // person对象的age属性
