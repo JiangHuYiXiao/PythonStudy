@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取值相关</title>
+</head>
+<body>
+<form action="http://127.0.0.1:8080/upload" enctype="multipart/form-data" method="post">
+    <label>爱好:
+        <input type="checkbox" name="hobby" value="football">足球
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="baseketball">篮球
+    </label>
+    <p>
+       <label>毕业学校:
+            <input type="text" id="school" name="school" placeholder="请输入毕业院校" value="jx">
+        </label>
+    </p>
+    <p>
+        <label>性别:
+            <input type="radio" name="gender" value="boy">男
+        </label>
+        <label>
+            <input type="radio" name="gender" value="girl">女
+        </label>
+    </p>
+    <p>
+        <label>上传毕业证:
+           <input type="file" name="schoolBook" value="d2">
+        </label>
+
+    </p>
+    家乡:<select name="home" id="s1">
+        <optgroup name="from1" label="江西">
+            <option value="nc">南昌</option>
+            <option value="jj">九江</option>
+            <option value="px">萍乡</option>
+        </optgroup>
+        <optgroup name="from2" label="湖南">
+            <option value="cs">长沙</option>
+            <option value="ly">浏阳</option>
+            <option value="hy">衡阳</option>
+        </optgroup>
+    </select>
+    <p>
+       <textarea name="bz" id="t1" cols="60" rows="20" placeholder='备注'></textarea>
+    </p>
+    <script src="获取值相关04.js"></script>
+</form>
+</body>
+</html>
