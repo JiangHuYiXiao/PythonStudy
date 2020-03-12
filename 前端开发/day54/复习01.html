@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day53复习</title>
+</head>
+<body>
+<!--涉及到DOM操作的javaScript代码应该放到文件后面，因为要等HTML文件加载完成后才可以操作-->
+<!--1、BOM-->
+<!--
+1.1 location相关的：
+    location.href 返回url地址
+    location.href="url"
+    location.reload() 刷新页面
+-->
+
+<!--
+1.2 弹出框：
+<script>
+    alert("hello JavaScript");    //警告框
+    confirm("对");    //确认
+    prompt("oooo");    //提示框
+</script>
+-->
+
+<!--1.3 计时相关：-->
+
+<!--
+1.3.1 setTimeout()：
+表示指定时间执行setTimeout的第一个参数内的脚本，返回
+<script>
+    var st = setTimeout(function(){alert("你等待了5秒")},5000);
+</script>
+-->
+
+<!--1.3.2
+ clearTimeout()：清除setTimeout设置返回的变量
+
+<script>
+    var t = setTimeout(function(){alert("等待5s")},5000);
+    clearTimeout(t);
+</script>
+
+-->
+
+<!--1.3.3
+setInterval('js语句',时间间隔)根据时间间隔循环执行'js语句'
+<script>
+    var t1= setInterval(function(){alert("King James")},2000);
+</script>-->
+
+
+<!--1.3.4
+clearInterval(setInterlva返回的值) 清除setInterval的返回值
+
+<script>
+    var t1= setInterval(function(){alert("King James")},2000);
+    clearInterval(t1);
+</script>-->
+
+<!--2、DOM-->
+<!--DOM是一套对文档抽象和概念化的方法，当浏览器加载网页的时候，会创建页面的文档对象模型包含各种标签等-->
+<!--javaSciprt可以通过DOM改变页面中的HTML的元素、属性、和CSS样式、这就是DOM的应用-->
+
+<div id="d1" onclick="change(this)" style="background-color: green" >
+    <div id="d11">d1里面的div1</div>
+    <div id="d12">d1里面的div2</div>
+    <div id="d14">d1里面的div4</div>
+    <div id="d15">d1里面的div5</div>
+    <div class="c1 c2" id="d13">d1里面的div3</div>
+</div>
+<p id="p1">段落1
+    <a name="p" href="https://www.baidu.com" id="a1">百度</a>
+    <a name="p11" href="https://www.baidu.com" id="a2">百度</a>
+</p>
+
+<!--2.1 查找标签-->
+
+<!--<script>
+    // 直接查找
+    var d1Ele = document.getElementById("d1");
+    var d13Ele = document.getElementsByClassName("c1");
+    var divEle = document.getElementsByTagName("div");
+    var dEle = document.getElementsByName("p11");
+    console.log(d1Ele);
+    console.log(d13Ele);
+    console.log(divEle);
+    console.log(dEle);
+//  间接查找
+    var d1childEle = d1Ele.children;
+    var d11Ele = document.getElementById("d11");
+    console.log(d1childEle);
+    var d11ParentEle = d11Ele.parentElement;
+    console.log(d11ParentEle);
+    console.log(d1Ele.firstElementChild);
+    console.log(d1Ele.lastElementChild);
+    console.log(d11Ele.nextElementSibling);
+    console.log(d13Ele.previousElementSibling);
+</script>-->
+
+<!--2.2 节点操作-->
+
+<!--2.2.1创建节点-->
+<!--<script>
+    var d1Ele = document.getElementById("d1");
+    var input1Ele = document.createElement("input");
+    var input2Ele = document.createElement("input");
+//属性操作
+    input1Ele.type="text";
+
+//2.2.2添加节点
+    // 在d1的最后面
+    d1Ele.appendChild(input1Ele);
+    // 在指定标签的前面添加节点
+    var d11Ele = d1Ele.firstElementChild;
+    d1Ele.insertBefore(input2Ele,d11Ele);
+// 2.2.3删除节点   父节点.removeChild(要删除的节点)
+var d12Ele =document.getElementById("d11");
+d1Ele.removeChild(input2Ele);
+
+
+// 2.2.4 替换节点
+d1Ele.replaceChild(input1Ele,d11Ele);
+
+// 2.2.5 节点属性
+// innerText获取标签内容
+// innerHTML获取标签内容和标签
+console.log(d1.innerText);
+console.log(d1.innerHTML);
+//设置文本内容
+    var d14Ele= document.getElementById("d14");
+    d14Ele.innerText='jianghuyixiao';
+
+//设置标签内容
+    var d15Ele= document.getElementById("d15");
+    d15Ele.innerHTML='jianghu';
+
+// 2.2.6自定义属性的操作,setAttribute,getAttribute、removeAttribute对默认属性也可以操作
+
+d15Ele.setAttribute("age",18);      //设置属性和属性值
+console.log(d15Ele);
+console.log(d15Ele.getAttribute("age"));        //获取属性值
+d15Ele.removeAttribute("age");
+d15Ele.setAttribute("name","dd")
+</script>-->
+
+
+<!--2.2.7 事件-->
+<!--
+常用事件：
+1、onclick
+2、onfocus
+3、onflus
+4、onchange
+
+-->
+<!--绑定事件的方式：-->
+<!--方式1:
+<script>
+     function change(ths){
+         ths.style.backgroundColor="red";
+     }
+</script>  -->
+<!--方式2-->
+<script>
+    var d1Ele = document.getElementById("d1");
+    d1Ele.onclick=function () {
+        this.style.backgroundColor="gold";
+
+    }
+
+</script>
+
+</body>
+</html>
