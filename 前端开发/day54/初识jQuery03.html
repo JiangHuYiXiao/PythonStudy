@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初识jQuery03</title>
+    <!--jQuery就是一个别人写好后封装的一个javascript库
+    学习jQuery能够极大的简化我们编写JavaScript代码，写的少，做的多
+    学习jQuery主要学习使用jQuery查找标签、操作属性、操作样式、事件操作，其实和我们之前学JavaScript一样
+    -->
+    <!--引入jQuery-->
+    <script type="text/javascript" src="../../jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="d1">div1</div>
+    <div id="d2" class="c1">div2
+        <div id="d3" class="c2">div3</div>
+        <div id="d4" class="c3">div4</div>
+    </div>
+    <div id="d5">
+        <a href="https://www.baidu.com">百度一下</a>
+        <p id="pl">
+            <input type="text" name="username" placeholder="请输入你的姓名">
+        </p>
+
+    </div>
+
+    <script>
+// 1、查找标签
+    // 使用的方法和我们css的选择器差不多
+    // 1.1 通过id选择器查找
+        console.log($("#d1"));
+    // 1.2 通过class查找
+        console.log($(".c1"));
+    // 1.3 通过tagName查找
+        console.log($("div"));
+    // 1.4 组合选择器
+        console.log($("#d3,input"));
+    // 1.5 配合使用
+        console.log($("div.c2"));    //查找标签为div，class为c2
+    // 1.6 所有元素选择器
+        console.log($("*"));
+    </script>
+</body>
+</html>
