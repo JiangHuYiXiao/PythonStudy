@@ -17,8 +17,8 @@
         <div id="d4" class="c3">div4</div>
     </div>
     <div id="d5">
-        <a href="https://www.baidu.com">百度一下</a>
-        <p id="pl">
+        <a id="a1" href="https://www.baidu.com">百度一下</a>
+        <p id="p1">
             <input type="text" name="username" placeholder="请输入你的姓名">
         </p>
 
@@ -26,7 +26,7 @@
 
     <script>
 // 1、查找标签
-    // 使用的方法和我们css的选择器差不多
+// 使用的方法和我们css的选择器差不多
     // 1.1 通过id选择器查找
         console.log($("#d1"));
     // 1.2 通过class查找
@@ -39,6 +39,34 @@
         console.log($("div.c2"));    //查找标签为div，class为c2
     // 1.6 所有元素选择器
         console.log($("*"));
+    // 1.7 后代选择器
+        console.log($("#d2 #d3"));
+    // 1.8 儿子选择器
+        console.log($("#d2>#d4"));
+    // 1.9 毗邻选择器
+        console.log($("#d3+#d4"));
+    // 1.10 兄弟选择器
+        console.log($("#a1~#p1"));
+
+// 2、HTML标签和jQuery对象的区别
+// HTML通过DOM找出来的结果是一个具体的，通过jQuery找出来的标签是一个数组，需要通过索引才能找到具体的标签
+    // 2.1 DOM对象
+        console.log(document.getElementById("d1"));  //<div id="d1">div1</div>
+
+    // 2.2 jQuery对象
+        console.log($("#d1"));      //k.fn.init[div#d1]
+        console.log($("#d1")[0]);   //<div id="d1">div1</div>,这个就是一个DOM对象了，
+
+    //2.3 jQuery对象转换成DOM对象用索引
+        console.log($("#d1")[0]);
+
+    //2.4 DOM对象转换成jQuery对象用$
+         var dEle = document.getElementById("d2");
+        console.log($(dEle));
+
+    // 2.5 为了区分jQuery和DOM对象，我们在定义Jquery对象时候加上$，标准这样，建议加上
+        var $dEle = $("#d2");
+
     </script>
 </body>
 </html>
