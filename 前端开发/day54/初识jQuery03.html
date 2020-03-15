@@ -15,18 +15,34 @@
     <div id="d2" class="c1">div2
         <div id="d3" class="c2">div3</div>
         <div id="d4" class="c3">div4</div>
+        <div id="d6" class="c3" >div6
+            <a href="http://www.baidu.com">点我去百度</a>
+        </div>
+        <div id="d7" class="c3">div7</div>
     </div>
     <div id="d5">
         <a id="a1" href="https://www.baidu.com">百度一下</a>
-        <p id="p1">
-            <input type="text" name="username" placeholder="请输入你的姓名">
-        </p>
+        <div id="d8">
+            <a href="https://www.baidu.com">哈哈哈哈</a>
+            <p>用户名:
+                <input type="text" name="username" placeholder="请输入你的姓名">
+
+            </p>
+            <p>密码:
+                <input type="password" name="pw">
+            </p>
+            <p>
+                <input type="button" name="bu" value="按钮">
+
+            </p>
+
 
     </div>
 
     <script>
-// 1、查找标签
-// 使用的方法和我们css的选择器差不多
+/*
+// 一、查找标签
+// 1、使用的方法和我们css的选择器差不多
     // 1.1 通过id选择器查找
         console.log($("#d1"));
     // 1.2 通过class查找
@@ -66,6 +82,72 @@
 
     // 2.5 为了区分jQuery和DOM对象，我们在定义Jquery对象时候加上$，标准这样，建议加上
         var $dEle = $("#d2");
+
+*/
+
+// 3、筛选器，通过筛选器可以进一步对我们刚通过选择器查找到的结果进行再次筛选
+/*
+基本筛选器：
+:first // 第一个
+:last // 最后一个
+:eq(index)// 索引等于index的那个元素
+:even // 匹配所有索引值为偶数的元素，从 0 开始计数
+:odd // 匹配所有索引值为奇数的元素，从 0 开始计数
+:gt(index)// 匹配所有大于给定索引值的元素
+:lt(index)// 匹配所有小于给定索引值的元素
+:not(元素选择器)// 移除所有满足not条件的标签
+:has(元素选择器)// 选取所有包含一个或多个标签在其内的标签(指的是从后代元素找)
+*/
+// 第一个
+console.log($("#d2>div:first"));
+
+// 最后一个
+console.log($("#d2>div:last"));
+
+//第3个  根据索引查找，从0开始
+console.log($("#d2>div:eq(2)"));
+
+//索引值为偶数的0，2，4
+console.log($("#d2>div:even"));
+
+//索引值为偶数的1，3，5
+console.log($("#d2>div:odd"));
+
+//大于索引1的值
+console.log($("#d2>div:gt(1)"));
+
+//小于索引3的值
+console.log($("#d2>div:lt(3)"));
+
+//移除d2下面的div中id为d6的标签
+console.log($("#d2>div:not(#d6)"));
+
+//从后代div2中找一个div它包含个标签在内
+console.log($("#d2 div:has(a)"));
+
+// 4、属性选择器
+/*[attribute]
+[attribute=value]// 属性等于
+[attribute!=value]// 属性不等于*/
+
+//后代中的标签中有type属性的标签
+console.log($("#d8 [type]"));
+
+// 后代中标签中type属性为text的标签
+console.log($("#d8 [type=text]"));
+
+// 儿子标签中type属性不等于text的标签
+console.log($("#d8 [type!=text]"))
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>
