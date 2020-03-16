@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筛选器04</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<!--
+1、下一个元素：
+$("#id").next()  下一个元素
+$("#id").nextAll()      后面所有的元素
+$("#id").nextUntil("#i2")           下一个元素直到id为i2的
+-->
+<ul id="u1">
+    <li id="l0">l0</li>
+    <li id="l1">l1</li>
+    <li id="l2">l2</li>
+    <li id="l3">l3</li>
+    <li id="l4">l4</li>
+</ul>
+
+<script>
+    console.log($("#l1").next());
+    console.log($("#l1").nextAll());
+    console.log($("#l1").nextUntil("#l4"));
+</script>
+
+<!--
+2、上一个元素：
+$("#id").prev()         上一个元素
+$("#id").prevAll()          上面所有的元素
+$("#id").prevUntil("#i2")           上一个元素直到找到id为i2的元素
+-->
+<script>
+    console.log($("#l2").prev());
+    console.log($("#l2").prevAll());
+    console.log($("#l3").prevUntil("#l1"));
+</script>
+
+<!--
+3、父亲元素：
+$("#id").parent()
+$("#id").parents()  // 查找当前元素的所有的父辈元素
+$("#id").parentsUntil() // 查找当前元素的所有的父辈元素，直到遇到匹配的那个元素为止。
+-->
+<div id="d1">
+    <div id="d2">
+        <div id="d3" class="c1">div3</div>
+        <div id="d4">div4</div>
+        <div id="d5">div5</div>
+        <p id="p6">
+            好哈学习
+        </p>
+    </div>
+    <div id="d22">div22</div>
+
+</div>
+
+<script>
+    console.log($("#d3").parent());
+    console.log($("#d3").parent().parent());
+    console.log($("#d3").parent().parent().parent());
+</script>
+<!--4、儿子和兄弟元素：-->
+<!--
+$("#id").children();// 儿子们
+$("#id").siblings();// 兄弟们-->
+<script>
+    console.log($("#d2").children());
+    console.log($("#d2").siblings());
+</script>
+
+<!--
+5、查找find()
+搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。
+-->
+<script>
+    console.log($("#d2").find("p"));            //等价于$("#d2 p")
+</script>
+
+<!--
+6、筛选filter()
+筛选出与指定表达式匹配的元素集合。这个方法用于缩小匹配的范围。用逗号分隔多个表达式。
+-->
+<script>
+    console.log($("div").filter(".c1"));   //等价于$("div.c1")
+</script>
+</body>
+</html>
