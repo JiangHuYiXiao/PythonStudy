@@ -32,9 +32,26 @@
                 <input type="password" name="pw">
             </p>
             <p>
-                <input type="button" name="bu" value="按钮">
+                <input type="button" name="bu" value="按钮1">
 
             </p>
+            <p>
+                <label>性别
+                    <input type="checkbox" name="gender" value="1" checked>男
+                    <input type="checkbox" name="gender" value="2">女
+                </label>
+            <p>
+            <select name="s1" id="s1">国籍
+                <opgroup>
+                    <option value="1" selected>中国</option>
+                    <option value="2">美国</option>
+                </opgroup>
+            </select>
+            </p>
+
+
+            </p>
+        </div>
 
 
     </div>
@@ -122,7 +139,7 @@ console.log($("#d2>div:lt(3)"));
 //移除d2下面的div中id为d6的标签
 console.log($("#d2>div:not(#d6)"));
 
-//从后代div2中找一个div它包含个标签在内
+//从后代div2中找一个div它包含个a标签在内
 console.log($("#d2 div:has(a)"));
 
 // 4、属性选择器
@@ -137,17 +154,35 @@ console.log($("#d8 [type]"));
 console.log($("#d8 [type=text]"));
 
 // 儿子标签中type属性不等于text的标签
-console.log($("#d8 [type!=text]"))
+console.log($("#d8 [type!=text]"));
 
+// 5、表单筛选器
+/*
+:text
+:password
+:file
+:radio
+:checkbox
 
+:submit
+:reset
+:button
+*/
+console.log($(":password"));     //找到input标签，type为password   简单的方法
+console.log($("input[type=password]"));     //找到input标签，type为password
 
+console.log($(":text"));
+console.log($(":button"));
 
-
-
-
-
-
-
+// 6、表单对象属性
+/*
+:enabled
+:disabled
+:checked
+:selected
+*/
+console.log($("input:checked"));
+console.log($(":selected"));
 
     </script>
 </body>
