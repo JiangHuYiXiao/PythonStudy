@@ -63,7 +63,7 @@ console.log($("#f1 input:first"));
 console.log($("#my-checkbox input:last"));
 
 // 15、找到id值为my-checkbox的标签内部没有被选中的那个input标签
-console.log($("#my-checkbox input:not(:selected)"));
+console.log($("#my-checkbox input:not(:checked)"));
 
 // 16、找到所有含有input标签的label标签
 console.log($("label:has(input)"));
