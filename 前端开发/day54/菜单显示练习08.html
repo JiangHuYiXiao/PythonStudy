@@ -3,8 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>菜单显示练习08</title>
+    <link rel="stylesheet" href="菜单显示练习08.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+<ul id="u1">搜索菜单：
+    <li>
+        <a href="https://www.baidu.com" class="hide">百度</a>
+    </li>
+    <li>
+        <a href="https://360.cn" class="hide">360</a>
+    </li>
+    <li>
+        <a href="https://www.sogou.com/" class="hide">搜狗</a>
+    </li>
+</ul>
 
+<ul id="u2">考勤管理：
+    <li>
+        <a href="https://www.baidu.com">考勤计算</a>
+    </li>
+    <li>
+        <a href="https://360.cn">出差</a>
+    </li>
+    <li>
+        <a href="https://www.sogou.com/">打卡</a>
+    </li>
+</ul>
+
+<ul id="u3">假期管理：
+    <li>
+        <a href="https://www.baidu.com">请假</a>
+    </li>
+    <li>
+        <a href="https://360.cn">假期汇总</a>
+    </li>
+    <li>
+        <a href="https://www.sogou.com/">假期档案</a>
+    </li>
+</ul>
+
+<script>
+    $("#u1").click(function(){
+        ($("#u1 li").toggleClass("hide"));
+    });
+</script>
 </body>
 </html>
