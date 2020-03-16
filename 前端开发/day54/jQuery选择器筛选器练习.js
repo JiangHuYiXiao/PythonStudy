@@ -1,5 +1,5 @@
 
-//因为html中已经通过CDN引入了jQuery所以这里就需要再次引入了
+//因为html中已经通过CDN引入了jQuery所以这里就不需要再次引入了
 /*
 找到本页面中id是i1的标签
 找到本页面中所有的h2标签
@@ -55,3 +55,16 @@ console.log($("label+input"));
 
 // 12、找到本页面中id为p2的标签后面所有和它同级的li标签
 console.log($("#p2~li"));
+
+// 13、找到id值为f1的标签内部的第一个input标签
+console.log($("#f1 input:first"));
+
+// 14、找到id值为my-checkbox的标签内部最后一个input标签
+console.log($("#my-checkbox input:last"));
+
+// 15、找到id值为my-checkbox的标签内部没有被选中的那个input标签
+console.log($("#my-checkbox input:not(:selected)"));
+
+// 16、找到所有含有input标签的label标签
+console.log($("label:has(input)"));
+
