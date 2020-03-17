@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习01</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="d1">div1
+    <div id="d2">div2
+        <div id="d3">div3</div>
+        <div id="d4" class="c4">div4
+            <a href="https://www.baidu.com">百度</a>
+        </div>
+        <div id="d5">div5</div>
+        <div id="d6">div6</div>
+    </div>
+</div>
+<script>
+    // <!--这几个必须会，非常常用-->
+    console.log($("#d3").next());           // 下一个
+    console.log($("#d3").nextAll());       // 后面所有
+    console.log($("#d3").nextUntil("#d6"));         // 后面直到找到d6
+    console.log($("#d5").prev());            //上一个
+    console.log($("#d5").prevAll());            //上面所有的
+    console.log($("#d5").prevUntil("#d3"));            //上面所有的直到找到d3
+    console.log($("#d2").children());                    // 找到儿子
+    console.log($("#d5").siblings());                        //兄弟标签
+    console.log($("#d5").parent());                         // 找父亲
+    console.log($("#d5").parents());                     // 所有的父亲，一级一级往上找
+    console.log($("#d5").parentsUntil("#d1"));          // 找父亲，直到找到d1
+    console.log($("div").find(".c4"))                   //通过find可以找出这个元素的后代，find函数里面可以写各种选择的表达式
+
+
+
+</script>
+</body>
+</html>
