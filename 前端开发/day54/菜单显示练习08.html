@@ -7,45 +7,45 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<ul id="u1">搜索菜单：
-    <li>
-        <a href="https://www.baidu.com" class="hide">百度</a>
-    </li>
-    <li>
-        <a href="https://360.cn" class="hide">360</a>
-    </li>
-    <li>
-        <a href="https://www.sogou.com/" class="hide">搜狗</a>
-    </li>
-</ul>
+<div class="left-menu">
+    <div class="menu-title">搜索菜单：</div>     //这样有结束，这个标签和下面的标签才是兄弟标签
+    <div class="menu-item hide">        //这样有结束，这个标签和上面的标签才是兄弟标签
+            <ul id="u1">
+                <li><a href="https://www.baidu.com">百度</a></li>
+                <li><a href="https://360.cn">360</a></li>
+                <li><a href="https://www.sogou.com/">搜狗</a></li>
+            </ul>
+    </div>
 
-<ul id="u2">考勤管理：
-    <li>
-        <a href="https://www.baidu.com">考勤计算</a>
-    </li>
-    <li>
-        <a href="https://360.cn">出差</a>
-    </li>
-    <li>
-        <a href="https://www.sogou.com/">打卡</a>
-    </li>
-</ul>
+    <div class="menu-title">考勤管理：</div>
+    <div class="menu-item hide">
+            <ul id="u2">
+                <li><a href="https://www.baidu.com">考勤档案</a></li>
+                <li><a href="https://360.cn">考勤基础数据</a></li>
+                <li><a href="https://www.sogou.com/">考勤计算</a></li>
+            </ul>
 
-<ul id="u3">假期管理：
-    <li>
-        <a href="https://www.baidu.com">请假</a>
-    </li>
-    <li>
-        <a href="https://360.cn">假期汇总</a>
-    </li>
-    <li>
-        <a href="https://www.sogou.com/">假期档案</a>
-    </li>
-</ul>
+    </div>
+
+    <div class="menu-title">假期管理：</div>
+    <div class="menu-item hide">
+            <ul id="u3">
+                <li><a href="https://www.baidu.com">假期档案</a></li>
+                <li><a href="https://360.cn">假期类型</a></li>
+                <li><a href="https://www.sogou.com/">假期汇总</a></li>
+            </ul>
+    </div>
+</div>
+
 
 <script>
-    $("#u1").click(function(){
-        ($("#u1 li").toggleClass("hide"));
+    // 点击事件具体要做的事儿
+    // 1. 找到当前点击菜单下面的.menu-items,把它显示出来(移除hide类)
+    $(".menu-title").click(function () {
+        $(this).next().toggleClass("hide");
+    // 2、移除其他item的hide属性
+        $(this).next().siblings(".menu-item").addClass("hide");
+
     });
 </script>
 </body>
