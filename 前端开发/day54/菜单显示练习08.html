@@ -40,13 +40,28 @@
 
 <script>
     // 点击事件具体要做的事儿
-    // 1. 找到当前点击菜单下面的.menu-items,把它显示出来(移除hide类)
+
+/* 方法1：   // 1. 找到当前点击菜单下面的.menu-items,把它显示出来(移除hide类)
     $(".menu-title").click(function () {
         $(this).next().toggleClass("hide");
     // 2、移除其他item的hide属性
         $(this).next().siblings(".menu-item").addClass("hide");
 
+    });*/
+/*
+方法2
+*/
+    // 点击事件
+    $(".menu-title").click(function () {
+    // 1、找到所有的menu-item,添加hide类
+        $(".menu-item").addClass("hide");
+    // 2、将点击标签下面的标签的hide类删除
+        $(this).next().removeClass("hide");
+
+
     });
+
+
 </script>
 </body>
 </html>
