@@ -1,0 +1,50 @@
+<!--
+height()
+width()
+innerHeight()
+innerWidth()
+outerHeight()
+outerWidth()
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作尺寸示例07</title>
+    <script src="../../jquery-3.4.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .c1{
+            width: 300px;
+            height: 200px;
+            background-color: #cccccc;
+            padding: 5px;
+            border: 7px solid green;
+            margin: 10px;
+        }
+        .c2{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">div1
+        <div class="c2">div2</div>
+    </div>
+</body>
+<script>
+    console.log($(".c1").height());
+    console.log($(".c1").width());
+    console.log($(".c1").innerHeight());        //内容+内填充
+    console.log($(".c1").innerWidth());        //内容+内填充
+    console.log($(".c1").outerHeight());        //内容+内填充padding+边框border
+    console.log($(".c1").outerWidth());
+
+</script>
+</html>
