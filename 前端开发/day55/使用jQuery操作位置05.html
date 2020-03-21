@@ -1,0 +1,64 @@
+<!--
+offset()// 获取匹配元素在当前窗口的相对偏移或设置元素位置
+position()// 获取匹配元素相对父元素的偏移
+scrollTop()// 获取匹配元素相对滚动条顶部的偏移
+scrollLeft()// 获取匹配元素相对滚动条左侧的偏移
+.offset()方法允许我们检索一个元素相对于文档（document）的当前位置。
+
+和 .position()的差别在于： .position()是相对于父级元素的位移。
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作位置</title>
+    <script src="../../jquery-3.4.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #d1{
+            width: 300px;
+            height: 300px;
+            background-color: #cccccc;
+            border: solid;
+
+        }
+        #d2{
+            width: 200px;
+            height: 200px;
+            background-color: #79aec8;
+            border: solid;
+
+        }
+        #d3{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: dashed;
+
+        }
+    </style>
+</head>
+<body>
+<div id="d1">div1
+    <div id="d2">div2
+        <div id="d3">div3
+
+        </div>
+    </div>
+
+<script>
+    console.log($("#d1").offset());
+    console.log($("#d2").offset());
+    console.log($("#d3").offset());     //获取div相对于当前窗口的位置
+    $("#d3").offset({top:50,left:20});          //设置div的位置
+    $("#d2").offset({top:50,left:20});
+    console.log($("#d2").position());            //相对于父元素的位置
+    console.log($("#d2").scrollLeft);
+
+</script>
+</div>
+</body>
+</html>
