@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义模态框示例</title>
+    <script src="../../jquery-3.4.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .c1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*width: 100px;*/
+            /*height: 200px;*/
+            background-color: rgba(0,0,0,0.2);
+            z-index: 998;
+
+        }
+
+        .c2{
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            border: solid;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -200px;
+            z-index: 1000;
+
+        }
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <input id="b1" type="button" name="register" value="点击进入">
+    <div class="c1 hide">
+        <input type="button" name="register">
+    </div>
+
+    <div class="c2 hide">
+        <p>
+            <label>用户名:
+                <input type="text" placeholder="请输入用户名">
+            </label>
+        </p>
+
+        <p>
+            <label>密码:
+                <input type="password" placeholder="请输入密码">
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="submit" name="join" value="登录">
+            </label>
+            <label>
+                <input type="button" id="cancel" value="取消">
+            </label>
+        </p>
+    </div>
+    <script>
+        $("#b1").click(function () {
+            $(".c1").removeClass("hide");
+            $(".c2").removeClass("hide");
+            });
+        $("#cancel").click(function () {
+            $(".c1").toggleClass("hide");
+            $(".c2").toggleClass("hide");
+
+        });
+
+    </script>
+</body>
+</html>
