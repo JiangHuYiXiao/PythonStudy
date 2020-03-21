@@ -1,0 +1,38 @@
+<!--
+javaScript修改CSS样式的方法为：// dEle[0].style.backgroundColor='blue';
+
+jQuery修改CSS样式的方法为：#p1.css("attribute","value");
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery修改css样式04</title>
+    <script src="../../jquery-3.4.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: #ddffdd;
+        }
+        #p1{
+            background-color: powderblue;
+
+        }
+
+    </style>
+</head>
+<body>
+    <p id="p1">
+        <label>
+            <input type="text" name="username" value="jianghu">
+        </label>
+    </p>
+    <script>
+        $("#p1").css("background-color","red");
+        $("#p1").css({"font-size":20,"margin":200,"border":"white"})
+    </script>
+
+</body>
+</html>
