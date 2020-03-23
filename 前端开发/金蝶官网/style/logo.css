@@ -1,0 +1,19 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.logo{
+    margin-left: 350px;
+    margin-top: 10px;
+}
+
+
+li{
+    display: inline-block;
+    margin-left: 40px;
+}
+
