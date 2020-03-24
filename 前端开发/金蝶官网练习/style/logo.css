@@ -1,19 +1,45 @@
-
-
 *{
     margin: 0;
     padding: 0;
     font-size: 16px;
+    background-color: #eeeeee;
 }
+
 
 .logo{
     margin-left: 350px;
     margin-top: 10px;
 }
 
-
-li{
+#ul1>li{
     display: inline-block;
     margin-left: 40px;
+
+}
+#ul2{
+    position: fixed;
+    right: 0;
+}
+#ul2>li{
+    margin-bottom: 0;
 }
 
+h1{
+    font-size: 32px;
+}
+h3{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#d3{
+    margin-top: 20px;
+}
+#d3>div{
+    display: inline-block;
+    width: 370px;
+    height: 325px;
+    background-color: #fff;
+    margin: 10px;
+
+}
