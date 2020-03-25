@@ -144,10 +144,14 @@ h3 {
     background-color: #2587ee;
     color: #ffffff;
     font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 90px;
 }
 .connectwomen{
-    margin-left: 150px;
+    margin-left: 160px;
     display: inline-block;
+    background-color: #2587ee;
+
 
 }
 .connectimg{
@@ -158,5 +162,49 @@ h3 {
 
 }
 .h6{
-  background-color: #2587ee;
+    background-color: #2587ee;
+    font-size: 24px;
+    color: white;
+    margin: 10px;
 }
+
+input[type="text"]{
+    width: 223px;
+    height: 28px;
+    padding: 6px 10px;
+    background-color: #ffffff;
+    margin-left: 30px;
+}
+
+input[type="submit"]{
+    width: 122px;
+    /*height: 22px;*/
+    padding: 9px;
+    border: none;
+    background-color: #00ccfe;
+    color: white;
+    margin-left: 30px;
+}
+
+input[type="button"]{
+    width: 122px;
+    /*height: 22px;*/
+    padding: 9px;
+    border: solid white 1px;
+    background-color: #2587ee;
+    color: white;
+    margin-left: 30px;
+}
+
+.six>div{
+    display: inline-block;
+    color: #333333;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+}
+a{
+    text-decoration: none;
+    margin-left: 28px;
+
+ }

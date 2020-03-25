@@ -18,7 +18,7 @@ overline	定义文本上的一条线。
 line-through	定义穿过文本下的一条线。
 inherit	继承父元素的text-decoration属性的值。
 
-3、常用的为去掉a标签默认的自划线：
+3、常用的为去掉a标签默认的下划线：
 a {
   text-decoration: none;
 }
