@@ -260,3 +260,12 @@ a{
     /*position: absolute;*/
     margin-left: 400px;
 }
+
+#d9{
+    display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+}
+.tabletitle{
+    margin-left: 50px;
+}
