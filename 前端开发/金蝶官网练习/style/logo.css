@@ -144,16 +144,22 @@ h3 {
     background-color: #2587ee;
     color: #ffffff;
     font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 90px;
+    /*margin-top: 30px;*/
+    /*margin-bottom: 90px;*/
+    padding: 30px;
+}
+.connectus{
+    /*margin: 30px 60px;*/
+    /*background-color: #2587ee;*/
+
 }
 .connectwomen{
-    margin-left: 160px;
+    /*margin-left: 200px;*/
     display: inline-block;
     background-color: #2587ee;
-
-
+    margin: 30px 70px;
 }
+
 .connectimg{
     background-color: #2587ee;
 }
@@ -163,7 +169,7 @@ h3 {
 }
 .h6{
     background-color: #2587ee;
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     margin: 10px;
 }
@@ -208,3 +214,49 @@ a{
     margin-left: 28px;
 
  }
+
+.connecth6{
+    background-color: #2587ee;
+    color: white;
+}
+
+.cell{
+    margin: 30px;
+}
+
+/*.newsh6{*/
+    /*color: #8e969f;*/
+    /*font-size: 20px;*/
+/*}*/
+.h1,.newtitle,.kb{
+    background-color: white;
+}
+
+.kingdeegzh,.xscgzh{
+    float: left;
+    margin: 30px 30px 10px 30px;
+}
+
+.kingdeegzhinfo,.xscgzhinfo{
+    font-size: 12px;
+    width: 100px;
+}
+.gzh,.sumtable{
+    float: left;
+}
+
+.banquan{
+    margin: 60px;
+}
+
+/*.tablediv{*/
+    /*height: ;*/
+/*}*/
+.kingdeproduct,.kingdeproduct li{
+    display: inline-block;
+}
+
+.china{
+    /*position: absolute;*/
+    margin-left: 400px;
+}
