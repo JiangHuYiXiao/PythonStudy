@@ -234,12 +234,13 @@ a{
 
 .kingdeegzh,.xscgzh{
     float: left;
-    margin: 30px 30px 10px 30px;
+    margin: 10px;
 }
 
 .kingdeegzhinfo,.xscgzhinfo{
     font-size: 12px;
     width: 100px;
+    margin: 0 20px 20px 0;
 }
 .gzh,.sumtable{
     float: left;
@@ -255,33 +256,48 @@ a{
 .kingdeproduct,.kingdeproduct li{
     display: inline-block;
 }
+/*金蝶logo样式*/
+.kingdeelogo,.kingdeechildproduct{
+    /*height: 100%;*/
+    margin-left: 10px;
+}
+/*工商logo样式*/
+.china,.gongshang,.kingdeelogo{
+    margin: 20px;
+}
 
-.china{
-    /*position: absolute;*/
-    margin-left: 200px;
-    height: 100%;
-}
-.gongshang{
-    margin: 10px;
-}
 #d9{
     display: flex;
     /*flex-wrap: wrap;*/
     justify-content: center;
 }
-.tabletitle{
+.tabletitle,.tablebody{
     /*margin-left: 50px;*/
+    align: left;
 }
+
+/*table thead, tbody tr {*/
+/*    display: table;*/
+/*    !*width: 100%;*!*/
+/*    table-layout: fixed;*/
+/*}*/
 .tablediv{
     font-size: 14px;
     color: #7a7a7a;
 }
 
-a {
+a{
     color: #7a7a7a;
     font-size: 14px;
 }
 
+/*版权样式*/
+.copy{
+    color: #7a7a7a;
+    line-height: 88px;
+    height: 88px;
+
+}
 .languageselect{
     margin-left: 40px;
 }
@@ -290,9 +306,9 @@ a {
     /*flex-wrap: wrap;*/
     justify-content: center;
 }
-.power{
-    margin: 0 auto;
-}
+/*.power{*/
+/*    margin-left: 100px;*/
+/*}*/
 .languageselect{
     border: 0;
 }
