@@ -258,14 +258,41 @@ a{
 
 .china{
     /*position: absolute;*/
-    margin-left: 400px;
+    margin-left: 200px;
+    height: 100%;
 }
-
+.gongshang{
+    margin: 10px;
+}
 #d9{
     display: flex;
     /*flex-wrap: wrap;*/
     justify-content: center;
 }
 .tabletitle{
-    margin-left: 50px;
+    /*margin-left: 50px;*/
+}
+.tablediv{
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+a {
+    color: #7a7a7a;
+    font-size: 14px;
+}
+
+.languageselect{
+    margin-left: 40px;
+}
+.flexbox{
+    display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+}
+.power{
+    margin: 0 auto;
+}
+.languageselect{
+    border: 0;
 }
