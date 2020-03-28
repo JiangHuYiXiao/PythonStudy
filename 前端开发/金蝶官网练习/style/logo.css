@@ -21,13 +21,13 @@
 
 }
 
-#ul2 {
+#help{
     position: fixed;
     right: 0;
 }
 
-#ul2 > li {
-    margin-bottom: 0;
+#help img{
+    float: right;
 }
 
 h1 {
@@ -113,13 +113,13 @@ h3 {
     color: #2285ed;
     /*height: 100px;*/
 }
-.gsf{
-    background-color: #fff;
+.business_story{
+    background-color: #eeeeee;
 }
 .gs{
     width: 375px;
     height: 459px;
-    background-color: white;
+    /*background-color: white;*/
     /*border: solid;*/
     display: inline-block;
 }
@@ -173,7 +173,45 @@ h3 {
     color: white;
     margin: 10px;
 }
+/*新闻事件*/
+.news_event{
+    height: 150px;
+    background-color: #ffffff;
+}
+/*设置文字垂直居中*/
+.news_event>h1{
+    line-height: 100px;
+    height: 100px;
+    background-color: #ffffff;
+}
 
+.kingdeeevent{
+    margin: 10px 0 20px 0;
+}
+
+.news_event>span{
+    background-color: #ffffff;
+}
+
+.kingdeeevent>div{
+    font-size: 12px;
+    text-align: left;
+}
+
+.duihua_time img,.caibao_time img,.saas_time img{
+    margin-left: 200px;
+}
+
+.duihua_time span,.caibao_time span,.saas_time span{
+    margin-left: 20px;
+}
+
+#IDC,#KD2019,#DX{
+    /*text-decoration: underline;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: #303030;
+}
 input[type="text"]{
     width: 223px;
     height: 28px;
@@ -211,7 +249,7 @@ input[type="button"]{
 }
 a{
     text-decoration: none;
-    margin-left: 28px;
+    /*margin-left: 28px;*/
 
  }
 
@@ -241,21 +279,31 @@ a{
     font-size: 12px;
     width: 100px;
     margin: 0 20px 20px 0;
+    color: #7a7a7a;
 }
 .gzh,.sumtable{
     float: left;
+}
+
+/**/
+.serverphone>div{
+    margin: 8px;
+    color: #7a7a7a;
+
 }
 
 .banquan{
     margin: 60px;
 }
 
-/*.tablediv{*/
-    /*height: ;*/
-/*}*/
+/*金蝶旗下品牌*/
 .kingdeproduct,.kingdeproduct li{
     display: inline-block;
 }
+.kingdeproduct a{
+    margin-left: 20px;
+}
+
 /*金蝶logo样式*/
 .kingdeelogo,.kingdeechildproduct{
     /*height: 100%;*/
@@ -285,6 +333,7 @@ a{
     font-size: 14px;
     color: #7a7a7a;
 }
+
 
 a{
     color: #7a7a7a;
