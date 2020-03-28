@@ -113,17 +113,21 @@ h3 {
     color: #2285ed;
     /*height: 100px;*/
 }
+.xfxb_logo,.wsjt_logo,.gfkj_logo{
+    /*float: left;*/
+    margin-left: 0;
+}
+
 .business_story{
     background-color: #eeeeee;
 }
-.gs{
+.xfxb,.gfkj,.wsjt{
     width: 375px;
     height: 459px;
-    /*background-color: white;*/
-    /*border: solid;*/
     display: inline-block;
 }
-.gs img{
+
+.business_story img{
     background-color: #fff;
 }
 
