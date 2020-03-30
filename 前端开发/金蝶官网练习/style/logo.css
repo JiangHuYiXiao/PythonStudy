@@ -120,21 +120,24 @@ h3 {
 
 .business_story{
     background-color: #eeeeee;
+    font-size: 0;
 }
 
 .xfxb,.gfkj,.wsjt{
     width: 375px;
     height: 459px;
-    float: left;
+    display: inline-block;
 }
 .xfxb_boss,.wsjt_boss,.gfkj_boss{
-    float: left;
+    /*float: left;*/
+    display: inline-block;
+
 }
 .xfxb_logo,.wsjt_logo,.gfkj_logo{
-    float: left;
+    display: inline-block;
 }
 .xfxb_logo_img{
-
+/**/
 }
 
 
