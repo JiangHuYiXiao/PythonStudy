@@ -107,25 +107,37 @@ h3 {
     line-height: 72px;
 }
 
-.gdgs,.news{
+
+
+/*行业标杆企业成功故事样式*/
+#business_more_story{
     position: absolute;
     margin-left: 350px;
     color: #2285ed;
-    /*height: 100px;*/
-}
-.xfxb_logo,.wsjt_logo,.gfkj_logo{
-    /*float: left;*/
-    margin-left: 0;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .business_story{
     background-color: #eeeeee;
 }
+
 .xfxb,.gfkj,.wsjt{
     width: 375px;
     height: 459px;
-    display: inline-block;
+    float: left;
 }
+.xfxb_boss,.wsjt_boss,.gfkj_boss{
+    float: left;
+}
+.xfxb_logo,.wsjt_logo,.gfkj_logo{
+    float: left;
+}
+.xfxb_logo_img{
+
+}
+
+
 
 .business_story img{
     background-color: #fff;
@@ -187,6 +199,13 @@ h3 {
     line-height: 100px;
     height: 100px;
     background-color: #ffffff;
+}
+.more_news{
+    position: absolute;
+    margin-left: 350px;
+    color: #2285ed;
+    background-color: #ffffff;
+
 }
 
 .kingdeeevent{
