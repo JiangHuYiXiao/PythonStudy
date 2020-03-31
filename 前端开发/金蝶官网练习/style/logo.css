@@ -240,12 +240,19 @@ h3 {
     font-weight: bold;
     color: #303030;
 }
+
+.username_input,.cellphone_input{
+    float: left;
+    background-color: #2587ee;
+    vertical-align: baseline;
+}
 input[type="text"]{
     width: 223px;
     height: 28px;
     padding: 6px 10px;
     background-color: #ffffff;
     margin-left: 30px;
+    float: left;
 }
 
 input[type="submit"]{
@@ -268,6 +275,13 @@ input[type="button"]{
     margin-left: 30px;
 }
 
+
+.user_need,.cell_need{
+    background-color: #2587ee;
+    width: 200px;
+    height: 20px;
+    color: #FF776B;
+}
 .six>div{
     display: inline-block;
     color: #333333;
@@ -350,6 +364,7 @@ a{
 .tabletitle,.tablebody{
     /*margin-left: 50px;*/
     align: left;
+
 }
 
 /*table thead, tbody tr {*/
