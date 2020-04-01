@@ -120,15 +120,17 @@ h3 {
 
 .business_story{
     background-color: #eeeeee;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    /*display: inline-block;*/
+    /**display:inline;*/
 
 }
 
 .xfxb,.gfkj,.wsjt{
     width: 375px;
     height: 459px;
-    /*display: inline-block;*/
     float: left;
+    /*display: inline-block;*/
 }
 .xfxb_boss,.wsjt_boss,.gfkj_boss{
     /*float: left;*/
@@ -142,11 +144,10 @@ h3 {
 /**/
 }
 
-
-
-.business_story img{
-    background-color: #fff;
+.business{
+    display: inline-block;
 }
+
 
 .duihua,.caibao,.saas{
     display: inline-block;
@@ -240,11 +241,19 @@ h3 {
     font-weight: bold;
     color: #303030;
 }
+.div_center{
+    display: inline-block;
+    /**display:inline;*/
+    background-color: #2587ee;
+
+}
+
 
 .username_input,.cellphone_input{
     float: left;
     background-color: #2587ee;
     vertical-align: baseline;
+    height: 28px;
 }
 input[type="text"]{
     width: 223px;
@@ -257,7 +266,7 @@ input[type="text"]{
 
 input[type="submit"]{
     width: 122px;
-    /*height: 22px;*/
+    height: 28px;
     padding: 9px;
     border: none;
     background-color: #00ccfe;
@@ -267,7 +276,7 @@ input[type="submit"]{
 
 input[type="button"]{
     width: 122px;
-    /*height: 22px;*/
+    height: 28px;
     padding: 9px;
     border: solid white 1px;
     background-color: #2587ee;
