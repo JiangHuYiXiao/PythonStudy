@@ -1,40 +1,28 @@
-// console.log($("#a1"));
-// $(".ycq").hover(
-//     function () {
-//         console.log($(this).has("#a1"));
-//     },
-//     function () {
-//         $(this).addClass("hide");
-//
-//     });
+// 1、校验input输入是否为空
 
+//查找提交需求按钮
+var sumbitEle = document.getElementById("sumbit");
+//查找姓名输入框
+var usernameEle = document.getElementById("username");
+//查找电话输入框
+var cellphoneEle = document.getElementById("cellphone");
+//查找姓名输入框下面的div
+var user_needEle = document.getElementsByClassName("user_need");
 
-// 校验input输入是否为空
-$inputEle = $(":text");
-$("#sumbit").click(function () {
-    console.log($inputEle[0]);
-    // for (var i=0;i<$inputEle.length;i++){
-    //     if ($inputEle[i].val().trim().length===0){
-    //         var name = $inputEle.attr(name);
-    //         var html="<div>name不能为空</div>";
-    //         $inputEle.after(html)
-    //     }
-    // }
-return false;
-});
+//查找电话号码下面的div
+var cell_needEle = document.getElementsByClassName("cell_need");
 
-
-    // $("#b1").click(function () {  /*找到b1*/
-    //     var $needEles = $(".need");/*找到need赋值给$needEles*/
-    //     for (var i=0;i<$needEles.length;i++){
-    //         if ($($needEles[i]).val().trim().length === 0) {
-    //             /*赋值labelName是用户名和密码这两个词*/
-    //                                             /*找父类的文本去空格去冒号*/
-    //             var labelName = $($needEles[i]).parent().text().trim().slice(0,-1);/*去掉冒号*/
-    //             /* 用户名下面的内容就是文本框，添加一个内容***不能为空*/
-    //             $($needEles[i]).next().text( labelName +"不能为空!");
-    //         }
-    //     }
-    //     return false;/*提交按钮有自动提交的功能，写这句话就是为了不提交*/
-    // })
+// 给提交需求按钮绑定事件
+sumbitEle.onclick = function () {
+    //对姓名输入框取值
+    if (usernameEle.value.trim().length === 0) {
+        //  显示姓名输入框下面的div
+        user_needEle[0].classList.remove("hide")
+    }
+    if (cellphoneEle.value.trim().length === 0) {
+        //  显示姓名输入框下面的div
+        cell_needEle[0].classList.remove("hide")
+    }
+    return false;
+};
 
