@@ -26,3 +26,22 @@ sumbitEle.onclick = function () {
     return false;
 };
 
+
+//2、右侧帮助栏js
+//查找联系我们的标签
+var cell_us_imgEle = document.getElementsByClassName("cell_us_img");
+//绑定事件
+cell_us_imgEle[0].onmouseover = function () {
+
+
+};
+
+
+
+// 3、金蝶云，为企业成长而生js
+
+var ycqEle = document.getElementsByClassName("ycq");
+ycqEle.onmouseover = function () {
+
+};
+

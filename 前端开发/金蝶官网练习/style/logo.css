@@ -29,6 +29,51 @@
 #help img{
     float: right;
 }
+.cell_us{
+
+}
+.cell_us_info{
+    height: 100px;
+    width: 400px;
+    float: left;
+}
+/*金蝶云为企业成长而生样式*/
+.kingdee_yun{
+    background-color: #eeeeee;
+}
+.a1div{
+    float: left;
+}
+
+.trydiv{
+    float: right;
+}
+
+.ycq_img,.yxk_img,.jdy_img,.EASCloud_img,.gyy_img,.yun_img{
+    background-color: #fff;
+}
+#yxk_logo, #jdy_logo, #ycq_logo, #EASCloud_logo, #gyy_logo, #yun_logo {
+    margin-top: 30px ;
+    margin-left: 30px;
+    float: left;
+    background-color: #fff;
+
+}
+
+.yxk, .jdy, .ycq, .EASCloud, .gyy, .yun {
+    float: left;
+}
+
+.custom_h1{
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+.custom_h3{
+    margin: 45px 0;
+    background-color: #fff;
+}
+
 
 h1 {
     font-size: 32px;
@@ -37,6 +82,7 @@ h1 {
 h3 {
     font-size: 16px;
     margin-top: 20px;
+    /*height: 60px;*/
 }
 
 #d3, #d4 {
@@ -62,18 +108,11 @@ h3 {
     margin: 10px;
 }
 
-#yxk, #jdy, #ycq, #EASCloud, #gyy, #yun {
-    background-color: #fff;
-    /*font-size: 0;*/
-}
 
-.yxk, .jdy, .ycq, .EASCloud, .gyy, .yun {
-    float: left;
-}
 
-.h1, .h3 {
-    background-color: #fff
-}
+/*.h1, .h3 {*/
+    /*background-color: #fff*/
+/*}*/
 
 
 .hide{
