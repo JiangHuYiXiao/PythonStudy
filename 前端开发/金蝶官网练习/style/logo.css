@@ -110,6 +110,8 @@ h3 {
 
 
 /*行业标杆企业成功故事样式*/
+
+/*更多故事*/
 #business_more_story{
     position: absolute;
     margin-left: 350px;
@@ -119,12 +121,21 @@ h3 {
 }
 
 .business_story{
-    background-color: #eeeeee;
-    /*margin: 0 auto;*/
-    /*display: inline-block;*/
-    /**display:inline;*/
+    margin-bottom: 30px;
 
 }
+.business_story_title{
+    margin-top: 30px;
+}
+
+.business_story_info{
+    margin: 20px 0;
+}
+.business_story_h6{
+    font-size: 20px;
+    color: #8e969f;
+}
+
 
 .xfxb,.gfkj,.wsjt{
     width: 375px;
@@ -137,13 +148,45 @@ h3 {
     /*display: inline-block;*/
 
 }
-.xfxb_logo,.wsjt_logo,.gfkj_logo{
-    /*display: inline-block;*/
+
+
+.xfxb_after,.wsjt_after,.gfkj_after{
+    width: 349px;
 }
-.xfxb_logo_img{
-/**/
+.xfxb_logo{
+    height: 90px;
+     /*垂直居中*/
+    line-height: 90px;
 }
 
+.xfxb_logo,.wsjt_logo,.gfkj_logo{
+    background-color: white;
+
+}
+.boosname{
+    float: right;
+    height: 20px;
+}
+.xfxb_logo_img{
+    background-color: white;
+    /*垂直居中*/
+    vertical-align: middle;
+}
+
+
+.xfxb_info,.wsjt_info,.gfkj_info{
+    background-color: white;
+    height: 70px;
+}
+
+.xfxb_info a,.wsjt_info a,.gfkj_info a{
+    font-size: 16px;
+    background-color: white;
+    font-weight: 700;
+    line-height: 70px;
+    color: black;
+
+}
 .business{
     display: inline-block;
 }
@@ -313,10 +356,7 @@ a{
     margin: 30px;
 }
 
-/*.newsh6{*/
-    /*color: #8e969f;*/
-    /*font-size: 20px;*/
-/*}*/
+
 .h1,.newtitle,.kb{
     background-color: white;
 }
