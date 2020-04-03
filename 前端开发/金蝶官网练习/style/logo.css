@@ -43,14 +43,37 @@
 }
 .a1div{
     float: left;
+    background-color: #fff;
 }
+.a1div a,.a1div img{
+    background-color: #fff;
+    color: #2285ed;
+    margin-left: 20px;
+}
+.a1div img{
+    margin-left: 10px;
 
+}
 .trydiv{
     float: right;
+    background-color: #2285ed;
+    height: 25px;
+    width: 90px;
+    border-radius: 12.5px;
+    margin-right: 20px;
 }
+.trydiv a{
+    background-color: #2285ed;
+    color: #fff;
 
+
+
+}
 .ycq_img,.yxk_img,.jdy_img,.EASCloud_img,.gyy_img,.yun_img{
     background-color: #fff;
+    width: 370px;
+    height: 84px;
+
 }
 #yxk_logo, #jdy_logo, #ycq_logo, #EASCloud_logo, #gyy_logo, #yun_logo {
     margin-top: 30px ;
@@ -72,11 +95,14 @@
 .custom_h3{
     margin: 45px 0;
     background-color: #fff;
+    font-weight: normal;
+    color: #8e969f;
+
 }
 
 
 h1 {
-    font-size: 32px;
+    font-size: 26px;
 }
 
 h3 {

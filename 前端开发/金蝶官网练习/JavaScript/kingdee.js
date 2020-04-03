@@ -39,9 +39,28 @@ cell_us_imgEle[0].onmouseover = function () {
 
 
 // 3、金蝶云，为企业成长而生js
-
 var ycqEle = document.getElementsByClassName("ycq");
-ycqEle.onmouseover = function () {
+var yxkEle = document.getElementsByClassName("yxk");
+var jdyEle = document.getElementsByClassName("jdy");
+var EASCloudEle = document.getElementsByClassName("EASCloud");
+var gyyEle = document.getElementsByClassName("gyy");
+var yunEle = document.getElementsByClassName("yun");
+var a1divEle = document.getElementsByClassName("a1div");
+var trydivEle = document.getElementsByClassName("trydiv");
+var Attrayhide = [ycqEle[0],yxkEle[0],jdyEle[0],EASCloudEle[0],gyyEle[0],yunEle[0]];
 
-};
-
+// 定义一个隐藏函数
+function hidefoo() {
+    for (var i = 0; i < Attrayhide.length; i++) {
+        Attrayhide[i].onmouseover = function () {
+            this.lastElementChild.previousElementSibling.classList.remove("hide");
+            this.lastElementChild.classList.remove("hide");
+        };
+        Attrayhide[i].onmouseout = function () {
+            this.lastElementChild.previousElementSibling.classList.add("hide");
+            this.lastElementChild.classList.add("hide");
+        }
+    }
+}
+//调用函数
+hidefoo();
