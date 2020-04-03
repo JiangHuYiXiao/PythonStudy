@@ -41,6 +41,18 @@
 .kingdee_yun{
     background-color: #eeeeee;
 }
+.kindee_yun_h1{
+    margin-top: 20px;
+}
+
+
+.kindee_yun_h3{
+    font-size: 20px;
+    color: #8e969f;
+    font-weight: normal;
+    margin: 10px 0 20px;
+}
+
 .a1div{
     float: left;
     background-color: #fff;
@@ -102,7 +114,7 @@
 
 
 h1 {
-    font-size: 26px;
+    font-size: 32px;
 }
 
 h3 {
@@ -134,11 +146,19 @@ h3 {
     margin: 10px;
 }
 
+/*了解我们的云服务样式*/
 
+.yun_serverh1{
+    margin: 20px 0;
+}
 
-/*.h1, .h3 {*/
-    /*background-color: #fff*/
-/*}*/
+.yun_serverh6{
+    font-size: 20px;
+    color: #8e969f;
+    font-weight: normal;
+    margin: 20px 0 30px;
+}
+
 
 
 .hide{
@@ -199,6 +219,7 @@ h3 {
 .business_story_h6{
     font-size: 20px;
     color: #8e969f;
+    font-weight: normal;
 }
 
 
@@ -313,6 +334,12 @@ h3 {
     line-height: 100px;
     height: 100px;
     background-color: #ffffff;
+}
+
+.newsh6{
+    font-size: 20px;
+    color: #8e969f;
+    font-weight: normal;
 }
 .more_news{
     position: absolute;
