@@ -64,3 +64,5 @@ function hidefoo() {
 }
 //调用函数
 hidefoo();
+
+// 4、

@@ -1,91 +1,115 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-  <!--<meta charset="UTF-8">-->
-  <!--<meta http-equiv="x-ua-compatible" content="IE=edge">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-  <!--<title>hover示例</title>-->
-  <!--<style>-->
-    <!--* {-->
-      <!--margin: 0;-->
-      <!--padding: 0;-->
-    <!--}-->
-    <!--.nav {-->
-      <!--height: 40px;-->
-      <!--width: 100%;-->
-      <!--background-color: #3d3d3d;-->
-      <!--position: fixed;-->
-      <!--top: 0;-->
-    <!--}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最简单的轮播效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        .box {
+            width: 1920px;
+            height: 560px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            padding: 5px;
 
-    <!--.nav ul {-->
-      <!--list-style-type: none;-->
-      <!--line-height: 40px;-->
-    <!--}-->
+        }
+        .inner{
+            width: 1920px;
+            height: 560px;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner img{
+            width: 1920px;
+            height: 560px;
+            vertical-align: top
+        }
+        ul {
+            width: 100%;
+            position: absolute;
+            list-style: none;
+            left:0;
+            top: 0;
+        }
+        .inner li{
+            float: left;
 
-    <!--.nav li {-->
-      <!--float: left;-->
-      <!--padding: 0 10px;-->
-      <!--color: #999999;-->
-      <!--position: relative;-->
-    <!--}-->
-    <!--.nav li:hover {-->
-      <!--background-color: #0f0f0f;-->
-      <!--color: white;-->
-    <!--}-->
+        }
 
-    <!--.clearfix:after {-->
-      <!--content: "";-->
-      <!--display: block;-->
-      <!--clear: both;-->
-    <!--}-->
+        ol {
+            position: absolute;
+            height: 20px;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+            padding: 5px;
+        }
+        ol li{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #fff;
+            margin: 5px;
+            cursor: pointer;
 
-    <!--.son {-->
-      <!--position: absolute;-->
-      <!--top: 40px;-->
-      <!--right: 0;-->
-      <!--height: 50px;-->
-      <!--width: 100px;-->
-      <!--background-color: #00a9ff;-->
-      <!--display: none;-->
-    <!--}-->
+        }
+        ol .current{
+            background-color: red;
+        }
+        #arr{
+            display: none;
+        }
+        #arr span{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #fff;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #000;
+            opacity: 0.5;
+            border: 1px solid #fff;
+        }
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
 
-    <!--.hover .son {-->
-      <!--display: block;-->
-    <!--}-->
-  <!--</style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="nav">-->
-  <!--<ul class="clearfix">-->
-    <!--<li>登录</li>-->
-    <!--<li>注册</li>-->
-    <!--<li>购物车-->
-      <!--<p class="son hide">-->
-        <!--空空如也...-->
-      <!--</p>-->
-    <!--</li>-->
-  <!--</ul>-->
-<!--</div>-->
-<!--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>-->
-<!--<script>-->
-<!--$(".nav li").hover(-->
-  <!--function () {-->
-    <!--$(this).addClass("hover");-->
-  <!--},-->
-  <!--function () {-->
-    <!--$(this).removeClass("hover");-->
-  <!--}-->
-<!--);-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
-<html>
-    <body style="text-align:center">
-        <div style="display:inline-block; *display:inline; zoom:1;">
-          <div style="float:left">123243</div>
-          <div style="float:left">6576876</div>
-          <div style="float:left">2433665</div>
+<body>
+<div class="box" id="box">
+    <div class="inner">
+        <!--轮播图-->
+        <ul>
+            <li><a href="#"><img src="./img\caib.png" alt=""></a></li>
+            <li><a href="#"><img src="./img\ban-pc.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img\geli1920_560.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img\rouyu560.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img\banner.jpg" alt=""></a></li>
+        </ul>
+        <ol class="bar">
+            <!--小按钮数量无法确定，由js动态生成-->
+        </ol>
+        <!--左右焦点-->
+        <div id="arr">
+              <span id="left"> <</span>
+              <span id="right">></span>
         </div>
-    </body>
+
+    </div>
+</div>
+
+</body>
 </html>
