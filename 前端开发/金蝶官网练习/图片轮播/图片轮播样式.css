@@ -1,0 +1,86 @@
+/*设置通用样式：去除margin和padding*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*设置block样式*/
+.block{
+    height: 560px;
+    width: 1920px;
+    overflow: hidden;
+    margin: 100px auto;
+    position: relative;
+    border: 1px solid black;
+    /*box-sizing: border-box;  !*把borders和padding全都包含在定义的宽高里面*!*/
+
+}
+
+.big_box{
+    position: absolute;
+    width: 11520px;
+    height: 560px;
+}
+
+/*设置过度效果*/
+.nav{
+    transition: margin-left 0.5s linear;
+}
+
+/*设置图片的样式*/
+.box{
+    width: 1920px;
+    height: 560px;
+    float: left;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.spot{
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    bottom: 5px;
+}
+
+.spot_list {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    line-height: 30px;
+    font-weight: bolder;
+    margin: 10px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+}
+.btn {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    margin: 0 auto;
+    top: 160px;
+}
+
+.left_btn, .right_btn {
+    width: 30px;
+    height: 80px;
+    z-index: 15;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    line-height: 80px;
+    border-radius: 8px;
+
+}
+
+.left_btn {
+    float: left;
+}
+
+.right_btn {
+    float: right;
+}
