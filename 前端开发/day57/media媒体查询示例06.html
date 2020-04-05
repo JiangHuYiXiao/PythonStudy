@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media媒体查询示例06</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">       <!--适配移动端-->
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.css" rel="stylesheet">    <!-- 引入normalize去除默认样式-->
+    <script src="../../jquery-3.4.1.min.js"></script>
+    <style>
+        .c1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /*@media screen and (max-width: 300px)*/
+        /*and后面一定要加空格*/
+        @media screen and (max-width:400px){
+            .c1{
+                background-color: green;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <!--使用media必须先使用viewport-->
+    <div class="c1"></div>
+</body>
+</html>
