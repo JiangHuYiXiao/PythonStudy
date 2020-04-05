@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap示例栅格系统05</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">       <!--适配移动端-->
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.css" rel="stylesheet">    <!-- 引入normalize去除默认样式-->
+    <script src="../../jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist\css\bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!--将container容器分成12列，平均分-->
+        <div class="row">
+            <div class="col-md-1">列1</div>   <!--屏幕大于992px用md-->
+            <div class="col-md-1">列2</div>
+            <div class="col-md-1">列3</div>
+            <div class="col-md-1">列4</div>
+            <div class="col-md-1">列5</div>
+            <div class="col-md-1">列6</div>
+            <div class="col-md-1">列7</div>
+            <div class="col-md-1">列8</div>
+            <div class="col-md-1">列9</div>
+            <div class="col-md-1">列10</div>
+            <div class="col-md-1">列11</div>
+            <div class="col-md-1">列12</div>
+        </div>
+        <!--将container容器分成2列，一个占8列，一个占4列-->
+        <div class="row">
+            <div class="col-md-8">列1</div>
+            <div class="col-md-4">列2</div>
+        </div>
+        <!--将container容器分成3列，每列占4列-->
+        <div class="row">
+            <div class="col-sm-4">列1</div>          <!--屏幕大于768px用sm-->
+            <div class="col-sm-4">列2</div>
+            <div class="col-sm-4">列3</div>
+        </div>
+        <!--将容器container分成两列每列占6列-->
+        <div class="row">
+            <div class="col-xs-6">列1</div>          <!--屏幕小于768px用xs-->
+            <div class="col-xs-6">列2</div>
+        </div>
+    </div>
+</body>
+</html>
