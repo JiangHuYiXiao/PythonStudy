@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 # 1、数字（int）
+
 a = 2
 b = 8
 c = a + b
@@ -22,15 +23,32 @@ print(name,type(name))
 sex = '男'
 print(name + sex)
 print(name * 8)
+
 '''
-注意：
+注意1：
 多行字符串需要使用三个单引号或者三个双引号
 已经存在单引号后，只能使用双引号
 '''
 
+
+
 '''
-\n,默认前面不加转义符的话，就是换行
-\\n ,表示\n
+注意2：
+1、换行符\n：
+2、转义符\：\n,默认前面不加转义符的话，就是换行。\\n ,表示\n。忽略转义符只需要在前面加上r\\n,print结果为\\n
+3、字符串拼接：使用+号或者使用空格print(a+b),print('a','b')
+4、字符串引用：
+# 1、使用f'字符串'{}
+    a = 'jianghu'
+    b = f'yixiao{a}'
+    print(b)
+    
+# 2、使用format格式化
+    a = "jianghu"
+    c = "shuaige"
+    b = "yixiao{}{}"
+    print(b.format(a,c))
+
 '''
 
 msg = '''
