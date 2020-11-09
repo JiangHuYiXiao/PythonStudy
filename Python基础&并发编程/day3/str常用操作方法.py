@@ -77,7 +77,7 @@ print(s18)    #result: @#jianghuyixiao
 
 # 13、删除左边的空格或者特定字符
 str5 = ' %%jianghuyixiao&&&^%$$    '
-s19 = str5.strip('% ')
+s19 = str5.lstrip('% ')
 print(s19)    #result:jianghuyixiao&&&^%$$
 
 # 举例：一般我们在用户输入的时候难免会输入空格，这个时候就需要我们使用strip进行去除空格
