@@ -21,11 +21,16 @@ print(type(tuple1))
 # 2、字典格式是key-value的数据类型,key是不可变的，key必须可以hash，value可变
 # 3、查找速度快（是通过比二分法更快的方式进行查找的，通过hash函数将key转为数字，然后比较大小，进行查找）所以key必须可以hash
 # 4、可存放任意多个值不唯一，
+# 定义一个空字典：
+dict2 = {}
 dict = {'name':'jianghu','age':'17'}
 print(dict)
 print(type(dict))
 
 # 7、集合是一个无序的，不重复的数据集合，用{}表示
+# 定义一个空集合使用：
+a = set()
+print(type(a))
 set = {11,12,'12231'}
 print(set)
 print(type(set))
