@@ -21,7 +21,7 @@ print(os.getcwd())          # F:\PythonStudy
 # 5、os.mkdir('dirname')生成单级目录
 os.mkdir('jianghu')
 
-# 6、os.rmdir('dirname')生成单级目录
+# 6、os.rmdir('dirname')删除单级目录
 os.rmdir('jianghu')     # 若目录为空，则不能删除
 
 
