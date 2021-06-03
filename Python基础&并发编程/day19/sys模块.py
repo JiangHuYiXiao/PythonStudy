@@ -15,7 +15,7 @@ print(sys.version)      #   3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MS
 # exit(1)
 
 # 4、path  返回模块搜索路径，先去找该文件的路径，再去找改文件上一级，再去找python解释器的目录，
-print(sys.path)
+print()
 # ['F:\\PythonStudy\\day19', 'F:\\PythonStudy',
 # 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python37.zip',
 #  'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\DLLs',

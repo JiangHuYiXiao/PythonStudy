@@ -17,7 +17,7 @@ def listener(filename):
         while True:
             line = file.readline()
             if line.strip():
-                yield(line.strip())
+                (line.strip())
 
 res = listener('file1')
 count = 0
