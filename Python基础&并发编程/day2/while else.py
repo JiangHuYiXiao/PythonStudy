@@ -12,6 +12,6 @@ a = 0
 while a < 5:
     print(a)
     a += 1
-    break
+    # break
 else:
     print('循环结束')  # 0
