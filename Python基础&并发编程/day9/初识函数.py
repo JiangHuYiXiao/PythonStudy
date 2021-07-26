@@ -175,18 +175,39 @@ print(my_sum(1,3))
 # 1、位置参数：必须传，且有几个参数传几个
 # 2、*args：动态参数，多个位置参数
 # 3、默认参数:如果不传，则用默认的，传了用传的
-# # 4、**kwargs：动态参数，多个关键字参数
+# 4、**kwargs：动态参数，多个关键字参数
+
+# *args和**kwargs总结
+# 在Python中的代码中经常会见到这两个词 args 和 kwargs，前面通常还会加上一个或者两个星号。其实这只是编程人员约定的变量名字,
+# args是 arguments 的缩写，表示位置参数；kwargs 是 keyword arguments 的缩写，表示关键字参数。
+# 这其实就是 Python 中可变参数的两种形式，并且 *args 必须放在 **kwargs 的前面，因为位置参数在关键字参数的前面。
 
 # 可变位置参数：
 # python中规定参数前带 * 的，称为可变位置参数，只是我们通常称这个可变位置参数为*args而已，叫其他的一样一样滴。
 # *args：是一个元组，传入的参数会被放进元组里。
+def test_args1(first, *args):
+    print('Required argument: ', first)
+    print(type(args))
+    for v in args:
+        print ('Optional argument: ', v)
 
+test_args1(1, 2, 3, 4)
 # 可变关键字参数：
 # 同理，python中规定参数前 带 ** 的，称为可变关键字参数，通常用**kwargs表示。
 # **kwargs：是一个字典，传入的参数以键值对的形式存放到字典里。
+# 而**kwargs则是将一个可变的关键字参数的字典传给函数实参，
+# 同样参数列表长度可以为0或为其他值。下面这段代码演示了如何使用kwargs
 
+def test_kwargs2(first, *args, **kwargs):
+   print('Required argument: ', first)      # first参数为必填参数  后面的*args、**kwargs为可选参数，可以为空
+   print(type(kwargs))
+   for v in args:
+      print ('Optional argument (args): ', v)
+   for k, v in kwargs.items():
+      print ('Optional argument %s (kwargs): %s' % (k, v))
 
-
+test_kwargs2(1)
+test_kwargs2(1, 2, 3, 4, k1=5, k2=6)
 
 # *args 动态参数，多个位置参数
 def my_sum(*args):
@@ -245,7 +266,7 @@ def my_sum(a,b):
 # print(my_sum(a=1,3))    #2、报错，位置参数在前
 
 
-# 动态参数的另一种表现形式
+# 动态参数的另一种表现形式(也叫做解包)
 def func(*args):  # 站在形参的角度，给变量加上*就是组合所有传来的值
     print(args)
 func(2,3,4,5,6)                # 站在实参的角度，给list加上*就是按照顺序打散这个序列
@@ -257,3 +278,10 @@ def func(**kwargs):  # 站在形参的角度，给变量加上**就是组合所�
 func(a=2,b=3)                # 站在实参的角度，给dict加上**就是按照顺序打散这个字典
 dic={'a':2,'b':3}
 func(**dic)
+
+
+# 如何定义函数的传参数只能传关键字参数如下(*,a)
+def func6(*,a):
+    print(a)
+
+func(a=66)
