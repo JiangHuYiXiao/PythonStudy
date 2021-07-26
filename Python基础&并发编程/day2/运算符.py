@@ -32,6 +32,7 @@ print(2**16)
 '''
 s = 's'
 j = 'j'
+
 # 查看字符的Ascii码通过ord()函数
 print(ord(s))
 print(ord(j))
@@ -78,7 +79,7 @@ print(not(2 > 3))  #True
 # article
 '''
 1,3>4 or 4<3 and 1==1
-2,1 < 2 and 3 < 4 or 1>2 
+2,1 < 2 and 3 < 4 or 1>2
 3,2 > 1 and 3 < 4 or 4 > 5 and 2 < 1
 4,1 > 2 and 3 < 4 or 4 > 5 and 2 > 1 or 9 < 8
 5,1 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6
@@ -92,19 +93,38 @@ print(1 > 2 and 3 < 4 or 4 > 5 and 2 > 1 or 9 < 8)#False
 print(1 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6) #False
 print(not 2 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6)#False
 
-print('---------x 和 y都是数字------------')
+# 数字的逻辑运算
+# print('---------x 和 y都是数字------------')
 print(1 and 2) #x为真则返回y
-print(0 and 1) #x为假则返回x（总结：遇到一个假则返回，否则一直判断下去，直到返回最后一个）
+print(0 and 1) #x为假则返回x    （总结：遇到一个假则返回，否则一直判断下去，直到返回最后一个）
 print(1 or 2)  #x为真则返回x
-print(0 or 3)  #x为假则返回y（总结：遇到真则返回）
+print(0 or 3)  #x为假则返回y    （总结：遇到真则返回）
 
 # article
 print(1 or 12 or 199 or 200) #1
 print(1 and 2 and 4 and 0 and 11 )#0
 print(1 and 3 or 4 and 5) #3
 print(0 or 4 and 3 or 2)  #3
-# 比较运算符优先级高于逻辑运算符 and or not,如果先是比较运算则结果为bool，先算出来是int则结果为int
-print(1 > 2 and 2 or 4 and 5 < 4) #0 and 2 or 4 and 0  0 or 0 result = False
-print(1 > 2 and 2 or 4 and 5 > 4) #True
-print(3 < 1 or 2 and 4) #4
+# # 比较运算符优先级高于逻辑运算符 and or not,如果先是比较运算则结果为bool，先算出来是int则结果为int
+# print(1 > 2 and 2 or 4 and 5 < 4) #0 and 2 or 4 and 0  0 or 0 result = False
+# print(1 > 2 and 2 or 4 and 5 > 4) #True
+# print(3 < 1 or 2 and 4) #4
 print(2 or 3 > 1 and 4) #2
+
+
+# 面试总结：
+
+# 1、比较运算符优先级大于逻辑运算符的
+
+# 2、逻辑运算优先级
+    # ()>not>and>or
+# 3、两个数进行逻辑运算：
+        # 3.1、两个数都是bool数据类型
+        # and ：都是True则为True,有一个为False则返回False
+        # or：只要有一个为False则为False
+        # not：not(True)返回False，not(False)返回True
+
+        # 3.2、两个数都是数字数据类型
+        # and ：遇到假则返回，两个都为真则返回后面一个数
+        # or：遇到真则返回，两个都为假则返回后面一个数
+        # not：not(1)返回False，not(0)返回True
