@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 
 li = ['jianghu','jiangxi','Rose','Jack']
-
 # 1、列表索引
 L1 =li[0]
 print(L1)
@@ -64,7 +63,7 @@ print(li)
 
 # 第一种：pop，指定索引进行删除，不指定索引时默认删除最后一个，有返回值，返回值就是删除的那个元素
 
-li.pop(1)  
+li.pop(1)
 print(li)
 
 li.pop()
@@ -88,8 +87,9 @@ print(li)
 # 6、列表的修改
 
 li[0] = 'jiangjiang'
-print(li)
-
+# print(li)
+#
+print(li[0:2])
 li[0:2] = 'jianghu'  # 列表的修改都是把原先的元素删除，然后把新的加入进去，按照一个元素一个元素添加
 print(li)  # ['j', 'i', 'a', 'n', 'g', 'h', 'u', 'Rose', 'Jack']
 
