@@ -1,16 +1,16 @@
 # -*- coding:utf-8 -*-
 # 1、默认参数的值是不可变数据类型
-'''
+
 def func(a =1):
     return a
 
 print(func())     # 1
 print(func(2))    # 2
-'''
+
 
 # 2、默认参数的值是可变数据类型
 # 列表
-'''
+
 def func(list = []):
     list.append(2)
     return list
@@ -21,14 +21,16 @@ print(func())          # [2,2]
 print(func())          # [2,2,2]
 #当实参有传递值时，用传递的值
 print(func([1]))       # [1,2]
-print(func([1,3]))       # [1,2]
-'''
+print(func([1,3]))       # [1,3,2]
+
 # 字典
 def func(k,dic={}):
+    print(k)
     dic[k] = 'v'
     return (dic)
 
 print(func(1))    # {1: 'v'}
 print(func(2))    # {1: 'v', 2: 'v'}
 print(func(3))    # {1: 'v', 2: 'v', 3: 'v'}
+
 
