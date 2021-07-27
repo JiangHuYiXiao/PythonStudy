@@ -80,6 +80,7 @@ set = {}
 # print(bool(set))    #set
 
 # 6、如果元组里面只有一个元素且不加逗号那么此元素的数据类型是什么类型就是什么类型
+# 加了逗号那么就是元组
 tuple = (1)
 print(type(tuple))   #<class 'int'>
 
