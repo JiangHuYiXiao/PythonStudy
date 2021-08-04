@@ -11,7 +11,7 @@ print(random.randint(1,5))      # 5 返回大于1小于等于5直接的随机整
 print(random.randrange(1,10,2))      # 7 返回大于1小于10直接的奇数
 
 # 3、随机选择列表中的一个返回
-print(random.choice([1,2,[231,3242],'2oqu']))
+
 
 # 4、随机选择列表中的多个返回，返回的个数取决于第二个参数的值
 print(random.sample([231,3242,'12'],3))         # [231, 3242, '12']
@@ -48,3 +48,4 @@ print(res)
 #         code="".join([code,str(add)])
 #     return code
 # print(v_code())
+# print(random.choice([1,2,[231,3242],'2oqu']))
